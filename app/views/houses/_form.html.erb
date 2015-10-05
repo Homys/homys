@@ -1,0 +1,24 @@
+<%= form_for @house do |f| %>
+  
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <h3> Add Housemates </h3>
+
+  <div id="users">
+  	<%= f.fields_for :users do |user| %>
+  	<%= render 'user_fields', f: user %>
+  </div>
+  <% end %>
+
+  <div class="links">
+  	<%= link_to_add_association 'Add housemate', f, :users %>
+  </div>
+
+  <div class="actions">
+  	<%= f.submit %>
+  </div>
+
+<% end %> 

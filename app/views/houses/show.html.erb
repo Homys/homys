@@ -1,2 +1,20 @@
-<h1>Houses#show</h1>
-<p>Find me in app/views/houses/show.html.erb</p>
+<h1>Welcome to <%= @house.name %></h1>
+
+<h3> Add a Housemate </h3>
+
+<%= form_tag houses_add_housemate_path, method: :patch do %>
+
+	<div class="field">
+    <%= label_tag :email %><br />
+    <%= text_field_tag :email %>
+	</div>
+
+	<div class="field">
+    <%= hidden_field_tag :house_id, @house.id %>
+	</div>
+
+	<div class="actions">
+		<%= submit_tag %>
+	</div>
+	
+<% end %>

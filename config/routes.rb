@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  root 'houses#index' 
+
+  patch 'houses/add_housemate' => 'houses#add_housemate'
   resources :houses, only: [:create, :new, :index, :show]
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
