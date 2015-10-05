@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  amount: 1.5
+  date_due: 2015-10-05 18:02:18
+  user_id: 1
+  owner_id: 1
+
+two:
+  title: MyString
+  amount: 1.5
+  date_due: 2015-10-05 18:02:18
+  user_id: 1
+  owner_id: 1
