@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
 
-  root 'houses#index' 
-
   patch 'houses/add_housemate' => 'houses#add_housemate'
   resources :houses, only: [:create, :new, :index, :show]
+  resources :expenses, only: [:index, :new, :create, :show, :destroy, :update]
   devise_for :users
 
   resources :chore_items, only: [:new, :create, :show, :index]

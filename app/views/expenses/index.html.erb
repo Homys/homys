@@ -1,0 +1,6 @@
+<h1>All About $$$</h1>
+<%= link_to "Add Expense", new_expense_path %>
+
+<% @expenses.each do |expense| %>
+  <%= link_to expense.title, expense_path(expense) %>
+<% end %>
