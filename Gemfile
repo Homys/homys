@@ -42,7 +42,6 @@ gem 'better_errors'
 gem 'kaminari'
 
 #gem 'fog-aws'
-
 gem 'fog', require: 'fog/aws'
 
 # Use ActiveModel has_secure_password

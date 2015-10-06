@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :houses, only: [:create, :new, :index, :show]
   devise_for :users
 
+  resources :chore_items, only: [:new, :create, :show, :index]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
