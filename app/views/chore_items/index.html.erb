@@ -1,6 +1,12 @@
-<h1> Chores List </h1>
+<h1> House Quests </h1>
 
+<p> House Quests are weekly chores around the house. </p>
+
+<div class = "chore_list">
 <% @chore_items.each do |chore| %>
-	<%= chore.name %>
-	<%= chore.description %>
+	<%= link_to chore.name, chore_item_path(chore) %> <br> 
+	# <%= "Assigned to: #{chore.user_id}" %> <br>
 <% end %> 
+</div>
+
+<%= link_to 'Create a new chore', new_chore_item_path %>

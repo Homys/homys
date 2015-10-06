@@ -18,6 +18,10 @@ class ChoreItemsController < ApplicationController
 		@chore_items = ChoreItem.all 
 	end 
 
+	def show 
+		@chore_item = ChoreItem.find(params[:id])
+	end 
+
 private 
 
 	def chore_item_params
