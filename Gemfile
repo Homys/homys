@@ -30,7 +30,7 @@ gem 'mini_magick'
 # authorization
 gem 'devise'
 
-#mailer 
+#mailer
 gem 'letter_opener'
 
 #nested forms
@@ -41,7 +41,9 @@ gem 'better_errors'
 #pagination
 gem 'kaminari'
 
-gem 'fog-aws'
+#gem 'fog-aws'
+
+gem 'fog', require: 'fog/aws'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
