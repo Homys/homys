@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 
   belongs_to :house
 
+  mount_uploader :avatar, AvatarUploader
+
 end
