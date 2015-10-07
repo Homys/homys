@@ -6,11 +6,33 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-  <link rel="stylesheet" type="text/css" href="application.scss">
+    <link rel="stylesheet" type="text/css" href="application.scss">
+
+   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.blue_grey-indigo.min.css" /> 
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 </head>
 
 <body>
+
+
+<!-- nav bar -->
+<button id="demo-menu-lower-left"
+        class="mdl-button mdl-js-button mdl-button--icon">
+  <i class="material-icons">more_vert</i>
+</button>
+
+<ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+    for="demo-menu-lower-left">
+  <li class="mdl-menu__item"><%= link_to "Loot List", shopping_items_path %></li>
+  <li class="mdl-menu__item"><%= link_to "House Quests", chore_items_path %></li>
+  <li disabled class="mdl-menu__item"><%= link_to "Announcements", announcements_path %></li>
+  <li class="mdl-menu__item"><%= link_to "Commandments", commandments_path %></li>
+</ul>
+
+
+
 
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.first_name %></strong>.
@@ -23,17 +45,11 @@
 <% end %>
 
 
-<%= link_to "Loot List", shopping_items_path %>
-<%= link_to "House Quests", chore_items_path %>
-<%= link_to "Announcements", announcements_path %>
-<%= link_to "Commandments", commandments_path %>
+
 
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-
-
-
 
   <%= yield %>
 
