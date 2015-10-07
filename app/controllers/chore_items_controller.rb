@@ -9,7 +9,7 @@ class ChoreItemsController < ApplicationController
 		@chore_item.owner_id = current_user.id
 	
 		if @chore_item.save
-			redirect_to chore_items_path
+			redirect_to house_chore_items_path(current_user.house_id)
 		else 
 			render :new
 		end 
@@ -26,13 +26,13 @@ class ChoreItemsController < ApplicationController
 	def chore_assigner 
 		current_user.house.assign_chores
 
-		redirect_to chore_items_path
+		redirect_to house_chore_items_path(current_user.house_id)
 	end
 
 	def destroy
 		@chore_item = ChoreItem.find(params[:id])
 		@chore_item.destroy
-		redirect_to chore_items_path
+		redirect_to house_chore_items_path(current_user.house_id)
 	end 
 
 private 

@@ -12,10 +12,5 @@
 </div>
 
 
-<div class = "add_button">
-	<%= link_to new_commandment_path do %>
-		<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
-		  <i class="material-icons">add</i>
-		</button>
-	<% end %>
-</div>
+
+	<%= link_to "Add new commandment", new_house_commandment_path(current_user.house_id) %>

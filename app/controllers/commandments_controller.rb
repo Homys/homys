@@ -8,7 +8,7 @@ class CommandmentsController < ApplicationController
 		@commandment = Commandment.new(commandment_params)
 	
 		if @commandment.save
-			redirect_to commandments_path
+			redirect_to house_commandments_path(current_user.house_id)
 		else 
 			render :new
 		end 

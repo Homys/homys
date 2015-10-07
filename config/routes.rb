@@ -1,22 +1,25 @@
 Rails.application.routes.draw do
-  patch 'houses/add_housemate' => 'houses#add_housemate'
-  resources :houses, only: [:create, :new, :index, :show]
-  resources :expenses, only: [:index, :new, :create, :show, :destroy, :update]
+  
+  root 'houses#index'
+
+
   devise_for :users
 
-
-  patch 'chore_assigner' => 'chore_items#chore_assigner'
-  
-  resources :chore_items, only: [:new, :create, :show, :index, :destroy]
-  resources :shopping_items, only: [:new, :create, :show, :index]
-  resources :commandments, only: [:new, :create, :show, :index]
-  resources :announcements, only: [:new, :create, :show, :index, :destroy]
+  resources :houses, only: [:create, :new, :index, :show] do 
+    resources :expenses, only: [:index, :new, :create, :show, :destroy, :update]
+    resources :chore_items, only: [:new, :create, :show, :index, :destroy]
+    resources :shopping_items, only: [:new, :create, :show, :index]
+    resources :commandments, only: [:new, :create, :show, :index]
+    resources :announcements, only: [:new, :create, :show, :index, :destroy]
+    patch 'chore_assigner' => 'chore_items#chore_assigner'
+    patch 'add_housemate' => 'houses#add_housemate'
+  end 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'houses#index'
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

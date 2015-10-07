@@ -1,6 +1,6 @@
 <h1>Create new commandment</h1>
 
-<%= form_for @commandment do |f| %>
+<%= form_for [current_user.house, @commandment] do |f| %>
   
   <div class="field">
     <%= f.label :title %><br />

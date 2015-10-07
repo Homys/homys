@@ -8,7 +8,7 @@ class AnnouncementsController < ApplicationController
 		@announcement.owner_id = current_user.id
 
 		if @announcement.save
-			redirect_to announcements_path
+			redirect_to house_announcements_path(current_user.house_id)
 		else
 			render :new
 		end
@@ -21,7 +21,7 @@ class AnnouncementsController < ApplicationController
 	def destroy
 		@announcement = Announcement.find(params[:id])
 		@announcement.destroy
-		redirect_to announcements_path
+		redirect_to house_announcements_path(current_user.house_id)
 	end
 
 private
