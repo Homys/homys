@@ -1,6 +1,8 @@
 <h1> Chores List </h1>
 
 <% @chore_items.each do |chore| %>
-	<%= chore.name %>
-	<%= chore.description %>
+	Name: <%= chore.name %> <br>
+	Description: <%= chore.description %> <br> <br>
 <% end %> 
+
+<%= link_to "Create new chore", new_chore_item_path %>

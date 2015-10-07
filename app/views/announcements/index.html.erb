@@ -1,0 +1,11 @@
+<h1> Announcements </h1>
+
+<p> Announcements go here </p>
+
+<% @announcements.each do |announcement| %>
+	Name: <%= announcement.name %> <br>
+	Description: <%= announcement.description %> <br>
+	Importance: <%= announcement.importance %> <br> <br>
+<% end %> 
+
+<%= link_to "Create new announcement", new_announcement_path %>

@@ -1,0 +1,11 @@
+<h1> Commandments </h1>
+
+<p> Commandments go here </p>
+
+<% @commandments.each do |commandment| %>
+	Commandment: <%= commandment.name %>
+	Description: <%= commandment.description %>
+	Importance: <%= commandment.importance %>
+<% end %> 
+
+<%= link_to "Create new commandment", new_commandment_path %>

@@ -5,17 +5,15 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <link rel="stylesheet" type="text/css" href="application.scss">
+
 </head>
+
 <body>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
-  <%= yield %>
-
-
 <% if user_signed_in? %>
-  Logged in as <strong><%= current_user.first_name %><%= current_user.avatar %></strong>.
+  Logged in as <strong><%= current_user.first_name %></strong>.
   <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
 
@@ -23,6 +21,33 @@
   <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
+
+
+<%= link_to "Loot List", shopping_items_path %>
+<%= link_to "House Quests", chore_items_path %>
+<%= link_to "Announcements", announcements_path %>
+<%= link_to "Commandments", commandments_path %>
+
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+
+
+
+  <%= yield %>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </body>

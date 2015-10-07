@@ -1,0 +1,19 @@
+<h1>Create new shopping item</h1>
+
+<%= form_for @shopping_item do |f| %>
+  
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :importance %><br />
+    <%= f.select :importance, [['Running low','Running low'],['Need today','Need today'],['Need ASAP','Need ASAP']] %>
+  </div>
+
+  <div class="actions">
+  	<%= f.submit %>
+  </div>
+
+<% end %>
