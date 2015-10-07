@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :chore_items, only: [:new, :create, :show, :index]
   resources :shopping_items, only: [:new, :create, :show, :index]
-  resources :commandments, only: [:new, :create, :show, :index]
+  resources :commandments, only: [:new, :create, :show, :index, :destroy]
   resources :announcements, only: [:new, :create, :show, :index, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.

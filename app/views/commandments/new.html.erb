@@ -1,7 +1,7 @@
 <h1>Create new commandment</h1>
 
 <%= form_for @commandment do |f| %>
-  
+
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
@@ -9,7 +9,7 @@
 
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_field :description %>
+    <%= f.text_area :description %>
   </div>
 
 
