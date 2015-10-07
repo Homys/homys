@@ -23,19 +23,17 @@ class ChoreItemsController < ApplicationController
 		@chore_item = ChoreItem.find(params[:id])
 	end 
 
-	def chore_assigner	
-		@house = current_user.house
-		@chore_items = @house.created_chores
-		@users = @house.users
-
-		@chore_items.each do |chore|
-			chore.user = @users.sample
-			chore.save
-		end
+	def chore_assigner 
+		current_user.house.assign_chores
 
 		redirect_to chore_items_path
 	end
 
+	def destroy
+		@chore_item = ChoreItem.find(params[:id])
+		@chore_item.destroy
+		redirect_to chore_items_path
+	end 
 
 private 
 

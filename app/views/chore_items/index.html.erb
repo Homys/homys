@@ -2,16 +2,20 @@
 
 <p> House Quests are weekly chores around the house. </p>
 
+<p> <%= link_to "Randomize chores", chore_assigner_path, method: :patch %> </p>
+
 <div class = "chore_list">
 <% @chore_items.each do |chore| %>
 	<%= link_to chore.name, chore_item_path(chore) %> <br> 
 	Description: <%= chore.description %> <br>
-	Assigned to: <%= chore.user.first_name %> <br>
+	<% if chore.user %>
+		Assigned to: <%= chore.user.full_name %> <br>
+	<% end %>
+	<%= link_to("Delete", chore_item_path(chore), method: :delete) if chore.owner_id == current_user.id %> <br><br>
 <% end %> 
 </div>
 
 <%= link_to 'Create a new chore', new_chore_item_path %>
-
 
 <div class = "add_button">
 	<%= link_to new_chore_item_path do %>
@@ -20,3 +24,4 @@
 		</button>
 	<% end %>
 </div>
+
