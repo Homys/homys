@@ -1,7 +1,7 @@
 <h1>Create new announcement</h1>
 
 <%= form_for @announcement do |f| %>
-  
+
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
@@ -13,8 +13,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :importance %><br />
-    <%= f.select :importance, [['Meh','Meh'],['Kinda Important','Kinda Important'],['Urgent','Urgent']] %>
+    <%= f.label :importance, "Important" %><br />
+    <%= f.check_box :importance %>
   </div>
 
 

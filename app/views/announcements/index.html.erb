@@ -8,8 +8,9 @@
 	<% @announcements.each do |announcement| %>
 		Name: <%= announcement.title %> <br>
 		Description: <%= announcement.description %> <br>
-		Importance: <%= announcement.importance %> <br> <br>
-	<% end %> 
+		Important: <%= announcement.importance %> <br>
+		<%= link_to("Delete", announcement_path(announcement), method: :delete) if announcement.owner_id = current_user.id %><br><br>
+	<% end %>
 </div>
 
 
