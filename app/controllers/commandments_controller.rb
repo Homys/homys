@@ -1,28 +1,35 @@
 class CommandmentsController < ApplicationController
 
-	def new 
+	def new
 		@commandment = Commandment.new
-	end 
+	end
 
-	def create 
+	def create
 		@commandment = Commandment.new(commandment_params)
-	
+		@commandment.owner_id = current_user.id
+
 		if @commandment.save
 			redirect_to house_commandments_path(current_user.house_id)
 		else 
 			render :new
-		end 
-	end 
+		end
+	end
 
-	def index 
-		@commandments = Commandment.all 
-	end 
+	def index
+		@commandments = Commandment.all
+	end
 
-	def show 
+	def show
 		@commandment = Commandment.find(params[:id])
-	end 
+	end
 
-private 
+	def destroy
+		@commandment = Commandment.find(params[:id])
+		@commandment.destroy
+		redirect_to commandments_path
+	end
+
+private
 
 	def commandment_params
 		params.require(:commandment).permit(:title, :description, :owner_id)
