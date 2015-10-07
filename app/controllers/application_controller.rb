@@ -11,4 +11,14 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << [:first_name, :last_name, :phone_num, :avatar]
   end
 
+	# def run
+	# 	number_of_users = User.count 
+
+	# 	array_users = (1..number_of_users).to_a
+	# 	chore_user = array_users.select
+
+
+	# 	ChoreItem(user_id) = chore_user
+	# end
+
 end

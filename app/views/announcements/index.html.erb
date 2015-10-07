@@ -13,11 +13,11 @@
 </div>
 
 
+
 <div class = "add_button">
-
-	<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
-  <i class="material-icons">add </i>
-	</button>
-
-	<%= link_to "Create new announcement", new_announcement_path %>
+	<%= link_to new_announcement_path do %>
+		<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+		  <i class="material-icons">add</i>
+		</button>
+	<% end %>
 </div>

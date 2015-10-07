@@ -3,13 +3,16 @@
 <div class = "container">
 	<% @chore_items.each do |chore| %>
 		Name: <%= chore.name %> <br>
-		Description: <%= chore.description %> <br> <br>
+		Description: <%= chore.description %> <br>
+		Responsiblity assigned to:   <br><br>
 	<% end %> 
 </div>
 
+
 <div class = "add_button">
-	<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
-	  <i class="material-icons">add </i>
-	</button>
-	<%= link_to "Create new chore", new_chore_item_path %>
+	<%= link_to new_chore_item_path do %>
+		<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+		  <i class="material-icons">add</i>
+		</button>
+	<% end %>
 </div>
