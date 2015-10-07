@@ -1,12 +1,23 @@
 <h1> House Quests </h1>
 
+
 <p> House Quests are weekly chores around the house. </p>
 
 <div class = "chore_list">
 <% @chore_items.each do |chore| %>
 	<%= link_to chore.name, chore_item_path(chore) %> <br> 
+	Description: <%= chore.description %> <br>
 	# <%= "Assigned to: #{chore.user_id}" %> <br>
 <% end %> 
 </div>
 
 <%= link_to 'Create a new chore', new_chore_item_path %>
+
+
+<div class = "add_button">
+	<%= link_to new_chore_item_path do %>
+		<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+		  <i class="material-icons">add</i>
+		</button>
+	<% end %>
+</div>

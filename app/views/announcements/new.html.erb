@@ -1,0 +1,25 @@
+<h1>Create new announcement</h1>
+
+<%= form_for @announcement do |f| %>
+  
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :importance %><br />
+    <%= f.select :importance, [['Meh','Meh'],['Kinda Important','Kinda Important'],['Urgent','Urgent']] %>
+  </div>
+
+
+  <div class="actions">
+  	<%= f.submit %>
+  </div>
+
+<% end %>

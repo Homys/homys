@@ -1,3 +1,11 @@
 <h1>Welcome to Homys</h1>
 
-<%= link_to 'Create new house', new_house_path %>
+Add a House
+<div class = "add_button">
+	<%= link_to new_house_path do %>
+		<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+		  <i class="material-icons">add</i>
+		</button>
+	<% end %>
+</div>
+

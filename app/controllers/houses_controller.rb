@@ -4,9 +4,9 @@ class HousesController < ApplicationController
 
   	if @house.save
   		redirect_to house_path(@house)
-  	else 
+  	else
   		render :new
-  	end 
+  	end
 
   end
 
@@ -18,10 +18,10 @@ class HousesController < ApplicationController
   	if @user.save
   		# redirect_to house_url(params[:house_id])
   		redirect_to houses_url
-  	else 
+  	else
   		redirect_to house_path(@house)
-  	end 
-  end 
+  	end
+  end
 
   def new
     @house = House.new
@@ -38,7 +38,7 @@ class HousesController < ApplicationController
   private
 
   def house_params
-  	params.require(:house).permit(:name, users_attributes: [:house_id, :email])
-	end 
+  	params.require(:house).permit(:name)
+	end
 
-end 
+end

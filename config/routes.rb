@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
-
-  root 'houses#index' 
-
   patch 'houses/add_housemate' => 'houses#add_housemate'
   resources :houses, only: [:create, :new, :index, :show]
+  resources :expenses, only: [:index, :new, :create, :show, :destroy, :update]
   devise_for :users
 
   resources :chore_items, only: [:new, :create, :show, :index]
+  resources :shopping_items, only: [:new, :create, :show, :index]
+  resources :commandments, only: [:new, :create, :show, :index]
+  resources :announcements, only: [:new, :create, :show, :index]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
