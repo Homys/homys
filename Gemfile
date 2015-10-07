@@ -47,6 +47,9 @@ gem 'fog', require: 'fog/aws'
 #jQuery based replacement for select boxes
 gem "select2-rails"
 
+#provide fake information
+gem "faker"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
