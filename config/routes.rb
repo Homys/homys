@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :expenses, only: [:index, :new, :create, :show, :destroy, :update]
   devise_for :users
 
+
+  patch 'chore_assigner' => 'chore_items#chore_assigner'
+  
   resources :chore_items, only: [:new, :create, :show, :index]
   resources :shopping_items, only: [:new, :create, :show, :index]
   resources :commandments, only: [:new, :create, :show, :index]

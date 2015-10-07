@@ -6,6 +6,7 @@ class ChoreItemsController < ApplicationController
 
 	def create 
 		@chore_item = ChoreItem.new(chore_item_params)
+		@chore_item.owner_id = current_user.id
 	
 		if @chore_item.save
 			redirect_to chore_items_path
@@ -22,26 +23,17 @@ class ChoreItemsController < ApplicationController
 		@chore_item = ChoreItem.find(params[:id])
 	end 
 
+	def chore_assigner	
+		@house = current_user.house
+		@chore_items = @house.created_chores
+		@users = @house.users
 
-	def run
-		number_of_users = User.count 
-		number_of_chores = ChoreItem.count 
+		@chore_items.each do |chore|
+			chore.user = @users.sample
+			chore.save
+		end
 
-		array_users = (1..number_of_users).to_a
-		chore_user = array_users.sample
-
-
-		@chore_item(user_id) = chore_user
-
-		@chore_item.each do |chore|
-			
-			end  
-
-
-		# max_num_chores_per_user = (number_of_chores / (number_of_users) + 1
-			# @chore_item 
-
-
+		redirect_to chore_items_path
 	end
 
 
