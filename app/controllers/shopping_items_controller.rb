@@ -20,6 +20,6 @@ class ShoppingItemsController < ApplicationController
 private 
 
 	def shopping_item_params
-		params.require(:announcement).permit(:name, :importance, :points, :owner_id)
+		params.require(:shopping_item).permit(:name, :importance, :points, :owner_id)
 	end
 end

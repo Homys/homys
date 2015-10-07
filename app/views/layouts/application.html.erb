@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" type="text/css" href="application.scss">
 
-   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.blue_grey-indigo.min.css" /> 
+   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.blue_grey-deep_orange.min.css" /> 
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
@@ -16,20 +16,35 @@
 
 <body>
 
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Title</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+     <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href=""><%= link_to "Loot List", shopping_items_path %></a>
+        <a class="mdl-navigation__link" href=""><%= link_to "House Quests", chore_items_path %></a>
+        <a class="mdl-navigation__link" href=""><%= link_to "Announcements", announcements_path %></a>
+        <a class="mdl-navigation__link" href=""><%= link_to "Commandments", commandments_path %></a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Title</span>
+  <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href=""><%= link_to "Loot List", shopping_items_path %></a>
+        <a class="mdl-navigation__link" href=""><%= link_to "House Quests", chore_items_path %></a>
+        <a class="mdl-navigation__link" href=""><%= link_to "Announcements", announcements_path %></a>
+        <a class="mdl-navigation__link" href=""><%= link_to "Commandments", commandments_path %></a>
+      </nav>
+  </div>
 
-<!-- nav bar -->
-<button id="demo-menu-lower-left"
-        class="mdl-button mdl-js-button mdl-button--icon">
-  <i class="material-icons">more_vert</i>
-</button>
+</div>
 
-<ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
-    for="demo-menu-lower-left">
-  <li class="mdl-menu__item"><%= link_to "Loot List", shopping_items_path %></li>
-  <li class="mdl-menu__item"><%= link_to "House Quests", chore_items_path %></li>
-  <li disabled class="mdl-menu__item"><%= link_to "Announcements", announcements_path %></li>
-  <li class="mdl-menu__item"><%= link_to "Commandments", commandments_path %></li>
-</ul>
+
 
 
 
@@ -51,8 +66,9 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
+<main class="mdl-layout__content">
   <%= yield %>
-
+</main>
 
 
 
