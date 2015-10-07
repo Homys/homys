@@ -1,17 +1,7 @@
 Rails.application.routes.draw do
-
-  get 'shopping_items/index'
-
-  get 'shopping_items/new'
-
-  get 'announcements/index'
-
-  get 'announcements/new'
-
-  root 'houses#index' 
-
   patch 'houses/add_housemate' => 'houses#add_housemate'
   resources :houses, only: [:create, :new, :index, :show]
+  resources :expenses, only: [:index, :new, :create, :show, :destroy, :update]
   devise_for :users
 
   resources :chore_items, only: [:new, :create, :show, :index]
