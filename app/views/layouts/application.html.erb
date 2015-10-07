@@ -6,62 +6,24 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-    <link rel="stylesheet" type="text/css" href="application.scss">
-
-   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.indigo-orange.min.css" /> 
-    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 </head>
 
 <body>
 
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-  <header class="mdl-layout__header">
-    <div class="mdl-layout__header-row">
-      <!-- Title -->
-      <span class="mdl-layout-title">Homys</span>
-      <!-- Add spacer, to align navigation to the right -->
-      <div class="mdl-layout-spacer"></div>
-      <!-- Navigation. We hide it in small screens. -->
-     <nav class="mdl-navigation">
-
       <% if user_signed_in? %>
-        Logged in as <strong><%= current_user.first_name %></strong>.
-        <a class="mdl-navigation__link" href=""> <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></a>
+        Logged in as <strong><%= current_user.first_name %></strong>.<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
 
       <% else %>
-      <a class="mdl-navigation__link" href=""> <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></a>
-      <a class="mdl-navigation__link" href="">  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></a>
-      
+       <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %>
+      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
       <% end %>
 
-
-
-
-        <a class="mdl-navigation__link" href=""><%= link_to "Loot List", shopping_items_path %></a>
-        <a class="mdl-navigation__link" href=""><%= link_to "House Quests", chore_items_path %></a>
-        <a class="mdl-navigation__link" href=""><%= link_to "Announcements", announcements_path %></a>
-        <a class="mdl-navigation__link" href=""><%= link_to "Commandments", commandments_path %></a>
+      <%= link_to "Loot List", shopping_items_path %>
+      <%= link_to "House Quests", chore_items_path %>
+      <%= link_to "Announcements", announcements_path %>
+      <%= link_to "Commandments", commandments_path %>
      
-      </nav>
-    </div>
-  </header>
-  <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Homys</span>
-  <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href=""><%= link_to "Loot List", shopping_items_path %></a>
-        <a class="mdl-navigation__link" href=""><%= link_to "House Quests", chore_items_path %></a>
-        <a class="mdl-navigation__link" href=""><%= link_to "Announcements", announcements_path %></a>
-        <a class="mdl-navigation__link" href=""><%= link_to "Commandments", commandments_path %></a>
-      </nav>
-  </div>
-
-</div>
-
-
-
-
 
 
   <p class="notice"><%= notice %></p>
