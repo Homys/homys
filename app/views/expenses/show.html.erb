@@ -1,17 +1,24 @@
-<h1><%= @expense.title %></h1>
-<p>Total Amount: <%= @expense.amount %></p>
-<p>Pay By: <%= @expense.date_due %></p>
-
-
-<%= form_for @expense do |f| %>
-
-<div class="field">
-  <%= f.label :user_ids, "Who Owes" %><br />
- <%= f.select :user_ids, User.all.collect{ |u| [ u.full_name, u.id ] },{}, {:multiple => true, class: "housemates"} %><br>
- <%= f.submit %>
-
+<div class="expenseInfo">
+  <h1><%= @expense.title %></h1>
+  <p>Total Amount: <%= @expense.amount %></p>
+  <p>Pay By: <%= @expense.date_due %></p>
 </div>
 
+<div class="userExpenses">
+  <% @expense.users.each do |user| %>
+    <p> <%= user.full_name %> owes: , <%= link_to("paid", "") if @expense.owner_id == current_user.id  %> </p>
+  <% end %>
+</div>
+
+<% if @expense.owner_id == current_user.id %>
+  <%= form_for @expense do |f| %>
+  <div class="field">
+    <%= f.label :user_ids, "Who Owes" %><br />
+   <%= f.select :user_ids, User.all.collect{ |u| [ u.full_name, u.id ] },{}, {:multiple => true, class: "housemates"} %><br>
+   <%= f.submit %>
+  </div>
+  <% end %>
+  <%= link_to "Delete Expense", expense_path(@expense.id), method: :delete %>
 <% end %>
 
 <script type="text/javascript">$(".housemates").select2();</script>
