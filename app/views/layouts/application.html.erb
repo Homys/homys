@@ -20,7 +20,7 @@
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       <!-- Title -->
-      <span class="mdl-layout-title">Title</span>
+      <span class="mdl-layout-title">Homys</span>
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
@@ -44,11 +44,6 @@
 
 </div>
 
-
-
-
-
-
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.first_name %></strong>.
   <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
@@ -63,12 +58,17 @@
 
 
 
+
+
+
+
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-<main class="mdl-layout__content">
+
   <%= yield %>
-</main>
+
 
 
 
