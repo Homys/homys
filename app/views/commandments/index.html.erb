@@ -1,11 +1,20 @@
 <h1> Commandments </h1>
 
-<p> Commandments go here </p>
+<div class = "description">
+	<p> Commandments go here </p>
+</div>
 
-<% @commandments.each do |commandment| %>
-	Commandment: <%= commandment.title %>
-	Description: <%= commandment.description %>
+<div class = "container">
+	<% @commandments.each do |commandment| %>
+		Commandment: <%= commandment.title %> <br>
+		Description: <%= commandment.description %> <br> <br>
+	<% end %> 
+</div>
 
-<% end %> 
 
-<%= link_to "Create new commandment", new_commandment_path %>
+<div class = "add_button">
+	<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+	  <i class="material-icons">add</i>
+	</button>
+	<%= link_to "Create new commandment", new_commandment_path %>
+</div>

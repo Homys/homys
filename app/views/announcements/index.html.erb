@@ -1,11 +1,23 @@
 <h1> Announcements </h1>
 
-<p> Announcements go here </p>
+<div class = "description">
+	<p> Announcements go here </p>
+</div>
 
-<% @announcements.each do |announcement| %>
-	Name: <%= announcement.title %> <br>
-	Description: <%= announcement.description %> <br>
-	Importance: <%= announcement.importance %> <br> <br>
-<% end %> 
+<div class = "container">
+	<% @announcements.each do |announcement| %>
+		Name: <%= announcement.title %> <br>
+		Description: <%= announcement.description %> <br>
+		Importance: <%= announcement.importance %> <br> <br>
+	<% end %> 
+</div>
 
-<%= link_to "Create new announcement", new_announcement_path %>
+
+<div class = "add_button">
+
+	<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+  <i class="material-icons">add </i>
+	</button>
+
+	<%= link_to "Create new announcement", new_announcement_path %>
+</div>

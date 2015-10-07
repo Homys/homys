@@ -1,10 +1,20 @@
 <h1> Loot List </h1>
 
-<p> Loot list goes here </p>
+<div class = "description">
+	<p> Loot list goes here </p>
+</div>
 
-<% @shopping_items.each do |shopping| %>
-	Name: <%= shopping.name %>
-	Importance: <%= shopping.importance %>
-<% end %> 
+<div class="container">
+	<% @shopping_items.each do |shopping| %>
+		Name: <%= shopping.name %>
+		Importance: <%= shopping.importance %>
+	<% end %> 
+</div>
 
-<%= link_to "Create new shopping item", new_shopping_item_path %>
+<div class = "add_button">
+	<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+	  <i class="material-icons">add</i>
+	</button>
+
+	<%= link_to "Create new shopping item", new_shopping_item_path %>
+</div>

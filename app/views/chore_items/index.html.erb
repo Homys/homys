@@ -1,8 +1,15 @@
 <h1> Chores List </h1>
 
-<% @chore_items.each do |chore| %>
-	Name: <%= chore.name %> <br>
-	Description: <%= chore.description %> <br> <br>
-<% end %> 
+<div class = "container">
+	<% @chore_items.each do |chore| %>
+		Name: <%= chore.name %> <br>
+		Description: <%= chore.description %> <br> <br>
+	<% end %> 
+</div>
 
-<%= link_to "Create new chore", new_chore_item_path %>
+<div class = "add_button">
+	<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+	  <i class="material-icons">add </i>
+	</button>
+	<%= link_to "Create new chore", new_chore_item_path %>
+</div>
