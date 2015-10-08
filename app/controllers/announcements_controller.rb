@@ -1,4 +1,4 @@
-class AnnouncementsController < ApplicationController
+class AnnouncementsController < PrivateController
 	def new
 		@announcement = Announcement.new
 	end

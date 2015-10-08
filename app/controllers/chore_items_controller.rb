@@ -1,4 +1,4 @@
-class ChoreItemsController < ApplicationController
+class ChoreItemsController < PrivateController
 	
 	def new 
 		@chore_item = ChoreItem.new

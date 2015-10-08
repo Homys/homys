@@ -1,4 +1,4 @@
-class CommandmentsController < ApplicationController
+class CommandmentsController < PrivateController
 
 	def new
 		@commandment = Commandment.new

@@ -1,4 +1,4 @@
-class ExpensesController < ApplicationController
+class ExpensesController < PrivateController
   def index
     @expenses = Expense.all
   end
