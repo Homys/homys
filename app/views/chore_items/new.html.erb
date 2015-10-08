@@ -1,6 +1,6 @@
 <h1>Create new chore item</h1>
 
-<%= form_for @chore_item do |f| %>
+<%= form_for [current_user.house, @chore_item] do |f| %>
   
   <div class="field">
     <%= f.label :name %><br />

@@ -20,21 +20,18 @@
 <body>
 
 
+      <% if user_signed_in? && current_user.house_id != nil %>
 
-
-      <% if user_signed_in? %>
         Logged in as <strong><%= current_user.first_name %></strong>.<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+          <%= link_to "Loot List", house_shopping_items_path(current_user.house_id) %>
+          <%= link_to "House Quests", house_chore_items_path(current_user.house_id) %>
+          <%= link_to "Announcements", house_announcements_path(current_user.house_id) %>
+          <%= link_to "Commandments", house_commandments_path(current_user.house_id) %>
 
       <% else %>
        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %>
       <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
       <% end %>
-
-      <%= link_to "Loot List", shopping_items_path %>
-      <%= link_to "House Quests", chore_items_path %>
-      <%= link_to "Announcements", announcements_path %>
-      <%= link_to "Commandments", commandments_path %>
-
 
 
   <p class="notice"><%= notice %></p>

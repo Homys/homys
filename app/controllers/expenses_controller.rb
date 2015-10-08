@@ -15,7 +15,7 @@ class ExpensesController < ApplicationController
     @expense.owner_id = current_user.id
 
     if @expense.save
-      redirect_to expense_url(@expense)
+      redirect_to house_expense_url(current_user.house_id, @expense)
     else
       render :new
     end
@@ -28,7 +28,7 @@ class ExpensesController < ApplicationController
   def destroy
     expense = Expense.find(params[:id])
     expense.destroy
-    redirect_to expenses_path
+    redirect_to house_expenses_path(current_user.house_id)
   end
 
   def update
@@ -38,7 +38,7 @@ class ExpensesController < ApplicationController
     #Due to the 'has_and_belongs_to_many relationhip' with users,
     #the method then checks to see if it can update the expenses_users table
     @expense.update_attributes(expense_params)
-    redirect_to expense_path(@expense)
+    redirect_to house_expense_path(current_user.house_id, @expense)
 
   end
   private
