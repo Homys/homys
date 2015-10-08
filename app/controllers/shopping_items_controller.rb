@@ -1,4 +1,4 @@
-class ShoppingItemsController < ApplicationController
+class ShoppingItemsController < PrivateController
 	def new 
 		@shopping_item = ShoppingItem.new
 	end 
