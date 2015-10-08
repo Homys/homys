@@ -15,3 +15,6 @@
  *= require select2
  */
 
+#yield {
+	margin-right: 200px;
+}

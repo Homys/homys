@@ -5,12 +5,29 @@
 </div>
 
 <div class="container">
-	<% @shopping_items.each do |shopping| %>
-		Name: <%= shopping.name %><br>
-		Importance: <%= shopping.importance %> <br>
-		Who's got it? : <%= shopping.user_id %> <br>
+	<% @shopping_items.each do |shopping_item| %>
+		Name: <%= shopping_item.name %><br>
+		Importance: <%= shopping_item.importance %> <br>
+	
+	<button type="submit" value="submit"> 
+		<%= form_for [current_user.house, shopping_item] do |f| %>
+  			<div class="field">
+    		<%= f.label :user_id, "I've got it" %> <br>
+    		<%= f.hidden_field :user_id %>
+    		</div>
+  		<% end %>
+  		</button><br>
+
+
+
+
 	<% end %> 
 </div>
+
+
+
+
+
 
 
 <%= link_to "Create new loot", new_house_shopping_item_path(current_user.house_id) %>

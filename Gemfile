@@ -30,6 +30,8 @@ gem 'mini_magick'
 # authorization
 gem 'devise'
 
+gem 'figaro'
+
 #mailer
 gem 'letter_opener'
 
