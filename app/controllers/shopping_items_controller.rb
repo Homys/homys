@@ -6,6 +6,8 @@ class ShoppingItemsController < PrivateController
 	def create 
 		@shopping_item = ShoppingItem.new(shopping_item_params)
 	
+		@shopping_item.owner_id = current_user.id 
+		
 		if @shopping_item.save
 			redirect_to house_shopping_items_path(current_user.house_id)
 		else 

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :houses, only: [:create, :new, :index, :show] do 
     resources :expenses, only: [:index, :new, :create, :show, :destroy, :update]
     resources :chore_items, only: [:new, :create, :show, :index, :destroy]
-    resources :shopping_items, only: [:new, :create, :show, :index]
+    resources :shopping_items, only: [:new, :create, :show, :index, :destroy]
     resources :commandments, only: [:new, :create, :show, :index]
     resources :announcements, only: [:new, :create, :show, :index, :destroy]
     patch 'chore_assigner' => 'chore_items#chore_assigner'
