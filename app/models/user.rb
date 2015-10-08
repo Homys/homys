@@ -14,7 +14,6 @@ class User < ActiveRecord::Base
   has_many :created_expenses, class_name: "Expense", foreign_key: "owner_id"
   belongs_to :house
 
-
   mount_uploader :avatar, AvatarUploader
 
 
