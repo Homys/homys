@@ -9,12 +9,12 @@
     <%= text_field_tag :email %>
 	</div>
 
-	<div class="field">
-    <%= hidden_field_tag :house_id, @house.id %>
-	</div>
-
 	<div class="actions">
 		<%= submit_tag %>
 	</div>
-	
+
+  <div class="invite">
+    <%= link_to "Invite your Homy", house_add_housemate_path(current_user.house_id)%>
+  </div>
+
 <% end %>
