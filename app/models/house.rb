@@ -1,6 +1,7 @@
 class House < ActiveRecord::Base
   has_many :users
   has_many :created_chores, through: :users
+  validates :name, presence: true
 
 	def assign_chores
   	created_chores.each do |chore|
