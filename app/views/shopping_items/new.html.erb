@@ -1,6 +1,6 @@
-<h1>Create new shopping item</h1>
+<h1>Create new loot</h1>
 
-<%= form_for @shopping_item do |f| %>
+<%= form_for [current_user.house, @shopping_item] do |f| %>
   
   <div class="field">
     <%= f.label :name %><br />
@@ -8,9 +8,14 @@
   </div>
 
   <div class="field">
-    <%= f.label :importance %><br />
-    <%= f.select :importance, [['Running low','Running low'],['Need today','Need today'],['Need ASAP','Need ASAP']] %>
+    <%= f.label :importance, "Need ASAP" %><br />
+    <%= f.check_box :importance %>
   </div>
+
+  <div class="field">
+    <%= f.label :user_id, "Who's got it?" %> <br>
+    <%= f.check_box :user_id %>
+    </div>
 
   <div class="actions">
   	<%= f.submit %>
