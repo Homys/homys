@@ -1,5 +1,5 @@
-class CommandmentsController < PrivateController
-
+class CommandmentsController < ApplicationController
+	before_action :authenticate_user!
 	def new
 		@commandment = Commandment.new
 	end
@@ -10,7 +10,7 @@ class CommandmentsController < PrivateController
 
 		if @commandment.save
 			redirect_to house_commandments_path(current_user.house_id)
-		else 
+		else
 			render :new
 		end
 	end

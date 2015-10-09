@@ -1,4 +1,5 @@
 class AnnouncementsController < PrivateController
+	before_action :authenticate_user!
 	def new
 		@announcement = Announcement.new
 	end

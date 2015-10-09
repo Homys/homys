@@ -33,7 +33,9 @@ class HousesController < PrivateController
   def index
     if current_user
       if current_user.house_id
-       redirect_to house_path(current_user.house)
+        redirect_to house_path(current_user.house)
+      else
+        redirect_to new_user_session_path
      end
     end
   end

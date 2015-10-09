@@ -1,31 +1,33 @@
-class ShoppingItemsController < PrivateController
-	def new 
-		@shopping_item = ShoppingItem.new
-	end 
+class ShoppingItemsController < ApplicationController
 
-	def create 
+	before_action :authenticate_user!
+	def new
+		@shopping_item = ShoppingItem.new
+	end
+
+	def create
 		@shopping_item = ShoppingItem.new(shopping_item_params)
-	
-		@shopping_item.owner_id = current_user.id 
-		
+
+		@shopping_item.owner_id = current_user.id
+
 		if @shopping_item.save
 			redirect_to house_shopping_items_path(current_user.house_id)
-		else 
+		else
 			render :new
-		end 
-	end 
+		end
+	end
 
-	def index 
+	def index
 		@shopping_items = ShoppingItem.order('importance DESC', 'created_at DESC')
-	end 
+	end
 
 	def destroy
 		@shopping_item = ShoppingItem.find(params[:id])
 		@shopping_item.destroy
 		redirect_to house_shopping_items_path(current_user.house_id)
-	end 
+	end
 
-private 
+private
 
 	def shopping_item_params
 		params.require(:shopping_item).permit(:name, :importance, :points, :owner_id)
