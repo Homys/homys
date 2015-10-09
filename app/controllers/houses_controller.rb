@@ -1,4 +1,4 @@
-class HousesController < PrivateController
+class HousesController < ApplicationController
   def create
   	@house = House.new(house_params)
     @house.users << current_user
