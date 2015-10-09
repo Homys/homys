@@ -17,6 +17,11 @@ class CommandmentsController < ApplicationController
 
 	def index
 		@commandments = Commandment.all
+
+		respond_to do |format|
+			format.html
+			format.js
+		end
 	end
 
 	def show

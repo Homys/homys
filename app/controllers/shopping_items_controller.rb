@@ -19,6 +19,11 @@ class ShoppingItemsController < ApplicationController
 
 	def index
 		@shopping_items = ShoppingItem.order('importance DESC', 'created_at DESC')
+
+		respond_to do |format|
+			format.html
+			format.js
+		end
 	end
 
 	def destroy

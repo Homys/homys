@@ -1,4 +1,5 @@
-class AnnouncementsController < PrivateController
+class AnnouncementsController < ApplicationController
+
 	before_action :authenticate_user!
 	def new
 		@announcement = Announcement.new
@@ -17,6 +18,11 @@ class AnnouncementsController < PrivateController
 
 	def index
 		@announcements = Announcement.order('importance DESC', 'created_at DESC')
+
+		respond_to do |format|
+			format.html
+			format.js
+		end
 	end
 
 	def destroy

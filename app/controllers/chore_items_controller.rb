@@ -18,6 +18,11 @@ class ChoreItemsController < ApplicationController
 
 	def index
 		@chore_items = ChoreItem.all
+
+		respond_to do |format|
+			format.html
+			format.js
+		end
 	end
 
 	def show

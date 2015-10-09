@@ -3,6 +3,11 @@ class ExpensesController < ApplicationController
   before_action :authenticate_user!
   def index
     @expenses = Expense.all
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new
