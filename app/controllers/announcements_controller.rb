@@ -1,6 +1,8 @@
 class AnnouncementsController < ApplicationController
 
 	before_action :authenticate_user!
+	before_filter :ensureHouseExists
+
 	def new
 		@announcement = Announcement.new
 	end

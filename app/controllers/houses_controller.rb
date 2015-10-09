@@ -1,4 +1,5 @@
 class HousesController < ApplicationController
+  before_action :authenticate_user!
   def create
   	@house = House.new(house_params)
     @house.users << current_user
@@ -31,13 +32,7 @@ class HousesController < ApplicationController
   end
 
   def index
-    if current_user
-      if current_user.house_id
-        redirect_to house_path(current_user.house)
-      else
-        redirect_to new_user_session_path
-     end
-    end
+
   end
 
   def show

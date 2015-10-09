@@ -1,5 +1,8 @@
 class CommandmentsController < ApplicationController
+
 	before_action :authenticate_user!
+	before_filter :ensureHouseExists
+
 	def new
 		@commandment = Commandment.new
 	end

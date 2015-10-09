@@ -5,6 +5,12 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  def ensureHouseExists
+    if current_user.house_id == nil
+      redirect_to houses_path
+    end
+  end
+
   protected
 
   def configure_permitted_parameters

@@ -1,6 +1,7 @@
 class ExpensesController < ApplicationController
-
   before_action :authenticate_user!
+  before_filter :ensureHouseExists
+
   def index
     @expenses = Expense.all
 

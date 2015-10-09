@@ -1,6 +1,8 @@
 class ChoreItemsController < ApplicationController
 
 	before_action :authenticate_user!
+	before_filter :ensureHouseExists
+
 	def new
 		@chore_item = ChoreItem.new
 	end

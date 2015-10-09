@@ -1,6 +1,8 @@
 class ShoppingItemsController < ApplicationController
 
 	before_action :authenticate_user!
+	before_filter :ensureHouseExists
+
 	def new
 		@shopping_item = ShoppingItem.new
 	end

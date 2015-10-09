@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  
+
   root 'houses#index'
 
   devise_for :users
 
-  resources :houses, only: [:create, :new, :index, :show] do 
+  resources :houses, only: [:create, :new, :index, :show] do
     resources :expenses, only: [:index, :new, :create, :show, :destroy, :update]
     resources :chore_items, only: [:new, :create, :show, :index, :destroy]
     resources :shopping_items, only: [:new, :create, :show, :index, :destroy]
@@ -12,13 +12,13 @@ Rails.application.routes.draw do
     resources :announcements, only: [:new, :create, :show, :index, :destroy]
     patch 'chore_assigner' => 'chore_items#chore_assigner'
     patch 'add_housemate' => 'houses#add_housemate'
-  end 
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
