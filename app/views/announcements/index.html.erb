@@ -13,5 +13,7 @@
 	<% end %>
 </div>
 
+<p> <%= link_to "Send text", house_text_sender_path(current_user.house_id), method: :patch %> </p>
+
 
 	<%= link_to "Create new announcement", new_house_announcement_path(current_user.house_id) %>

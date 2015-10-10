@@ -1,4 +1,7 @@
 class AnnouncementsController < PrivateController
+	
+	require 'twilio-ruby'
+
 	def new
 		@announcement = Announcement.new
 	end
@@ -21,6 +24,12 @@ class AnnouncementsController < PrivateController
 	def destroy
 		@announcement = Announcement.find(params[:id])
 		@announcement.destroy
+		redirect_to house_announcements_path(current_user.house_id)
+	end
+
+	def text_sender
+		current_user.house.send_text_message
+
 		redirect_to house_announcements_path(current_user.house_id)
 	end
 
