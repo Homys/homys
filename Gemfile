@@ -52,6 +52,9 @@ gem "select2-rails"
 #provide fake information
 gem "faker"
 
+#twilio API
+gem 'twilio-ruby'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
