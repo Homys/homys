@@ -1,0 +1,9 @@
+<% @commandments = Commandment.all %>
+
+<% if @commandment.errors.present? %>
+  $("#commandment-form-errors").html("<%= j(render "commandment_errors") %>");
+<% else %>
+  $("#commandment-form-errors").html("");
+  $("#commandment-list").html(("<%= j(render "commandment_list") %>"));
+  $("#new-commandment")[0].reset();
+<% end %>

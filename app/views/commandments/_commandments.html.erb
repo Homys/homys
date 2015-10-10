@@ -1,17 +1,39 @@
 <h1> Commandments </h1>
 
-<div class = "description">
+<div class="description">
   <p> Commandments go here </p>
 </div>
 
-<div class = "container">
-  <% @commandments.each do |commandment| %>
-    Commandment: <%= commandment.title %> <br>
-    Description: <%= commandment.description %> <br>
-    <%= link_to("Delete", house_commandment_path(current_user.house_id, commandment), method: :delete) if commandment.owner_id = current_user.id %><br> <br>
-  <% end %>
+<div id="commandment-list">
+  <%= render "commandment_list" %>
 </div>
 
 
 
-  <%= link_to "Add new commandment", new_house_commandment_path(current_user.house_id) %>
+<h5>Add Commandment</h5>
+<div id="new-commandment">
+  <%= form_for([current_user.house, @commandment], remote:true) do |f| %>
+
+    <div id="commandment-form-errors">
+      <%= render "commandment_errors" %>
+    </div>
+
+    <br>
+
+    <div class="field">
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
+    </div>
+
+    <div class="field">
+      <%= f.label :description %><br />
+      <%= f.text_area :description %>
+    </div>
+
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
+  <% end %>
+</div>
