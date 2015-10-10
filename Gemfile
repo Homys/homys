@@ -52,6 +52,11 @@ gem "select2-rails"
 #provide fake information
 gem "faker"
 
+#Bourbon.io
+gem "bourbon"
+gem "refills"
+gem "neat"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
