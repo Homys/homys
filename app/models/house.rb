@@ -20,9 +20,9 @@ class House < ActiveRecord::Base
     auth_token = ENV["twilio_auth_token"]
     our_twilio_num = ENV["our_twilio_num"]
 
-    client = Twilio::REST::Client.new account_sid, auth_token
+    @client = Twilio::REST::Client.new account_sid, auth_token
 
-    @twilio_client.account.sms.messages.create(
+    @client.account.sms.messages.create(
     :from => "#{our_twilio_num}",
     :to => number_to_send_to,
     :body => "Hey, Twilio works!"
