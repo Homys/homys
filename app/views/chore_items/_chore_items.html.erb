@@ -6,7 +6,7 @@
 
 <div class = "chore_list">
 <% @chore_items.each do |chore| %>
-  <%= link_to chore.name, house_chore_item_path(current_user.house_id, chore) %> <br>
+  <%= chore.name %> <br>
   Description: <%= chore.description %> <br>
   <% if chore.user %>
     Assigned to: <%= chore.user.full_name %> <br>

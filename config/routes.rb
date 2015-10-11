@@ -6,10 +6,10 @@ Rails.application.routes.draw do
 
   resources :houses, only: [:create, :new, :index, :show] do
     resources :expenses, only: [:index, :new, :create, :show, :destroy, :update]
-    resources :chore_items, only: [:new, :create, :show, :index, :destroy]
+    resources :chore_items, only: [:new, :create, :index, :destroy]
     resources :shopping_items, only: [:new, :create, :show, :index, :destroy]
-    resources :commandments, only: [:new, :create, :show, :index, :destroy]
-    resources :announcements, only: [:new, :create, :show, :index, :destroy]
+    resources :commandments, only: [:create, :index, :destroy]
+    resources :announcements, only: [:create, :index, :destroy]
     patch 'chore_assigner' => 'chore_items#chore_assigner'
     patch 'text_sender' => 'announcements#text_sender'
     patch 'add_housemate' => 'houses#add_housemate'
