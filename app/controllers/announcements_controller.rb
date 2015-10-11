@@ -26,6 +26,9 @@ class AnnouncementsController < ApplicationController
 			format.html
 			format.js
 		end
+
+		if @announcements.length == 0
+      flash[:alert] = "You have no announcements. Create one now to get started."
 	end
 
 	def destroy

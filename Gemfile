@@ -62,6 +62,7 @@ gem "neat"
 gem 'twilio-ruby'
 
 gem 'delayed_job_active_record'
+gem 'daemons'
 
 
 # Use ActiveModel has_secure_password
