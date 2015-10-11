@@ -1,0 +1,7 @@
+<% if @announcement.errors.present? %>
+  <% @announcement.errors.full_messages.each do |error| %>
+    <div class="alert">
+      <%= error %>
+    </div>
+  <% end %>
+<% end %>

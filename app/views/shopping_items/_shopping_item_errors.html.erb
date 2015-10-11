@@ -1,0 +1,7 @@
+<% if @shopping_item.errors.present? %>
+  <% @shopping_item.errors.full_messages.each do |error| %>
+    <div class="alert">
+      <%= error %>
+    </div>
+  <% end %>
+<% end %>

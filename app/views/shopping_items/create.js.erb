@@ -1,0 +1,9 @@
+<% @shopping_items = ShoppingItem.order('importance DESC', 'created_at DESC') %>
+
+<% if @shopping_item.errors.present? %>
+  $("#shopping-item-errors").html("<%= j(render "shopping_item_errors") %>");
+<% else %>
+  $("#shopping-item-errors").html("");
+  $("#shopping-list").html(("<%= j(render "shopping_item_list") %>"));
+  $("#new-shopping-item")[0].reset();
+<% end %>

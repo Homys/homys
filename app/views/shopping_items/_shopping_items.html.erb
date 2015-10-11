@@ -1,33 +1,35 @@
 <h1> Loot List </h1>
 
-<div class = "description">
+<div class="description">
   <p> List of shopping items </p>
 </div>
 
-<div class="container">
-  <% @shopping_items.each do |shopping_item| %>
-    Name: <%= shopping_item.name %><br>
-    Importance: <%= shopping_item.importance %> <br>
+<div id="shopping-list">
+  <%= render "shopping_item_list" %>
+</div>
 
-  <button type="submit" value="submit">
-    <%= form_for [current_user.house, shopping_item] do |f| %>
-        <div class="field">
-        <%= f.label :user_id, "I've got it" %> <br>
-        <%= f.hidden_field :user_id %>
-        </div>
-      <% end %>
-    </button><br>
+<h5>Create new loot</h5>
 
-  <label class="label-switch">
-    <input type="checkbox" />
-    <div class="checkbox"></div>
-  </label>
+<div id="new-shopping-item">
+  <%= form_for([current_user.house, @shopping_item], remote: true) do |f| %>
 
-  <%= link_to("Delete", house_shopping_item_path(current_user.house, shopping_item), method: :delete) if shopping_item.owner_id == current_user.id %> <br> <br>
+    <div id="shopping-item-errors">
+      <%= render "shopping_item_errors" %>
+    </div>
 
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
 
+    <div class="field">
+      <%= f.label :importance, "Need ASAP" %><br />
+      <%= f.check_box :importance %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 
   <% end %>
 </div>
-
-<%= link_to "Create new loot", new_house_shopping_item_path(current_user.house_id) %>

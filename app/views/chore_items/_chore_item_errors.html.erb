@@ -1,0 +1,7 @@
+<% if @chore_item.errors.present? %>
+  <% @chore_item.errors.full_messages.each do |error| %>
+    <div class="alert">
+      <%= error %>
+    </div>
+  <% end %>
+<% end %>

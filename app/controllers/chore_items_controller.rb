@@ -3,32 +3,31 @@ class ChoreItemsController < ApplicationController
 	before_action :authenticate_user!
 	before_filter :ensureHouseExists
 
-	def new
-		@chore_item = ChoreItem.new
-	end
 
 	def create
 		@chore_item = ChoreItem.new(chore_item_params)
 		@chore_item.owner_id = current_user.id
 
-		if @chore_item.save
-			redirect_to house_chore_items_path(current_user.house_id)
-		else
-			render :new
+		respond_to do |format|
+			if @chore_item.save
+				format.html { redirect_to house_chore_items_path(current_user.house), notice: 'Chore added.' }
+	      format.js {}
+
+			else
+				format.html { render :index, alert: 'There was an error.'  }
+	      format.js {}
+			end
 		end
 	end
 
 	def index
 		@chore_items = ChoreItem.all
+		@chore_item = ChoreItem.new
 
 		respond_to do |format|
 			format.html
 			format.js
 		end
-	end
-
-	def show
-		@chore_item = ChoreItem.find(params[:id])
 	end
 
 	def chore_assigner
