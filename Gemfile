@@ -52,10 +52,18 @@ gem "select2-rails"
 #provide fake information
 gem "faker"
 
+
 #Bourbon.io
 gem "bourbon"
 gem "refills"
 gem "neat"
+
+#twilio API
+gem 'twilio-ruby'
+
+gem 'delayed_job_active_record'
+gem 'daemons'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

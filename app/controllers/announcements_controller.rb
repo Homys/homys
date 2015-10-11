@@ -3,6 +3,14 @@ class AnnouncementsController < ApplicationController
 	before_action :authenticate_user!
 	before_filter :ensureHouseExists
 
+<<<<<<< HEAD
+=======
+
+	def new
+		@announcement = Announcement.new
+	end
+
+>>>>>>> 67bb2feaebab2009474240781cd1c4e1410c29ed
 	def create
 		@announcement = Announcement.new(announcement_params)
 		@announcement.owner_id = current_user.id
@@ -27,11 +35,21 @@ class AnnouncementsController < ApplicationController
 			format.html
 			format.js
 		end
+
+		if @announcements.length == 0
+      		flash[:alert] = "You have no announcements. Create one now to get started."
+		end 
 	end
 
 	def destroy
 		@announcement = Announcement.find(params[:id])
 		@announcement.destroy
+		redirect_to house_announcements_path(current_user.house_id)
+	end
+
+	def text_sender
+		current_user.house.send_text_message
+
 		redirect_to house_announcements_path(current_user.house_id)
 	end
 
