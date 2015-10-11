@@ -1,0 +1,9 @@
+<% @expenses = Expense.all %>
+
+<% if @expense.errors.present? %>
+  $("#expense-errors").html("<%= j(render "expense_errors") %>");
+<% else %>
+  $("#expense-errors").html("");
+  $("#expense-list").html(("<%= j(render "expense_list") %>"));
+  $("#new-expense")[0].reset();
+<% end %>

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :houses, only: [:create, :new, :index, :show] do
-    resources :expenses, only: [:index, :new, :create, :show, :destroy, :update]
+    resources :expenses, only: [:index, :create, :destroy, :update]
     resources :chore_items, only: [:create, :index, :destroy]
     resources :shopping_items, only: [:create, :index, :destroy]
     resources :commandments, only: [:create, :index, :destroy]
