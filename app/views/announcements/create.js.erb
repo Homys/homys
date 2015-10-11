@@ -1,0 +1,9 @@
+<% @annoucements = Announcement.all %>
+
+<% if @announcement.errors.present? %>
+  $("#announcement-form-errors").html("<%= j(render "announcement_errors") %>");
+<% else %>
+  $("#announcement-form-errors").html("");
+  $("#announcement-list").html(("<%= j(render "announcement_list") %>"));
+  $("#new-announcement")[0].reset();
+<% end %>

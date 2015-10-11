@@ -1,0 +1,7 @@
+  <% @announcements.each do |announcement| %>
+    Name: <%= announcement.title %> <br>
+    Description: <%= announcement.description %> <br>
+    Important: <%= announcement.importance %> <br>
+    <%= link_to("Delete", house_announcement_path(current_user.house_id, announcement), method: :delete) if announcement.owner_id = current_user.id %>
+    <br><br>
+  <% end %>

@@ -1,7 +1,7 @@
-    <% if @commandment.errors.present? %>
-      <% @commandment.errors.full_messages.each do |error| %>
-        <div class="alert">
-          <%= error %>
-        </div>
-      <% end %>
-    <% end %>
+<% if @commandment.errors.present? %>
+  <% @commandment.errors.full_messages.each do |error| %>
+    <div class="alert">
+      <%= error %>
+    </div>
+  <% end %>
+<% end %>
