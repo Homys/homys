@@ -3,10 +3,6 @@ class CommandmentsController < ApplicationController
 	before_action :authenticate_user!
 	before_filter :ensureHouseExists
 
-	def new
-		@commandment = Commandment.new
-	end
-
 	def create
 		@commandment = Commandment.new(commandment_params)
 		@commandment.owner_id = current_user.id
