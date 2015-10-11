@@ -28,7 +28,8 @@ class AnnouncementsController < ApplicationController
 		end
 
 		if @announcements.length == 0
-      flash[:alert] = "You have no announcements. Create one now to get started."
+      		flash[:alert] = "You have no announcements. Create one now to get started."
+		end 
 	end
 
 	def destroy
