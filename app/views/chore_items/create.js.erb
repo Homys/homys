@@ -1,0 +1,9 @@
+<% @chore_items = ChoreItem.all %>
+
+<% if @chore_item.errors.present? %>
+  $("#chore-form-errors").html("<%= j(render "chore_item_errors") %>");
+<% else %>
+  $("#chore-form-errors").html("");
+  $("#chore-list").html(("<%= j(render "chore_item_list") %>"));
+  $("#new-chore")[0].reset();
+<% end %>

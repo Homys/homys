@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :houses, only: [:create, :new, :index, :show] do
     resources :expenses, only: [:index, :new, :create, :show, :destroy, :update]
-    resources :chore_items, only: [:new, :create, :index, :destroy]
+    resources :chore_items, only: [:create, :index, :destroy]
     resources :shopping_items, only: [:new, :create, :show, :index, :destroy]
     resources :commandments, only: [:create, :index, :destroy]
     resources :announcements, only: [:create, :index, :destroy]
