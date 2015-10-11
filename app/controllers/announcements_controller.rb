@@ -3,14 +3,6 @@ class AnnouncementsController < ApplicationController
 	before_action :authenticate_user!
 	before_filter :ensureHouseExists
 
-<<<<<<< HEAD
-=======
-
-	def new
-		@announcement = Announcement.new
-	end
-
->>>>>>> 67bb2feaebab2009474240781cd1c4e1410c29ed
 	def create
 		@announcement = Announcement.new(announcement_params)
 		@announcement.owner_id = current_user.id
@@ -38,7 +30,7 @@ class AnnouncementsController < ApplicationController
 
 		if @announcements.length == 0
       		flash[:alert] = "You have no announcements. Create one now to get started."
-		end 
+		end
 	end
 
 	def destroy
