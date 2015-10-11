@@ -1,11 +1,14 @@
 <h1>Welcome to Homys</h1>
 
-Add a House
-<div class = "add_button">
-	<%= link_to new_house_path do %>
-		<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
-		  <i class="material-icons">add</i>
-		</button>
-	<% end %>
-</div>
+
+<% if current_user.house_id == nil %>
+  Add a House
+  <div class = "add_button">
+  	<%= link_to new_house_path do %>
+  		<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+  		  <i class="material-icons">add</i>
+  		</button>
+  	<% end %>
+  </div>
+<% end %>
 
