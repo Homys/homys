@@ -11,6 +11,9 @@
     Important: <%= announcement.importance %> <br>
     <%= link_to("Delete", house_announcement_path(current_user.house_id, announcement), method: :delete) if announcement.owner_id = current_user.id %><br><br>
   <% end %>
+  
+  <p> <%= link_to "Send text", house_text_sender_path(current_user.house_id), method: :patch %> </p>
+
 </div>
 
 

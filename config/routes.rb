@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :commandments, only: [:new, :create, :show, :index]
     resources :announcements, only: [:new, :create, :show, :index, :destroy]
     patch 'chore_assigner' => 'chore_items#chore_assigner'
+    patch 'text_sender' => 'announcements#text_sender'
     patch 'add_housemate' => 'houses#add_housemate'
   end
 

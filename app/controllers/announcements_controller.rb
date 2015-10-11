@@ -3,6 +3,7 @@ class AnnouncementsController < ApplicationController
 	before_action :authenticate_user!
 	before_filter :ensureHouseExists
 
+
 	def new
 		@announcement = Announcement.new
 	end
@@ -30,6 +31,12 @@ class AnnouncementsController < ApplicationController
 	def destroy
 		@announcement = Announcement.find(params[:id])
 		@announcement.destroy
+		redirect_to house_announcements_path(current_user.house_id)
+	end
+
+	def text_sender
+		current_user.house.send_text_message
+
 		redirect_to house_announcements_path(current_user.house_id)
 	end
 
