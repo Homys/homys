@@ -1,4 +1,4 @@
-<% @annoucements = Announcement.all %>
+<% @announcements = Announcement.order('importance DESC', 'created_at DESC') %>
 
 <% if @announcement.errors.present? %>
   $("#announcement-form-errors").html("<%= j(render "announcement_errors") %>");
