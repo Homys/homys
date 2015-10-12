@@ -1,7 +1,54 @@
-  <% @announcements.each do |announcement| %>
-    Name: <%= announcement.title %> <br>
-    Description: <%= announcement.description %> <br>
-    Important: <%= announcement.importance %> <br>
-    <%= link_to("Delete", house_announcement_path(current_user.house_id, announcement), method: :delete) if announcement.owner_id = current_user.id %>
-    <br><br>
+<style>
+	.demo-card-wide.mdl-card {
+  	width: 600px;
+  	margin-bottom: 50px;
+	}
+	
+	.demo-card-wide > .mdl-card__menu {
+  	color: #fff;
+	}
+
+	#title {
+		font-size: 40px;
+		font-family: Helvetica, sans-serif;
+		margin-bottom: 30px;
+	}
+
+	#description {
+		font-size: 30px;
+		font-family: Helvetica, sans-serif;
+		margin-bottom: 20px;
+	}
+
+
+
+
+</style>  
+
+
+<% @announcements.each do |announcement| %>
+  
+
+	<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  
+  	<div class="mdl-card__supporting-text">
+    	<div id="title">
+    		<%= announcement.title %> <br>
+    	</div>
+		
+			<div id="description">
+    		<%= announcement.description %> <br>
+    	</div>
+
+    	<div id="importance">
+				<%= announcement.importance %>
+			</div>
+
+    	<%= link_to("Delete", house_announcement_path(current_user.house_id, announcement), method: :delete) if announcement.owner_id = current_user.id %>
+  </div>
+
+ 
+</div>
+
   <% end %>
+
