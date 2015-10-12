@@ -1,8 +1,25 @@
 <% @chore_items.each do |chore| %>
-  <%= chore.name %> <br>
-  Description: <%= chore.description %> <br>
-  <% if chore.user %>
-    Assigned to: <%= chore.user.full_name %> <br>
+	<div class="demo-card-wide mdl-card mdl-shadow--2dp list-card">
+  
+  	<div class="mdl-card__supporting-text">
+    	
+		<img src="http://www.panamericanworld.com/sites/default/files/jose-bautista-beard-4.jpg" class="image"/>
+
+    <div class="title">
+    	<%= chore.name %> <br>
+    </div>
+		
+		<div class="description">
+    	<%= chore.description %> <br>
+    </div>
+		
+		<% if chore.user %>
+    	Assigned to: <%= chore.user.full_name %> <br>
+  	<% end %>
+  	
+  	<%= link_to("Delete", house_chore_item_path(current_user.house_id, chore), method: :delete) if chore.owner_id == current_user.id %> <br><br>
+
+  </div>
+</div>
+
   <% end %>
-  <%= link_to("Delete", house_chore_item_path(current_user.house_id, chore), method: :delete) if chore.owner_id == current_user.id %> <br><br>
-<% end %>
