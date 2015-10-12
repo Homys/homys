@@ -4,15 +4,12 @@ class ExpensesController < ApplicationController
 
   def index
     @expenses = Expense.all
+    @expense = Expense.new
 
     respond_to do |format|
       format.html
       format.js
     end
-  end
-
-  def new
-    @expense = Expense.new
   end
 
   def create
@@ -22,15 +19,16 @@ class ExpensesController < ApplicationController
     @expense = Expense.new(expense_params)
     @expense.owner_id = current_user.id
 
-    if @expense.save
-      redirect_to house_expense_url(current_user.house_id, @expense)
-    else
-      render :new
-    end
-  end
+    respond_to do |format|
+      if @expense.save
+        format.html { redirect_to house_expenses_path(current_user.house), notice: 'expense added.' }
+        format.js {}
 
-  def show
-    @expense = Expense.find(params[:id])
+      else
+        format.html { render :index, alert: 'There was an error.'  }
+        format.js {}
+      end
+    end
   end
 
   def destroy
