@@ -1,7 +1,38 @@
-  <% @shopping_items.each do |shopping_item| %>
-    Name: <%= shopping_item.name %><br>
-    Importance: <%= shopping_item.importance %> <br>
+<style>
+  .demo-card-wide.mdl-card {
+    width: 700px;
+    margin-bottom: 50px;
+  }
+  
+  .demo-card-wide > .mdl-card__menu {
+    color: #fff;
+  }
 
+  #title {
+    font-size: 30px;
+    font-family: Helvetica, sans-serif;
+    margin-bottom: 20px;
+  }
+
+
+</style> 
+
+<% @shopping_items.each do |shopping_item| %>
+  
+
+  <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  
+    <div class="mdl-card__supporting-text">
+      <div id="title">
+        <%= shopping_item.name %><br>
+      </div>
+    
+
+      <div id="importance">
+        <%= shopping_item.importance %> <br>
+      </div>
+
+      
   <button type="submit" value="submit">
     <%= form_for [current_user.house, shopping_item] do |f| %>
         <div class="field">
@@ -17,4 +48,15 @@
   </label>
 
   <%= link_to("Delete", house_shopping_item_path(current_user.house, shopping_item), method: :delete) if shopping_item.owner_id == current_user.id %> <br> <br>
+  </div>
+
+ 
+</div>
+
+
+
+  
+   
+   
+
   <% end %>

@@ -10,6 +10,10 @@
 </div>
 
 
+<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+  <i class="material-icons">add</i>
+</button>
+
 <h5>Make an Announcement</h5>
 <div id="new-annoucement">
   <%= form_for([current_user.house, @announcement], remote: true) do |f| %>
