@@ -12,19 +12,24 @@ class HousesController < ApplicationController
 
   end
 
-  def add_housemate
+  def add_housemate #maybe change to update
   	@user = User.find_by(email: params[:email])
   	if @user
-      @user.house_id = current_user.house_id
-    	if @user.save
-    		redirect_to houses_url
-    	else
-    		redirect_to house_path(current_user.house)
-    	end
+      if @user.house_id == nil
+        @user.house_id = current_user.house_id
+      	@user.save
+      	redirect_to house_path(current_user.house)
+      else
+      	redirect_to house_path(current_user.house), notice: "User cannot be assigned to this house"
+      end
     else
-      HomysMailer.invite(params[:email], current_user).deliver_now
-      redirect_to house_path(current_user.house), alert: "User does not exist, invitation to housemate sent"
+      redirect_to house_path(current_user.house), alert: "User does not exist, invite homy below"
     end
+  end
+
+  def invite_housemate
+     HomysMailer.invite(params[:email], current_user).deliver_now
+     redirect_to house_path(current_user.house), notice: "Sent invite email to your homy"
   end
 
   def new

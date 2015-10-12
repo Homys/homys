@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     patch 'chore_assigner' => 'chore_items#chore_assigner'
     patch 'text_sender' => 'announcements#text_sender'
     patch 'add_housemate' => 'houses#add_housemate'
+    get 'invite_housemate' => 'houses#invite_housemate'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
