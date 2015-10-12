@@ -61,9 +61,12 @@ gem "neat"
 #twilio API
 gem 'twilio-ruby'
 
+#schedulers & background workers
 gem 'delayed_job_active_record'
 gem 'daemons'
 
+
+gem 'whenever', :require => false
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
