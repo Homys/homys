@@ -1,46 +1,24 @@
-<style>
-	.demo-card-wide.mdl-card {
-  	width: 700px;
-  	margin-bottom: 50px;
-	}
-	
-	.demo-card-wide > .mdl-card__menu {
-  	color: #fff;
-	}
-
-	#title {
-		font-size: 30px;
-		font-family: Helvetica, sans-serif;
-		margin-bottom: 20px;
-	}
-
-	#description {
-		font-size: 20px;
-		font-family: Helvetica, sans-serif;
-		margin-bottom: 10px;
-	}
-
-
-
-
-</style>  
+<link rel="stylesheet" href="application.scss"> 
 
 
 <% @announcements.each do |announcement| %>
   
 
-	<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+	<div class="demo-card-wide mdl-card mdl-shadow--2dp list-card">
   
   	<div class="mdl-card__supporting-text">
-    	<div id="title">
+    	
+			<img src="http://www.panamericanworld.com/sites/default/files/jose-bautista-beard-4.jpg" class="image"/>
+
+    	<div class="title">
     		<%= announcement.title %> <br>
     	</div>
 		
-			<div id="description">
+			<div class="description">
     		<%= announcement.description %> <br>
     	</div>
 
-    	<div id="importance">
+    	<div class="importance">
 				<%= announcement.importance %>
 			</div>
 

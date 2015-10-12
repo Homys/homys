@@ -1,34 +1,15 @@
-<style>
-  .demo-card-wide.mdl-card {
-    width: 700px;
-    margin-bottom: 50px;
-  }
-  
-  .demo-card-wide > .mdl-card__menu {
-    color: #fff;
-  }
-
-  #title {
-    font-size: 30px;
-    font-family: Helvetica, sans-serif;
-    margin-bottom: 20px;
-  }
-
-
-</style> 
+<link rel="stylesheet" href="application.scss">
 
 <% @shopping_items.each do |shopping_item| %>
-  
-
   <div class="demo-card-wide mdl-card mdl-shadow--2dp">
   
     <div class="mdl-card__supporting-text">
-      <div id="title">
+      <div class="title">
         <%= shopping_item.name %><br>
       </div>
     
 
-      <div id="importance">
+      <div class="importance">
         <%= shopping_item.importance %> <br>
       </div>
 
