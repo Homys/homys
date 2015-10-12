@@ -3,5 +3,3 @@
     Description: <%= commandment.description %> <br>
     <%= link_to("Delete", house_commandment_path(current_user.house_id, commandment), method: :delete) if commandment.owner_id = current_user.id %><br> <br>
   <% end %>
-
-
