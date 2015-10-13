@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151013171204) do
+ActiveRecord::Schema.define(version: 20151013204126) do
 
   create_table "announcements", force: :cascade do |t|
     t.string   "title"
@@ -20,15 +20,6 @@ ActiveRecord::Schema.define(version: 20151013171204) do
     t.integer  "owner_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-  end
-
-  create_table "calendars", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "date"
-    t.string   "importance"
-    t.integer  "owner_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "chore_items", force: :cascade do |t|
@@ -64,6 +55,15 @@ ActiveRecord::Schema.define(version: 20151013171204) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
+
+  create_table "events", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "date"
+    t.string   "importance"
+    t.integer  "owner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "expenses", force: :cascade do |t|
     t.string   "title"

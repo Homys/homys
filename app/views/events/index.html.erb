@@ -1,0 +1,21 @@
+<h1>Calendar</h1>
+
+<br>
+<% @events.each do |event| %>
+  <%= event.name %>
+  <%= event.date %>
+  <%= event.importance %>
+  <%= event.owner %>
+<% end %>
+
+<br>
+
+<%= month_calendar(events: @events, attribute: 'date') do |date, events| %>
+  <%= date.day %>
+
+  <% events.each do |event| %>
+    <div>
+      <%= event.name %>
+    </div>
+  <% end %>
+<% end %>
