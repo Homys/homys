@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  resources :phone_numbers, only: [:new, :create]
+  post 'phone_numbers/verify' => "phone_numbers#verify"
+
   resources :houses, only: [:create, :new, :index, :show] do 
     resources :expenses, only: [:index, :new, :create, :show, :destroy, :update]
     resources :chore_items, only: [:new, :create, :show, :index, :destroy]

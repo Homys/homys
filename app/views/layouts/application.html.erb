@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.indigo-pink.min.css">
 <script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css", media: 'all', 'data-turbolinks-track' => true %>
+
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -18,6 +20,16 @@
 </head>
 
 <body>
+
+<%# Rails flash messages styled for Bootstrap 3.0 %>
+<% flash.each do |name, msg| %>
+  <% if msg.is_a?(String) %>
+    <div class="alert alert-<%= name.to_s == 'notice' ? 'success' : 'danger' %>">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    </div>
+  <% end %>
+<% end %>
 
 
       <% if user_signed_in? && current_user.house_id != nil %>
@@ -37,10 +49,9 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-<div id="yield">
-  <%= yield %>
+<div class="container">
+    <%= yield %> 
 </div>
-
 
 
 
