@@ -1,19 +1,18 @@
-<link rel="stylesheet" href="application.scss"> 
+<link rel="stylesheet" href="application.scss">
 
 
 <% @announcements.each do |announcement| %>
-  
 
 	<div class="demo-card-wide mdl-card mdl-shadow--2dp list-card">
-  
+
   	<div class="mdl-card__supporting-text">
-    	
+
 			<img src="http://www.panamericanworld.com/sites/default/files/jose-bautista-beard-4.jpg" class="image"/>
 
     	<div class="title">
     		<%= announcement.title %> <br>
     	</div>
-		
+
 			<div class="description">
     		<%= announcement.description %> <br>
     	</div>
@@ -23,10 +22,9 @@
 			</div>
 
     	<%= link_to("Delete", house_announcement_path(current_user.house_id, announcement), method: :delete) if announcement.owner_id = current_user.id %>
+    </div>
+    <% end %>
   </div>
 
- 
-</div>
 
-  <% end %>
 

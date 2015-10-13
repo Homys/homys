@@ -12,9 +12,10 @@
 	<div class="actions">
 		<%= submit_tag %>
 	</div>
+<% end %>
 
+<% if flash[:alert] %>
   <div class="invite">
-    <%= link_to "Invite your Homy", house_add_housemate_path(current_user.house_id)%>
+    <%= link_to "Invite your Homy", house_invite_housemate_path(current_user.house_id)%>
   </div>
-
 <% end %>
