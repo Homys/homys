@@ -23,11 +23,6 @@ class ChoreItemsController < ApplicationController
 	def index
 		@chore_items = ChoreItem.all
 		@chore_item = ChoreItem.new
-
-		respond_to do |format|
-			format.html
-			format.js
-		end
 	end
 
 	def chore_assigner

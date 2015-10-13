@@ -22,11 +22,6 @@ class CommandmentsController < ApplicationController
 	def index
 		@commandments = Commandment.all
 		@commandment = Commandment.new
-
-		respond_to do |format|
-			format.html
-			format.js
-		end
 	end
 
 	def show

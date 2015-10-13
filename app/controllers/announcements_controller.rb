@@ -23,14 +23,9 @@ class AnnouncementsController < ApplicationController
 		@announcements = Announcement.order('importance DESC', 'created_at DESC')
 		@announcement = Announcement.new
 
-		respond_to do |format|
-			format.html
-			format.js
-		end
-
 		if @announcements.length == 0
       		flash[:alert] = "You have no announcements. Create one now to share with your housemates."
-		end 
+		end
 	end
 
 	def destroy

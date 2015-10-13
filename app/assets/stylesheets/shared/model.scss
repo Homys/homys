@@ -1,35 +1,4 @@
-	.demo-card-wide.mdl-card {
-  	width: 700px;
-  	margin-bottom: 15px;
-  	min-height: 120px;
-	}
-
-	.demo-card-wide > .mdl-card__menu {
-  	color: #fff;
-	}
-
-	.list-card .title {
-		font-size: 20px;
-		font-family: Helvetica, sans-serif;
-		margin-bottom: 10px;
-
-	}
-
-	.list-card .description {
-		font-size: 15px;
-		font-family: Helvetica, sans-serif;
-		margin-bottom: 10px;
-	}
-
-	.list-card .image {
-		border-radius: 50%;
-		float: right;
-		width: 70px;
-		height: 70px;
-		margin-top: 15px;
-	}
-
-	.modal {
+  .modal {
   $base-border-color: #dcdcdc !default;
   $base-border-radius: 3px !default;
   $base-background-color: #fff !default;

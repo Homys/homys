@@ -22,11 +22,6 @@ class ShoppingItemsController < ApplicationController
 	def index
 		@shopping_items = ShoppingItem.order('importance DESC', 'created_at DESC')
 		@shopping_item = ShoppingItem.new
-
-		respond_to do |format|
-			format.html
-			format.js
-		end
 	end
 
 	def destroy

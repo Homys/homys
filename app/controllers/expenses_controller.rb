@@ -5,11 +5,6 @@ class ExpensesController < ApplicationController
   def index
     @expenses = Expense.all
     @expense = Expense.new
-
-    respond_to do |format|
-      format.html
-      format.js
-    end
   end
 
   def create
