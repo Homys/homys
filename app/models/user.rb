@@ -16,6 +16,9 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
 
+  validates_uniqueness_of :phone_num
+  validates :phone_num, phone: { possible: true, allow_blank: false, types: [:mobile] }
+
 
   def full_name
     "#{first_name} #{last_name}"

@@ -55,6 +55,9 @@ gem "faker"
 #twilio API
 gem 'twilio-ruby'
 
+#phone num validator
+gem 'phonelib'
+
 #schedulers & background workers
 gem 'delayed_job_active_record'
 
