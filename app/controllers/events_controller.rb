@@ -7,6 +7,7 @@ class EventsController < ApplicationController
 	def create
 		@event = Event.new(event_params)
 		@event.owner_id = current_user.id
+		redirect_to house_events_path(current_user.house)
 	end
 
 	def index
