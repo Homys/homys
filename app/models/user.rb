@@ -16,10 +16,6 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
 
-  validates_uniqueness_of :phone_num
-  validates :phone_num, phone: { possible: true, allow_blank: false, types: [:mobile] }
-
-
   def full_name
     "#{first_name} #{last_name}"
   end
@@ -36,10 +32,10 @@ class User < ActiveRecord::Base
     @client = Twilio::REST::Client.new account_sid, auth_token
 
     @client.account.sms.messages.create(
-    :from => "#{our_twilio_num}",
-    :to => number_to_send_to,
-    :body => body
-  )
+      :from => "#{our_twilio_num}",
+      :to => number_to_send_to,
+      :body => body
+    )
   end
 
 

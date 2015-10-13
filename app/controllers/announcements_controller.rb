@@ -16,13 +16,10 @@ class AnnouncementsController < PrivateController
 
 		if @announcement.save
 			text_sender(@announcement.title)
-
-			redirect_to house_announcements_path(current_user.house_id)
 		else
 			render :new
 		end
 	end
-
 
 	def destroy
 		@announcement = Announcement.find(params[:id])
