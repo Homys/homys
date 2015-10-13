@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  date: 2015-10-11 23:35:06
+  importance: MyString
+  owner_id: 1
+
+two:
+  name: MyString
+  date: 2015-10-11 23:35:06
+  importance: MyString
+  owner_id: 1

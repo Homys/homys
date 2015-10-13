@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :shopping_items, only: [:create, :index, :destroy]
     resources :commandments, only: [:create, :index, :destroy]
     resources :announcements, only: [:create, :index, :destroy]
+    resources :calendars, only: [:create, :index, :destroy]
     patch 'chore_assigner' => 'chore_items#chore_assigner'
     patch 'text_sender' => 'announcements#text_sender'
     patch 'add_housemate' => 'houses#add_housemate'
