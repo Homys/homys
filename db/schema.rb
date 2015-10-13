@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151012063506) do
+ActiveRecord::Schema.define(version: 20151013171204) do
 
   create_table "announcements", force: :cascade do |t|
     t.string   "title"
@@ -85,6 +85,14 @@ ActiveRecord::Schema.define(version: 20151012063506) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "phone_numbers", force: :cascade do |t|
+    t.string   "phone_number"
+    t.string   "pin"
+    t.boolean  "verified"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "shopping_items", force: :cascade do |t|
     t.string   "name"
     t.string   "importance"
@@ -113,6 +121,8 @@ ActiveRecord::Schema.define(version: 20151012063506) do
     t.string   "last_sign_in_ip"
     t.integer  "house_id"
     t.string   "avatar"
+    t.string   "verification_code"
+    t.boolean  "is_verified"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

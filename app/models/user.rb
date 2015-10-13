@@ -16,9 +16,28 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
 
-
   def full_name
     "#{first_name} #{last_name}"
   end
+
+
+  def send_text_message(body)
+    # number_to_send_to = users.phone_num
+    number_to_send_to = phone_num
+
+    account_sid = ENV["twilio_account_sid"]
+    auth_token = ENV["twilio_auth_token"]
+    our_twilio_num = ENV["our_twilio_num"]
+
+    @client = Twilio::REST::Client.new account_sid, auth_token
+
+    @client.account.sms.messages.create(
+      :from => "#{our_twilio_num}",
+      :to => number_to_send_to,
+      :body => body
+    )
+  end
+
+
 
 end
