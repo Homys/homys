@@ -19,70 +19,29 @@
 
 <body>
 
+  <% if user_signed_in? && current_user.house_id != nil %>
+    Logged in as <strong><%= current_user.first_name %></strong>.<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <% else %>
+    <%= link_to "Sign Up", new_user_registration_path %>
+    <%= link_to "Log In", new_user_session_path %>
 
-      <% if user_signed_in? && current_user.house_id != nil %>
-
-        Logged in as <strong><%= current_user.first_name %></strong>.<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <% end %>
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
-            mdl-layout--fixed-header">
-  <header class="mdl-layout__header">
-    <div class="mdl-layout__header-row">
-      <div class="mdl-layout-spacer">
-        Homys
-      </div>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <%= render 'layouts/header' %>
+    <%= render 'layouts/left_hand_nav' %>
 
-  </header>
-
-  <div class="mdl-layout__drawer navbar-container">
-    <span class="mdl-layout-title"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">avatar</i>&nbsp;AVATAR</span>
-    <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>&nbsp;&nbsp;Home</a>
-
-      <%= link_to '<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i> House Quests'.html_safe, house_chore_items_path(current_user.house_id), class: "mdl-navigation__link" %>&nbsp;&nbsp;
-      <%= link_to '<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">shopping_cart</i> Loot List'.html_safe, house_shopping_items_path(current_user.house_id), class: "mdl-navigation__link" %>&nbsp;&nbsp;
-
-      <%= link_to '<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">announcement</i> Announcement'.html_safe, house_announcements_path(current_user.house_id), class: "mdl-navigation__link" %>&nbsp;&nbsp;
-
-      <%= link_to '<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">list</i> Commandments'.html_safe, house_commandments_path(current_user.house_id), class: "mdl-navigation__link" %>&nbsp;&nbsp;
-
-     <%= link_to '<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">attach_money</i> Expenses'.html_safe, house_expenses_path(current_user.house_id), class: "mdl-navigation__link" %>&nbsp;&nbsp;
-
-      <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">access_time</i>&nbsp;&nbsp;Calendar</a>
-      <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">settings</i>&nbsp;&nbsp;Settings</a>
-    </nav>
-  </div>
-
-  <main class="mdl-layout__content">
-    <div class="page-content">
-      <div style="padding-left:50px; padding-right:50px;"id="main">
-
-      <% else %>
-
-        <% if user_signed_in? %>
-          Logged in as <strong><%= current_user.first_name %></strong>.<%= link_to("Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link')  %>
-
-        <% else %>
-          <%= link_to("Sign up", new_user_registration_path, :class => 'navbar-link')   %>
-          <%= link_to("Login", new_user_session_path, :class => 'navbar-link')   %>
-        <%end%>
-
-      <% end %>
-
+    <main class="mdl-layout__content">
+      <div class="page-content">
+        <div id="main">
           <%= yield %>
+        </div>
       </div>
-    </div>
-  </main>
-</div>
-
-
-
-
-
-
+    </main>
+  </div>
 
 </body>
 </html>
