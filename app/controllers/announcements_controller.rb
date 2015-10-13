@@ -15,10 +15,16 @@ class AnnouncementsController < PrivateController
 		@announcement.owner_id = current_user.id
 
 		if @announcement.save
+			if @announcement.importance == "1"
 			text_sender(@announcement.title)
+			end 
+			redirect_to house_announcements_path(current_user.house_id)
 		else
 			render :new
 		end
+
+	
+
 	end
 
 	def destroy
@@ -35,8 +41,6 @@ private
 
 	def text_sender(body)
 		current_user.house.send_to_all_users(body)
-
-		redirect_to house_announcements_path(current_user.house_id)
 	end
 
 end
