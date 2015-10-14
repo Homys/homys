@@ -46,4 +46,19 @@ class ExpensesController < ApplicationController
   def expense_params
     params.require(:expense).permit(:title, :amount, :date_due, :owner_id, :user_ids => [])
   end
+
+  # def text_sender(body)
+  #   expense.users.each do |user|
+  #     user.send_text_message(body)
+  #   end 
+  # end 
+
+  # def expense_text
+  #   body: "You owe #{owner_id} #{amount}. Due #{due_date} days."
+  # end  
+
+  # def auto_text
+  #   send_text_message.due_date - 7.days
+  # end 
+
 end

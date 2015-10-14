@@ -6,13 +6,11 @@ class PhoneNumber < ActiveRecord::Base
 	end
 
 	def twilio_client
-    binding.pry
   	Twilio::REST::Client.new(ENV["twilio_account_sid"], ENV["twilio_auth_token"])
 	end
 
 
 def send_pin
-  binding.pry
   twilio_client.messages.create(
     to: phone_number,
     from: ENV["our_twilio_num"],
