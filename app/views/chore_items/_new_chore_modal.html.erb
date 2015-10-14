@@ -1,0 +1,42 @@
+<div class="modal">
+  <label for="modal-1">
+    <div class="modal-trigger">
+      <div class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+        <i class="material-icons">add</i>
+      </div>
+    </div>
+  </label>
+  <input class="modal-state" id="modal-1" type="checkbox" />
+  <div class="modal-fade-screen">
+    <div class="modal-inner">
+      <div class="modal-close" for="modal-1"></div>
+       <h1>Add a New House Quest</h1>
+      <p class="modal-content">
+        <div id="new-chore">
+          <%= form_for([current_user.house, @chore_item], remote: true) do |f| %>
+
+            <div id="chore-form-errors">
+              <%= render "chore_item_errors" %>
+            </div>
+            <br>
+
+            <div class="field">
+              <%= f.label :name %><br />
+              <%= f.text_field :name %>
+            </div>
+
+            <div class="field">
+              <%= f.label :description %><br />
+              <%= f.text_area :description %>
+            </div>
+
+            <div class="actions">
+              <%= f.submit %>
+            </div>
+
+          <% end %>
+        </div>
+    </p>
+    </div>
+  </div>
+</div>

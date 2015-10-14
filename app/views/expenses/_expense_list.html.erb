@@ -10,6 +10,5 @@
       <%= user.full_name %> owes: , <%= link_to("paid", "") if expense.owner_id == current_user.id  %> <br>
     <% end %>
   </div>
-
     <%= link_to "Delete", house_expense_path(current_user.house, expense), method: :delete %><br><br>
   <% end %>

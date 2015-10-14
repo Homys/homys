@@ -1,3 +1,15 @@
-<%= render "chore_items" %>
+<h1> House Quests </h1>
+
+<p> House Quests are weekly chores around the house. </p>
+
+<p> <%= link_to "Randomize chores", house_chore_assigner_path(current_user.house_id), method: :patch %> </p>
+
+<div class="new-chore">
+  <%= render "new_chore_modal" %>
+</div>
+
+<div id="chore-list">
+  <%= render "chore_item_list" %>
+</div>
 
 
