@@ -3,4 +3,9 @@ class Expense < ActiveRecord::Base
   belongs_to :owner, class_name: "User"
   belongs_to :house
   validates :title, :amount, :date_due, presence: true
+
+  def split_amount
+    num_users = users.size
+    amount / num_users
+  end
 end
