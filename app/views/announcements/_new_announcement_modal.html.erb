@@ -1,15 +1,3 @@
-<h1> What's Happenin'? </h1>
-
-<div class="description">
-  <p> Announcements go here </p>
-</div>
-
-<div id="announcement-list">
-  <%= render "announcement_list" %>
-  <p> <%= link_to "Send text", house_text_sender_path(current_user.house_id), method: :patch %> </p>
-</div>
-
-
 <div class="modal">
   <label for="modal-1">
     <div class="modal-trigger">

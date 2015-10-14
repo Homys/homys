@@ -1,1 +1,35 @@
-<%= render "shopping_items" %>
+<h1> Loot List </h1>
+
+<div class="description">
+  <p> List of shopping items </p>
+</div>
+
+<div id="shopping-list">
+  <%= render "shopping_item_list" %>
+</div>
+
+<h5>Create new loot</h5>
+
+<div id="new-shopping-item">
+  <%= form_for([current_user.house, @shopping_item], remote: true) do |f| %>
+
+    <div id="shopping-item-errors">
+      <%= render "shopping_item_errors" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :importance, "Need ASAP" %><br />
+      <%= f.check_box :importance %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
+  <% end %>
+</div>
