@@ -1,4 +1,4 @@
-<% @shopping_items = ShoppingItem.order('importance DESC', 'created_at DESC') %>
+<% @shopping_items = current_user.house.shopping_items.order('importance DESC', 'created_at DESC') %>
 
 <% if @shopping_item.errors.present? %>
   $("#shopping-item-errors").html("<%= j(render "shopping_item_errors") %>");

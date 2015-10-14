@@ -1,6 +1,7 @@
 class House < ActiveRecord::Base
   has_many :users
   has_many :created_chores, through: :users
+  has_many :shopping_items
   validates :name, presence: true
 
   require 'twilio-ruby'
@@ -15,7 +16,7 @@ class House < ActiveRecord::Base
   def send_to_all_users(body)
     users.each do |user|
       user.send_text_message(body)
-    end 
-  end 
+    end
+  end
 
 end
