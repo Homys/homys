@@ -1,7 +1,8 @@
 <div class="mdl-layout__drawer navbar-container">
 	<span class="mdl-layout-title"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">avatar</i>&nbsp;AVATAR</span>
 	<nav class="mdl-navigation">
-		<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>&nbsp;&nbsp;Home</a>
+
+    <%= link_to '<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i> Home'.html_safe, house_path(current_user.house_id), class: "mdl-navigation__link" %>&nbsp;&nbsp;
 
 		<% if user_signed_in? && current_user.house_id %>
 		<%= render 'layouts/logged_in_links' %>
