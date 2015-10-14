@@ -1,11 +1,12 @@
 class ShoppingItemsController < ApplicationController
 
-	before_action :authenticate_user!
-	before_filter :ensureHouseExists
+	before_action :authenticate_user!, :ensure_house_exists, :get_house
 
 
 	def create
 		@shopping_item = ShoppingItem.new(shopping_item_params)
+		@shopping_item.house = @house
+		@shopping_item.owner = current_user
 
 		respond_to do |format|
 			if @shopping_item.save
@@ -20,14 +21,14 @@ class ShoppingItemsController < ApplicationController
 	end
 
 	def index
-		@shopping_items = ShoppingItem.order('importance DESC', 'created_at DESC')
+		@shopping_items = @house.shopping_items.order('importance DESC', 'created_at DESC')
 		@shopping_item = ShoppingItem.new
 	end
 
 	def destroy
 		@shopping_item = ShoppingItem.find(params[:id])
 		@shopping_item.destroy
-		redirect_to house_shopping_items_path(current_user.house_id)
+		redirect_to house_shopping_items_path(current_user.house)
 	end
 
 private

@@ -1,11 +1,11 @@
 class CommandmentsController < ApplicationController
 
-	before_action :authenticate_user!
-	before_filter :ensureHouseExists
+	before_action :authenticate_user!, :ensure_house_exists, :get_house
 
 	def create
 		@commandment = Commandment.new(commandment_params)
-		@commandment.owner_id = current_user.id
+		@commandment.owner = current_user
+		@commandment.house = @house
 
 		respond_to do |format|
 			if @commandment.save
@@ -20,7 +20,7 @@ class CommandmentsController < ApplicationController
 	end
 
 	def index
-		@commandments = Commandment.all
+		@commandments = @house.commandments.all
 		@commandment = Commandment.new
 	end
 

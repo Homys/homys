@@ -1,12 +1,12 @@
 class ChoreItemsController < ApplicationController
 
-	before_action :authenticate_user!
-	before_filter :ensureHouseExists
+	before_action :authenticate_user!, :ensure_house_exists, :get_house
 
 
 	def create
 		@chore_item = ChoreItem.new(chore_item_params)
-		@chore_item.owner_id = current_user.id
+		@chore_item.owner = current_user
+		@chore_item.house = @house
 
 		respond_to do |format|
 			if @chore_item.save
@@ -21,14 +21,14 @@ class ChoreItemsController < ApplicationController
 	end
 
 	def index
-		@chore_items = ChoreItem.all
+		@chore_items = @house.chore_items.all
 		@chore_item = ChoreItem.new
 	end
 
 	def chore_assigner
 		current_user.house.assign_chores
 
-		redirect_to house_chore_items_path(current_user.house_id)
+		redirect_to house_chore_items_path(current_user.house)
 	end
 
 	def destroy

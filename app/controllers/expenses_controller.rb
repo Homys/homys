@@ -1,10 +1,11 @@
 class ExpensesController < ApplicationController
-  before_action :authenticate_user!
-  before_filter :ensureHouseExists
+
+  before_action :authenticate_user!, :ensure_house_exists, :get_house
 
   def index
-    @expenses = Expense.all
+    @expenses = @house.expenses.all
     @expense = Expense.new
+    @housemates = @house.users
   end
 
   def create
@@ -12,7 +13,8 @@ class ExpensesController < ApplicationController
     #Due to the 'has_and_belongs_to_many' relationhip with users,
     #the method then checks to see if it can update the expenses_users table
     @expense = Expense.new(expense_params)
-    @expense.owner_id = current_user.id
+    @expense.owner = current_user
+    @expense.house = @house
 
     respond_to do |format|
       if @expense.save
@@ -30,7 +32,7 @@ class ExpensesController < ApplicationController
   def destroy
     expense = Expense.find(params[:id])
     expense.destroy
-    redirect_to house_expenses_path(current_user.house_id)
+    redirect_to house_expenses_path(current_user.house)
   end
 
   def update
