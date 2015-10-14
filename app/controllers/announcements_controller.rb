@@ -4,14 +4,19 @@ class AnnouncementsController < ApplicationController
 	before_filter :ensureHouseExists
 
 	def index
-		@announcements = Announcement.order('importance DESC', 'created_at DESC')
+		@announcements = Announcement.order('importance DESC', 'created_at DESC').page(params[:page])
 		@announcement = Announcement.new
 
 		if @announcements.length == 0
       		flash[:alert] = "You have no announcements. Create one now to share with your housemates."
 		end
 
+		respond_to do |format|
+			format.html
+			format.js
+		end
 	end
+
 
 	def create
 		@announcement = Announcement.new(announcement_params)
