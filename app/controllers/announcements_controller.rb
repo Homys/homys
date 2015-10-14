@@ -1,7 +1,6 @@
 class AnnouncementsController < ApplicationController
 
-	before_action :authenticate_user!
-	before_filter :ensureHouseExists
+	before_action :authenticate_user!, :ensure_house_exists, :get_house
 
 	def index
 		@announcements = Announcement.order('importance DESC', 'created_at DESC').page(params[:page])
@@ -27,7 +26,7 @@ class AnnouncementsController < ApplicationController
 			if @announcement.save
 				if @announcement.importance == "1"
 					text_sender(@announcement.title)
-				end 
+				end
 
 				format.html { redirect_to house_announcements_path(current_user.house), notice: 'Announcement added.' }
 	    	format.js {}
@@ -36,10 +35,10 @@ class AnnouncementsController < ApplicationController
 				format.html { render :index, alert: 'There was an error.'  }
 	      format.js {}
 			end
-		end 
-	end 
+		end
+	end
 
-	
+
 	def destroy
 		@announcement = Announcement.find(params[:id])
 		@announcement.destroy

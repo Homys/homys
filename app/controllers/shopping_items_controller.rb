@@ -1,6 +1,6 @@
 class ShoppingItemsController < ApplicationController
 
-	before_action :authenticate_user!, :ensureHouseExists, :get_house
+	before_action :authenticate_user!, :ensure_house_exists, :get_house
 
 
 	def create

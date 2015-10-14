@@ -1,6 +1,6 @@
 class ExpensesController < ApplicationController
-  before_action :authenticate_user!
-  before_filter :ensureHouseExists
+
+  before_action :authenticate_user!, :ensure_house_exists, :get_house
 
   def index
     @expenses = Expense.all
@@ -50,15 +50,15 @@ class ExpensesController < ApplicationController
   # def text_sender(body)
   #   expense.users.each do |user|
   #     user.send_text_message(body)
-  #   end 
-  # end 
+  #   end
+  # end
 
   # def expense_text
   #   body: "You owe #{owner_id} #{amount}. Due #{due_date} days."
-  # end  
+  # end
 
   # def auto_text
   #   send_text_message.due_date - 7.days
-  # end 
+  # end
 
 end

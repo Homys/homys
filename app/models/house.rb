@@ -2,6 +2,10 @@ class House < ActiveRecord::Base
   has_many :users
   has_many :created_chores, through: :users
   has_many :shopping_items
+  has_many :expenses
+  has_many :chore_items
+  has_many :announcements
+  has_many :commandments
   validates :name, presence: true
 
   require 'twilio-ruby'

@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def ensureHouseExists
+  def ensure_house_exists
     if current_user.house_id == nil
       redirect_to houses_path
     end
@@ -15,6 +15,11 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << [:first_name, :last_name, :phone_num, :avatar]
+  end
+
+  private
+  def get_house
+    @house = House.find(params[:house_id])
   end
 
 end
