@@ -7,7 +7,6 @@
 </div>
 
 <div id="new-expense">
-  <h5>New Expense</h5>
   <%= form_for([current_user.house, @expense], remote: true) do |f| %>
 
     <div id="expense-errors">
