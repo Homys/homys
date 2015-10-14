@@ -1,0 +1,52 @@
+<div class="modal">
+  <label for="modal-1">
+    <div class="modal-trigger">
+      <div class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+        <i class="material-icons">add</i>
+      </div>
+    </div>
+  </label>
+  <input class="modal-state" id="modal-1" type="checkbox" />
+  <div class="modal-fade-screen">
+    <div class="modal-inner">
+      <div class="modal-close" for="modal-1"></div>
+        <h1>Add an Expense</h1>
+      <p class="modal-content">
+        <div id="new-expense">
+          <%= form_for([current_user.house, @expense], remote: true) do |f| %>
+
+            <div id="expense-errors">
+              <%= render "expense_errors" %>
+            </div><br>
+
+            <div class="field">
+              <%= f.label :title %><br />
+              <%= f.text_field :title %>
+            </div>
+
+            <div class="field">
+              <%= f.label :amount, "Total Amount" %><br />
+              <%= f.number_field :amount, :step => 0.01 %>
+            </div>
+
+            <div class="field">
+              <%= f.label :date_due, "When Should Homys Pay You By" %><br />
+              <%= f.date_field :date_due%>
+            </div>
+
+            <div class="field">
+              <%= f.label :user_ids, "Who Owes" %><br />
+              <%= f.select :user_ids, User.all.collect{ |u| [ u.full_name, u.id ] },{}, {:multiple => true, class: "housemates"} %>
+            </div>
+
+            <div class="actions">
+              <%= f.submit %>
+            </div>
+          <% end %>
+        </div>
+      </p>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">$(".housemates").select2();</script>
