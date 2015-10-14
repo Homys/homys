@@ -20,5 +20,16 @@
 # Learn more: http://github.com/javan/whenever
 
 every :sunday, :at => '12am' do # Use any day of the week or :weekend, :weekday
-  runner "House.assign_chores"
+  House.all.each do |house|
+  	runner "house.assign_chores"
+  end 
 end
+
+every 1.day :at => '12am' do 
+	House.all.each do |house|
+		runner "house.auto_text"
+	end 
+end 
+
+
+
