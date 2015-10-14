@@ -1,4 +1,4 @@
-<% @commandments = Commandment.all %>
+<% @commandments = @house.commandments.all %>
 
 <% if @commandment.errors.present? %>
   $("#commandment-form-errors").html("<%= j(render "commandment_errors") %>");

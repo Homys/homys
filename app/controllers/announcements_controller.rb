@@ -3,7 +3,7 @@ class AnnouncementsController < ApplicationController
 	before_action :authenticate_user!, :ensure_house_exists, :get_house
 
 	def index
-		@announcements = Announcement.order('importance DESC', 'created_at DESC').page(params[:page])
+		@announcements = @house.announcements.order('importance DESC', 'created_at DESC').page(params[:page])
 		@announcement = Announcement.new
 
 		if @announcements.length == 0
@@ -19,8 +19,8 @@ class AnnouncementsController < ApplicationController
 
 	def create
 		@announcement = Announcement.new(announcement_params)
-		@announcement.owner_id = current_user.id
-
+		@announcement.owner = current_user
+		@announcement.house = @house
 
 		respond_to do |format|
 			if @announcement.save

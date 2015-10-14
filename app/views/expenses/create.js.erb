@@ -1,4 +1,4 @@
-<% @expenses = Expense.all %>
+<% @expenses = @house.expenses.all %>
 
 <% if @expense.errors.present? %>
   $("#expense-errors").html("<%= j(render "expense_errors") %>");

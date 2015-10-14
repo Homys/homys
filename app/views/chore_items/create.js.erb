@@ -1,4 +1,4 @@
-<% @chore_items = ChoreItem.all %>
+<% @chore_items = @house.chore_items.all %>
 
 <% if @chore_item.errors.present? %>
   $("#chore-form-errors").html("<%= j(render "chore_item_errors") %>");
