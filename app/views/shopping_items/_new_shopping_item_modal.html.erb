@@ -26,9 +26,12 @@
 
 
             <div class="field">
-              <%= f.label :importance, "Need ASAP" %><br />
-              <%= f.check_box :importance %>
+              <%= f.label :importance, "", :class => "mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" do %>
+              <%= f.check_box :importance, :class => "mdl-checkbox__input" %>
+              <span class="mdl-checkbox__label">Need ASAP</span>
+              <%end%>
             </div>
+            <br>
 
             <div class="actions">
               <%= f.submit "Add to Loot List", :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
