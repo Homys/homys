@@ -3,13 +3,18 @@
 <%= form_for [current_user.house, @event] do |f| %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, "Event" %><br />
     <%= f.text_field :name %>
   </div>
 
   <div class="field">
     <%= f.label :date %><br />
     <%= f.date_field :date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :owner_id %><br />
+    <%= f.number_field :owner_id %>
   </div>
 
   <div class="actions">
