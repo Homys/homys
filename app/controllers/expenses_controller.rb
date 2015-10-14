@@ -5,6 +5,7 @@ class ExpensesController < ApplicationController
   def index
     @expenses = @house.expenses.all
     @expense = Expense.new
+    @housemates = @house.users
   end
 
   def create
