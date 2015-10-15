@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       end 
     end 
     resources :chore_items, only: [:create, :index, :destroy]
-    resources :shopping_items, only: [:create, :index, :destroy]
+    resources :shopping_items, only: [:create, :index, :destroy, :update]
     resources :commandments, only: [:create, :index, :destroy]
     resources :announcements, only: [:create, :index, :destroy]
     resources :events, only: [:create, :index, :new]

@@ -20,6 +20,14 @@ class ShoppingItemsController < ApplicationController
 		end
 	end
 
+	def update 
+		@shopping_item = ShoppingItem.find(params[:id])
+		@shopping_item.user = current_user
+		@shopping_item.save
+
+		redirect_to house_shopping_items_path(current_user.house)
+	end 
+
 	def index
 		@shopping_items = @house.shopping_items.order('importance DESC', 'created_at DESC')
 		@shopping_item = ShoppingItem.new
@@ -34,6 +42,6 @@ class ShoppingItemsController < ApplicationController
 private
 
 	def shopping_item_params
-		params.require(:shopping_item).permit(:name, :importance, :points, :owner_id)
+		params.require(:shopping_item).permit(:name, :importance, :points, :owner_id, :user_id)
 	end
 end

@@ -1,6 +1,8 @@
 class PaymentsController < ApplicationController
-  def paid
+ 
+  before_action :authenticate_user!, :ensure_house_exists
 
+  def paid
   	payment = Payment.find(params[:payment_id])
   	payment.paid = 1
   	payment.save
