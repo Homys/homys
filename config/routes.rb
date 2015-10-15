@@ -7,19 +7,20 @@ Rails.application.routes.draw do
   resources :phone_numbers, only: [:new, :create]
   post 'phone_numbers/verify' => "phone_numbers#verify"
 
-  resources :houses, only: [:create, :new, :index, :show] do
+  resources :houses, only: [:create, :new, :index, :show, :destroy] do
     resources :expenses, only: [:index, :create, :destroy, :update]
     resources :chore_items, only: [:create, :index, :destroy]
     resources :shopping_items, only: [:create, :index, :destroy]
     resources :commandments, only: [:create, :index, :destroy]
     resources :announcements, only: [:create, :index, :destroy]
     resources :events, only: [:create, :index, :new]
+    resources :settings, only: [:index]
 
     patch 'chore_assigner' => 'chore_items#chore_assigner'
     patch 'text_sender' => 'announcements#text_sender'
     patch 'add_housemate' => 'houses#add_housemate'
     get 'invite_housemate' => 'houses#invite_housemate'
-  
+
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

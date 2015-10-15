@@ -1,0 +1,40 @@
+<h1>Settings</h1>
+
+<h5>Homys Contact Information</h5>
+<% @housemates.each do |housemate| %>
+  <% if current_user != housemate %>
+    <%= housemate.full_name %><br>
+    <%= housemate.email %><br>
+    <%= housemate.phone_num %><br><br>
+    <% end %>
+<% end %>
+
+
+<h5>Edit Profile</h5>
+<%= link_to "Edit your account", edit_user_registration_path %><br><br>
+
+
+<h5>Add Homy</h5>
+<%= form_tag house_add_housemate_path(current_user.house_id), method: :patch do %>
+
+  <div class="field">
+    <%= label_tag :email %><br />
+    <%= text_field_tag :email %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag %>
+  </div>
+<% end %><br><br>
+
+
+<h5>Logout</h5>
+<%= link_to "Logout", destroy_user_session_path, method: :delete %><br><br>
+
+
+<h5>Leave House</h5>
+<%= link_to "I'm moving on", house_path("user"), method: :delete %><br><br>
+
+
+<h5>Destroy House</h5>
+<%= link_to "Demolition time", house_path(current_user.house), method: :delete %>

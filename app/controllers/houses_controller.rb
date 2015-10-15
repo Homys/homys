@@ -44,6 +44,17 @@ class HousesController < ApplicationController
   	@house = House.find(params[:id])
   end
 
+  def destroy
+    if params[:id] == "user"
+      current_user.house_id = nil
+      redirect_to houses_path
+    else
+      @house = House.find(params[:id]) # do i need to remove users associations to the house before?
+      @house.destroy
+      redirect_to houses_path
+    end
+  end
+
 
   private
 
