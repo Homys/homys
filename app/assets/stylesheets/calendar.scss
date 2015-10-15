@@ -6,26 +6,33 @@
 .simple-calendar {
   .day {
     border: 3px solid black;
+    padding: 0px;
   }
 
-.has-events {
-  color: white;
-  background-color: red;
+  .has-events {
+    color: black;
   }
 
-.past {
-  background-color: #708090;
-  color: black;
+  div {
+    background-color: #6688FF;
   }
 
-tr, th {
-  border: 3px solid black;
+  tr, th {
+    border: 3px solid black;
   }
 
-.today {
-  background-color: #00FF00;
-  color: black;
+  .today {
+    background-color: white;
+    color: black;
   }
 
+  #today_number {
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    color: white;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+  }
 }
-
