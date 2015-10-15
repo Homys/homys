@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151014184457) do
+ActiveRecord::Schema.define(version: 20151015153049) do
 
   create_table "announcements", force: :cascade do |t|
     t.string   "title"
@@ -128,6 +128,7 @@ ActiveRecord::Schema.define(version: 20151014184457) do
     t.string   "avatar"
     t.string   "verification_code"
     t.boolean  "is_verified"
+    t.integer  "points"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
