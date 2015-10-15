@@ -15,7 +15,7 @@ class ChoreItemsController < ApplicationController
 
 			else
 				format.html { render :index, alert: 'There was an error.'  }
-	      format.js {}
+	      format.js { render status: '422'}
 			end
 		end
 	end
