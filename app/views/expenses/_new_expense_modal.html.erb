@@ -10,7 +10,7 @@
   <div class="modal-fade-screen">
     <div class="modal-inner">
       <div class="modal-close" for="modal-1"></div>
-        <h1>Add an Expense</h1>
+        <h1>Get Paid Back</h1>
       <p class="modal-content">
         <div id="new-expense">
           <%= form_for([current_user.house, @expense], remote: true) do |f| %>
@@ -25,17 +25,17 @@
             </div>
 
             <div class="field">
-              <%= f.label :amount, "Total Amount" %><br />
+              <%= f.label :amount, "Total $$$" %><br />
               <%= f.number_field :amount, :step => 0.01 %>
             </div>
 
             <div class="field">
-              <%= f.label :date_due, "When Should Homys Pay You By" %><br />
+              <%= f.label :date_due, "When's that money due by?" %><br />
               <%= f.date_field :date_due%>
             </div>
 
             <div class="field">
-              <%= f.label :user_ids, "Who Owes" %><br />
+              <%= f.label :user_ids, "Who owes you" %><br />
               <%= f.select :user_ids, @housemates.collect{ |u| [ u.full_name, u.id ] },{}, {:multiple => true, class: "housemates"} %>
             </div>
 
