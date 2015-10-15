@@ -1,5 +1,6 @@
 class Expense < ActiveRecord::Base
-  has_and_belongs_to_many :users
+  has_many :payments
+  has_many :users, through: :payments
   belongs_to :owner, class_name: "User"
   belongs_to :house
   validates :title, :amount, :date_due, presence: true

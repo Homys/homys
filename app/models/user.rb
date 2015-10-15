@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
   has_many :shopping_items, class_name: "ShoppingItem", foreign_key: "user_id"
   has_many :created_chores, class_name: "ChoreItem", foreign_key: "owner_id"
   has_many :chore_items, class_name: "ChoreItem", foreign_key: "user_id"
-  has_and_belongs_to_many :expenses
+  has_many :payments
+  has_many :expenses, through: :payments
   has_many :created_expenses, class_name: "Expense", foreign_key: "owner_id"
   belongs_to :house
 

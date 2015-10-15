@@ -1,5 +1,5 @@
-  <% @expenses.each do |expense| %>
-    <div class="expense-info">
+<% @expenses.each do |expense| %>
+  <div class="expense-info">
     <%= expense.title %><br>
     Total Amount: <%= expense.amount %><br>
     Pay By: <%= expense.date_due %><br>
@@ -7,13 +7,18 @@
 
   <div class="user-expenses">
     <% expense.users.each do |user| %>
-      <%= user.full_name %> owes: <%= expense.split_amount %> , <%= link_to("paid", "") if expense.owner_id == current_user.id  %> <br>
+      <%= user.full_name %> owes: <%= expense.split_amount %> ,
+
+      <% if user_payment_status(expense, user).paid != true %>
+        <%= link_to("paid", payment_paid_link(current_user.house, expense, user), method: :patch) if expense.owner_id == current_user.id %> 
+
+      <% else %>
+        PAID
+
+      <% end %> <br>
     <% end %>
   </div>
 
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-      COMPLETE
-    </button>
 
-    <%= link_to "Delete", house_expense_path(current_user.house, expense), method: :delete %><br><br>
-  <% end %>
+  <%= link_to "Delete", house_expense_path(current_user.house, expense), method: :delete %><br><br>
+<% end %>

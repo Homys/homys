@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  expense_id: 1
+  user_id: 
+  paid: false
+
+two:
+  expense_id: 1
+  user_id: 
+  paid: false
