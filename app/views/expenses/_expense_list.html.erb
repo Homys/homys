@@ -10,5 +10,10 @@
       <%= user.full_name %> owes: <%= expense.split_amount %> , <%= link_to("paid", "") if expense.owner_id == current_user.id  %> <br>
     <% end %>
   </div>
+
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+      COMPLETE
+    </button>
+
     <%= link_to "Delete", house_expense_path(current_user.house, expense), method: :delete %><br><br>
   <% end %>
