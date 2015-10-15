@@ -13,6 +13,7 @@ class House < ActiveRecord::Base
 	def assign_chores
   	created_chores.each do |chore|
   		chore.user = users.sample
+      chore.done = 0
   		chore.save
   	end
   end

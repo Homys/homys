@@ -15,12 +15,18 @@
 
   		<% if chore.user %>
       	Assigned to: <%= chore.user.full_name %> <br>
-    	<% end %>
 
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-        COMPLETE
-      </button>
+        <% if chore.done != true && chore.user == current_user%>
+        <%= link_to "Complete", house_chore_item_path(@house, chore), method: :patch %>
+        <% elsif chore.done == true %>
+      
+        DONE
 
+        <% end %>
+
+      <% end %>
+
+      
     	<%= link_to("Delete", house_chore_item_path(current_user.house_id, chore), method: :delete) if chore.owner_id == current_user.id %> <br><br>
     </div>
   </div>

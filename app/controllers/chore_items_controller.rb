@@ -37,6 +37,14 @@ class ChoreItemsController < ApplicationController
 		redirect_to house_chore_items_path(current_user.house_id)
 	end
 
+	def update
+		@chore_item = ChoreItem.find(params[:id])
+		@chore_item.done = 1
+		@chore_item.save
+
+		redirect_to house_chore_items_path(current_user.house)
+	end 
+
 private
 
 	def chore_item_params
