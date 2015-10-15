@@ -1,11 +1,16 @@
 <div class="mdl-layout__drawer navbar-container">
 
+  <%= image_tag current_user.avatar, id: 'avatar' %>
 
-	<span class="mdl-layout-title"><%= current_user.full_name if current_user %></span>
+	<span class="mdl-layout-title"><%= current_user.full_name if current_user %>
+  </span>
 
 	<nav class="mdl-navigation">
+
 		<% if user_signed_in? && current_user.house_id %>
 		<%= render 'layouts/logged_in_links' %>
 		<% end %>
+
 	</nav>
+
 </div>

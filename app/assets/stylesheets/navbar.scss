@@ -7,3 +7,19 @@ main.mdl-layout__content {
 div.mdl-layout__drawer.navbar-container {
   background-color: #D3D3D3;
 }
+
+#avatar {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  height: 85px;
+  width: 85px;
+  border-radius: 50%;
+}
+
+.mdl-layout-title {
+  left: 70px;
+  top: 20px;
+  height: 100px;
+
+}
