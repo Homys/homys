@@ -1,12 +1,8 @@
 <div class="mdl-layout__drawer navbar-container">
 
 
-<<<<<<< HEAD
 	<span class="mdl-layout-title"><%= current_user.full_name if current_user %></span>
-=======
-	<span class="mdl-layout-title"><%= current_user.full_name.titleize if current_user %></span>
 
->>>>>>> 3215b5c01e147cb0ceb48168beff0a109eba4298
 	<nav class="mdl-navigation">
 		<% if user_signed_in? && current_user.house_id %>
 		<%= render 'layouts/logged_in_links' %>
