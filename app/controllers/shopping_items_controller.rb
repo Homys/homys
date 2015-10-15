@@ -12,10 +12,9 @@ class ShoppingItemsController < ApplicationController
 			if @shopping_item.save
 				format.html { redirect_to house_shopping_items_path(current_user.house), notice: 'New loot added.' }
 	      format.js {}
-
 			else
 				format.html { render :index, alert: 'There was an error.'  }
-	      format.js {}
+	      format.js {render status: '422'}
 			end
 		end
 	end
