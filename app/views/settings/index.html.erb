@@ -1,6 +1,6 @@
 <h1>Settings</h1>
 
-<% if @housemates.empty? %>
+<% unless @housemates.empty? %>
   <h5>Homys Contact Information</h5>
   <% @housemates.each do |housemate| %>
     <% if current_user != housemate %>
