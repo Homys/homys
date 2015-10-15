@@ -1,21 +1,4 @@
 <h1>Welcome to <%= @house.name %></h1>
 
-<h3> Add a Housemate </h3>
+<p>Add your Homys on the settings page</p>
 
-<%= form_tag house_add_housemate_path(current_user.house_id), method: :patch do %>
-
-	<div class="field">
-    <%= label_tag :email %><br />
-    <%= text_field_tag :email, params[:email] %>
-	</div>
-
-	<div class="actions">
-		<%= submit_tag %>
-	</div>
-<% end %>
-
-<% if flash[:alert] %>
-  <div class="invite">
-    <%= link_to "Invite your Homy", house_invite_housemate_path(current_user.house_id)%>
-  </div>
-<% end %>

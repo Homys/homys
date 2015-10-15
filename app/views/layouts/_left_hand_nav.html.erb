@@ -1,9 +1,6 @@
 <div class="mdl-layout__drawer navbar-container">
 	<span class="mdl-layout-title"><%= current_user.first_name if current_user %></span>
 	<nav class="mdl-navigation">
-
-    <%= link_to '<i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i> Home'.html_safe, houses_path, class: "mdl-navigation__link" %>&nbsp;&nbsp;
-
 		<% if user_signed_in? && current_user.house_id %>
 		<%= render 'layouts/logged_in_links' %>
 		<% end %>

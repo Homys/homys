@@ -20,16 +20,16 @@ class HousesController < ApplicationController
       	@user.save
       	redirect_to house_path(current_user.house)
       else
-      	redirect_to house_path(current_user.house), notice: "User cannot be assigned to this house"
+      	redirect_to house_settings_path(current_user.house), notice: "User cannot be assigned to this house"
       end
     else
-      redirect_to house_path(current_user.house), alert: "User does not exist, invite homy below"
+      redirect_to house_settings_path(current_user.house), alert: "User does not exist, invite homy below"
     end
   end
 
   def invite_housemate
      HomysMailer.invite(params[:email], current_user).deliver_now
-     redirect_to house_path(current_user.house), notice: "Sent invite email to your homy"
+     redirect_to house_settings_path(current_user.house), notice: "Sent invite email to your homy"
   end
 
   def new
