@@ -5,7 +5,7 @@ main.mdl-layout__content {
 }
 
 div.mdl-layout__drawer.navbar-container {
-  background-color: #D3D3D3;
+  background-color: #37474F;
 }
 
 #avatar {
@@ -21,5 +21,23 @@ div.mdl-layout__drawer.navbar-container {
   left: 70px;
   top: 20px;
   height: 100px;
+  color: white !important;
 
 }
+
+.mdl-navigation__link {
+  color: #78909C !important;
+  font-size: 15px;
+}
+
+.mdl-navigation__link:hover {
+  background-color: #00C5CD !important;
+  color: black !important;
+}
+
+.mdl-layout__header-row {
+  background-color: white;
+  color: black;
+  font-size: 25px;
+}
+
