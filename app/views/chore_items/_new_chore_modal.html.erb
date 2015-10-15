@@ -21,17 +21,21 @@
             <br>
 
             <div class="field">
-              <%= f.label :name %><br />
-              <%= f.text_field :name %>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <%= f.label :name, :class => "mdl-textfield__label" %>
+                <%= f.text_field :name, :class => "mdl-textfield__input" %>
+              </div>
             </div>
 
             <div class="field">
-              <%= f.label :description %><br />
-              <%= f.text_area :description %>
+              <div class="mdl-textfield mdl-js-textfield">
+                <%= f.label :description, :class => "mdl-textfield__label" %>
+                <%= f.text_area :description, :class => "mdl-textfield__input" %>
+              </div>
             </div>
 
             <div class="actions">
-              <%= f.submit %>
+              <%= f.submit "Create a Quest", :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
             </div>
 
           <% end %>
