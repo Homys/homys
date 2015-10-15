@@ -20,24 +20,14 @@
 </head>
 
 <body>
-
-  <% if user_signed_in? && current_user.house_id != nil %>
-    Logged in as <strong><%= current_user.first_name %></strong>.<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-  <% else %>
-    <%= link_to "Sign Up", new_user_registration_path %>
-    <%= link_to "Log In", new_user_session_path %>
-
-  <% end %>
-
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
     <%= render 'layouts/header' %>
     <%= render 'layouts/left_hand_nav' %>
 
     <main class="mdl-layout__content mdl-color-text--black-600">
       <div class="page-content">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
         <%= yield %>
       </div>
     </main>
