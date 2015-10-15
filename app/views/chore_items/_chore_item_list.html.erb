@@ -17,7 +17,8 @@
       	Assigned to: <%= chore.user.full_name %> <br>
 
         <% if chore.done != true && chore.user == current_user%>
-        <%= link_to "Complete", house_chore_item_path(@house, chore), method: :patch %>
+        <%= link_to "Complete", house_chore_item_path(@house, chore), method: :patch, :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
+
         <% elsif chore.done == true %>
       
         DONE
@@ -27,7 +28,7 @@
       <% end %>
 
       
-    	<%= link_to("Delete", house_chore_item_path(current_user.house_id, chore), method: :delete) if chore.owner_id == current_user.id %> <br><br>
+    	<%= link_to('<i class="material-icons">remove_circle</i>'.html_safe, house_chore_item_path(current_user.house_id, chore), method: :delete) if chore.owner_id == current_user.id %> <br><br>
     </div>
   </div>
 <% end %>

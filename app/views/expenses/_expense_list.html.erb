@@ -1,24 +1,34 @@
 <% @expenses.each do |expense| %>
-  <div class="expense-info">
-    <%= expense.title %><br>
-    Total Amount: <%= expense.amount %><br>
-    Pay By: <%= expense.date_due %><br>
-  </div>
 
-  <div class="user-expenses">
-    <% expense.users.each do |user| %>
+<div class="demo-card-wide mdl-card mdl-shadow--2dp list-card">
+
+  <div class="mdl-card__supporting-text">
+
+    <div class="expense-info">
+      <%= expense.title %><br>
+      Total Amount: <%= expense.amount %><br>
+      Pay By: <%= expense.date_due %><br>
+    </div>
+
+    <div class="user-expenses">
+      <% expense.users.each do |user| %>
       <%= user.full_name %> owes: <%= expense.split_amount %> ,
 
       <% if user_payment_status(expense, user).paid != true %>
-        <%= link_to("paid", payment_paid_link(current_user.house, expense, user), method: :patch) if expense.owner_id == current_user.id %> 
+      <%= link_to("paid", payment_paid_link(current_user.house, expense, user), method: :patch) if expense.owner_id == current_user.id %> 
 
       <% else %>
-        PAID
+
+      PAID
 
       <% end %> <br>
-    <% end %>
+      <% end %>
+    </div>
+
+
+    <%= link_to "Delete", house_expense_path(current_user.house, expense), method: :delete %><br><br>
   </div>
+</div>
 
-
-  <%= link_to "Delete", house_expense_path(current_user.house, expense), method: :delete %><br><br>
 <% end %>
+
