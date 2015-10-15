@@ -42,6 +42,7 @@ class HousesController < ApplicationController
 
   def show
   	@house = House.find(params[:id])
+    @users = current_user.house.users
   end
 
   def destroy
