@@ -21,6 +21,9 @@ class ApplicationController < ActionController::Base
   private
   def get_house
     @house = House.find(params[:house_id])
+    if @house != current_user.house
+      redirect_to houses_path
+    end
   end
 
 end
