@@ -7,3 +7,47 @@
   padding-left: 50px;
   padding-right: 50px;
 }
+
+.simple-calendar {
+  .day {
+    border: 3px solid black;
+
+  }
+
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {
+    background-color: #00FF00;
+
+  }
+
+  .future {}
+
+  .start-date {}
+
+  .prev-month {}
+  .next-month { }
+  .current-month {}
+
+  .has-events {
+    color: white;
+    background-color: red;
+  }
+
+  .past {
+    background-color: #708090;
+    color: black;
+  }
+
+  tr, th {
+    border: 3px solid black;
+
+  }
+}
+
