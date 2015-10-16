@@ -1,35 +1,47 @@
 <h1>Settings</h1>
 
-<% unless @housemates.empty? %>
-  <h5>Homys Contact Information</h5>
-  <% @housemates.each do |housemate| %>
-    <% if current_user != housemate %>
-      <%= housemate.full_name %><br>
-      <%= housemate.email %><br>
-      <%= housemate.phone_num %><br><br>
-      <% end %>
-  <% end %>
-<% end %>
+<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__supporting-text">
+    <% unless @housemates.empty? %>
+      <h5>Homys Contact Information</h5>
+        <% @housemates.each do |housemate| %>
+          <% if current_user != housemate %>
+            <div class="name-title">
+            <%= housemate.full_name %><br><br>
+            </div>
+            <i class="material-icons">email</i><%= housemate.email %><br><br>
+            <i class="material-icons">smartphone</i><%= housemate.phone_num %><br><br>
+          <% end %>
+        <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__supporting-text">
+    <h5>Edit Profile</h5>
+    <%= link_to "Edit your account", edit_user_registration_path %><br><br>
+  </div>
+</div>
 
 
-<h5>Edit Profile</h5>
-<%= link_to "Edit your account", edit_user_registration_path %><br><br>
+<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__supporting-text">
+    <h5>Add Homy</h5>
+      <% if flash[:alert] %>
+      <%= form_tag house_invite_housemate_path(current_user.house_id), method: :patch do %>
 
+        <div class="field">
+          <%= label_tag :email %><br />
+          <%= text_field_tag :email, params[:email] %>
+        </div>
 
-<h5>Add Homy</h5>
-<% if flash[:alert] %>
-  <%= form_tag house_invite_housemate_path(current_user.house_id), method: :patch do %>
+        <div class="actions">
+          <%= submit_tag "Invite Homy" %>
+        </div>
+      <%end%>
 
-    <div class="field">
-      <%= label_tag :email %><br />
-      <%= text_field_tag :email, params[:email] %>
-    </div>
-
-    <div class="actions">
-      <%= submit_tag "Invite Homy" %>
-    </div>
-  <%end%>
-<% else %>
+    <% else %>
   <%= form_tag house_add_housemate_path(current_user.house_id), method: :patch do %>
 
     <div class="field">
@@ -41,22 +53,39 @@
       <%= submit_tag "Add Homy" %>
     </div>
   <% end %>
-<% end %><br><br>
+<% end %>
 
+</div>
+</div>
 
+<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__supporting-text">
 <h5> Validate Your Phone Number </h5>
 
 <%= link_to "Validate Now", new_phone_number_path %>
 
+</div>
+</div>
 
-
+<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__supporting-text">
 <h5>Logout</h5>
-<%= link_to "Logout", destroy_user_session_path, method: :delete %><br><br>
+ <%= button_to "Logout", destroy_user_session_path, :id => "open-contacts-dialog-btn",
+      :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent", method: :delete %>
+</div>
+</div>
 
+<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__supporting-text">
 <% if @house.users.size != 1 %>
   <h5>Leave House</h5>
-  <%= link_to "I'm moving on", house_path("user"), method: :delete %><br><br>
+  <%= button_to "I'm moving on", house_path("user"), :id => "open-contacts-dialog-btn",
+      :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent", method: :delete %>
 <%end%>
+</div>
+</div>
+
 
 <h5>Destroy House</h5>
-<%= link_to "Demolition time", house_path(current_user.house), method: :delete %>
+<%= button_to "Demolition Time", house_path(current_user.house), :id => "open-contacts-dialog-btn",
+      :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent", method: :delete %>

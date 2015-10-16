@@ -1,0 +1,9 @@
+<% @events = @house.events.all %>
+
+<% if @event.errors.present? %>
+  $("#event-form-errors").html("<%= j(render "event_errors") %>");
+<% else %>
+  $("#event-form-errors").html("");
+  $("#event-list").html(("<%= j(render "event_list") %>"));
+  $("#new_event")[0].reset();
+<% end %>

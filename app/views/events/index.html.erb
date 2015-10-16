@@ -1,19 +1,42 @@
+<style>
+
+  .demo-card-event.mdl-card {
+    width: 1000px;
+    height: 500px;
+  }
+
+</style>
+
+
+
+
+
+<h1> Events </h1>
+
 <%= button_to "Add Event", new_house_event_path, :id => "open-contacts-dialog-btn", :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent", method: :get %>
 
-<%= month_calendar(events: @events, attribute: 'date') do |date, events| %>
-  <% if Date.today == date %>
-    <span id="today_number"><%= date.day %></span>
-  <% else %>
-    <%= date.day %>
-  <% end %>
+<div class="calendar-container">
+  <div class="demo-card-event mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title mdl-card--expand">
+ 
+    
+      <%= month_calendar(events: @events, attribute: 'date') do |date, events| %>
+        <% if Date.today == date %>
+          <span id="today_number"><%= date.day %></span>
+        <% else %>
+          <%= date.day %>
+        <% end %>
 
-  <% events.each do |event| %>
-    <div>
-      <%= event.date.strftime("%l:%M %p ") %>
-      <%= event.name %>
+      <% events.each do |event| %>
+        <div>
+          <%= event.date.strftime("%l:%M %p ") %>
+          <%= event.name %>
+        </div>
+      <% end %>
+
+      <% end %>
+
     </div>
-  <% end %>
-
-<% end %>
-
+  </div>
+</div>
 
