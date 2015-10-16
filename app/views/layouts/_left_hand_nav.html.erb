@@ -3,25 +3,31 @@
 	<% if current_user %>
 	<header class="drawer-header">
 
-  	 <%= image_tag current_user.avatar, id: 'avatar' %>
+		<%= image_tag current_user.avatar, id: 'avatar' %>
+
+		<span class="mdl-layout-title"><%= current_user.first_name if current_user %>
+		</span>
+
+		<div class = "header-points">
+			Points: <%= current_user.points if current_user %>
+		</div>
+
+		<div class="drop-down-button">
+			<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+  			<i class="material-icons">arrow_drop_down</i>
+			</button>
+		</div>
 
 
-		<span class="mdl-layout-title"><%= current_user.full_name if current_user %>
-  	</span>
-
-  	<span class = "header-points">Points: <%= current_user.points if current_user %>
-
-  	<i class="material-icons">arrow_drop_down</i>
-
-  </header>
-  <% end %>
-
-	<nav class="mdl-navigation">
-
-		<% if user_signed_in? && current_user.house_id %>
-		<%= render 'layouts/logged_in_links' %>
+		</header>
 		<% end %>
 
-	</nav>
+		<nav class="mdl-navigation">
 
-</div>
+			<% if user_signed_in? && current_user.house_id %>
+			<%= render 'layouts/logged_in_links' %>
+			<% end %>
+
+		</nav>
+
+	</div>

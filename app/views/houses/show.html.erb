@@ -5,13 +5,20 @@
 <h3>Housemates</h3>
 
 <% @users.each do |user| %>
-	Name: <%= user.full_name %> <br>
-	Phone Number: <%= user.phone_num %> <br>
-  	Email: <%= user.email %><br/>
-  	Points: <%= user.points %> <br><br>
 
+<div class="demo-card-wide mdl-card mdl-shadow--2dp list-card">
 
+	<div class="mdl-card__supporting-text">
 
+		<div class="name-title">
+			<%= user.full_name %> <br><br>
+		</div>
+		Phone Number: <%= user.phone_num %> <br><br>
+		Email: <%= user.email %><br><br>
+		Points: <%= user.points %> <br><br>
+
+	</div>
+</div>
 
 <% end %>
 

@@ -53,10 +53,18 @@ div.mdl-layout__drawer.navbar-container {
 }
 
 .header-points {
-  top: 80px;
-  padding-left: 20px;
+  position: relative;
+  left: 10px;
+  top: 35px;
   color: white;
 }
+
+.drop-down-button {
+  position: relative;
+  left: 150px;
+}
+
+
 
 
 
