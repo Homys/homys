@@ -1,35 +1,35 @@
 <% @chore_items.each do |chore| %>
-	<div class="demo-card-wide mdl-card mdl-shadow--2dp list-card">
+<div class="demo-card-wide mdl-card mdl-shadow--2dp list-card">
 
-    <div class="mdl-card__supporting-text">
+  <div class="mdl-card__supporting-text">
 
-		  <img src="http://www.panamericanworld.com/sites/default/files/jose-bautista-beard-4.jpg" class="image"/>
+    <img src="http://www.panamericanworld.com/sites/default/files/jose-bautista-beard-4.jpg" class="image"/>
 
-      <div class="title">
-      	<%= chore.name %> <br>
-      </div>
+    <div class="chore-title">
+     <%= chore.name.capitalize %> <br><br>
+   </div>
 
-  		<div class="description">
-      	<%= chore.description %> <br>
-      </div>
+   <%= chore.description %> <br><br>
 
-  		<% if chore.user %>
-      	Assigned to: <%= chore.user.full_name %> <br>
 
-        <% if chore.done != true && chore.user == current_user%>
-        <%= link_to "Complete", house_chore_item_path(@house, chore), method: :patch, :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
+   <% if chore.user %>
+   Assigned to: <%= chore.user.full_name %> <br>
 
-        <% elsif chore.done == true %>
-      
-        DONE
+   <% if chore.done != true && chore.user == current_user%>
+   <%= link_to "Complete", house_chore_item_path(@house, chore), method: :patch, :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
 
-        <% end %>
+   <% elsif chore.done == true %>
+   
+   DONE
 
-      <% end %>
+   <% end %>
 
-      
-    	<%= link_to('<i class="material-icons">remove_circle</i>'.html_safe, house_chore_item_path(current_user.house_id, chore), method: :delete) if chore.owner_id == current_user.id %> <br><br>
-    </div>
+   <% end %>
+
+   <div class="delete-button">
+    <%= link_to('<i class="material-icons">remove_circle</i>'.html_safe, house_chore_item_path(current_user.house_id, chore), method: :delete) if chore.owner_id == current_user.id %> <br><br>
   </div>
+</div>
+</div>
 <% end %>
 
