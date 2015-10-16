@@ -5,7 +5,7 @@
 .expense-title {
 	font-size: 35px;
 	font-weight: bold;
-	margin-bottom: 20px;
+	padding-top: 20px;
 }
 
 .who-paid {
@@ -18,4 +18,19 @@
 
 .user-expenses {
 	font-size: 20px;
+}
+
+.shopping-title {
+	font-size: 35px;
+	font-weight: bold;
+	padding-top: 20px;
+}
+
+.mdl-card__supporting-text {
+	font-size: 20px;
+}
+
+.delete-button {
+	float: right;
+	position: relative;
 }
