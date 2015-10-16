@@ -68,8 +68,16 @@ i {
   position: relative;
   top: 5px;
   right: 5px;
+  overflow: hidden;
 }
 
+div.modal{
+  display: inline;
+}
+
+.title{
+  display: inline;
+}
 
 
 

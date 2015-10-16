@@ -5,10 +5,10 @@
  	<div class="mdl-card__supporting-text">
 
 		<div class="commandment-title">
- 			Commandment: <%= commandment.title.capitalize %> <br><br>
+ 			<%= commandment.title.capitalize %> <br><br>
  		</div>
  		
- 			Description: <%= commandment.description %> <br>
+ 			<%= commandment.description %> <br>
 
  		<div class="delete-button">
  			<%= link_to('<i class="material-icons">delete</i>'.html_safe, house_commandment_path(current_user.house_id, commandment), method: :delete) if commandment.owner_id == current_user.id %>

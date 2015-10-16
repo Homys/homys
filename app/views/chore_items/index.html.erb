@@ -1,13 +1,17 @@
 <h1> House Quests </h1>
+<span class="new-chore">
+	<%=render 'new_chore_modal' %>
+</span>
 
+<br><br>
 <p> House Quests are weekly chores around the house. </p>
 
     <%= button_to "Randomize Chores", house_chore_assigner_path(current_user.house_id), :id => "open-contacts-dialog-btn",
       :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent", :method => :patch %>
 
-<div class="new-chore">
-  <%= render "new_chore_modal" %>
-</div>
+<br>
+ 
+
 
 <div id="chore-list">
   <%= render "chore_item_list" %>
