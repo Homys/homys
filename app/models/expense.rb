@@ -7,7 +7,8 @@ class Expense < ActiveRecord::Base
 
   def split_amount
     num_users = users.size
-    amount / num_users
+    split = amount / num_users
+    split.round(2)
   end
 
 	def expense_text

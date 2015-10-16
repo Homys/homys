@@ -5,28 +5,40 @@
   <div class="mdl-card__supporting-text">
 
     <div class="expense-info">
-      <%= expense.title %><br>
-      Total Amount: <%= expense.amount %><br>
-      Pay By: <%= expense.date_due %><br>
+      <span class="expense-title">
+        <%= expense.title %><br><br>
+      </span>
+
+      <span class="expense-amount">
+        Total Amount: $<%= expense.amount %><br><br>
+      </span>
+
+      <span class="date-due">
+        Pay By: <%= expense.date_due.strftime("%B %d, %Y") %><br><br>
+      </span>
     </div>
 
     <div class="user-expenses">
+    <span class="who-paid">
+      Who Paid? <br><br>
+    </span>
+
       <% expense.users.each do |user| %>
       <%= user.full_name %> owes: <%= expense.split_amount %> ,
-
       <% if user_payment_status(expense, user).paid != true %>
-      <%= link_to("paid", payment_paid_link(current_user.house, expense, user), method: :patch) if expense.owner_id == current_user.id %> 
+      <%= link_to("Paid?", payment_paid_link(current_user.house, expense, user), method: :patch) if expense.owner_id == current_user.id %> 
 
       <% else %>
 
       PAID
 
-      <% end %> <br>
+      <% end %> <br><br>
       <% end %>
     </div>
 
+  <%= link_to('<i class="material-icons">remove_circle</i>'.html_safe, house_expense_path(current_user.house_id, expense), method: :delete) if expense.owner_id == current_user.id %>
 
-    <%= link_to "Delete", house_expense_path(current_user.house, expense), method: :delete %><br><br>
+
   </div>
 </div>
 

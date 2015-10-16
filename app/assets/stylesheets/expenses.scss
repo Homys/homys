@@ -1,3 +1,21 @@
 // Place all the styles related to the expenses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.expense-title {
+	font-size: 35px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.who-paid {
+	text-decoration: underline;
+}
+
+.expense-info {
+	font-size: 20px;
+}
+
+.user-expenses {
+	font-size: 20px;
+}
