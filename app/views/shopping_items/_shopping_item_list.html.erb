@@ -17,7 +17,7 @@
     Assigned to <%= shopping_item.user.full_name %> <br><br>
 
       <%= button_to "Bought it", house_shopping_item_path(current_user.house, shopping_item), :id => "open-contacts-dialog-btn",
-      :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent", method: :delete %>
+      :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored", method: :delete %>
 
     <% end %> <br>
 
