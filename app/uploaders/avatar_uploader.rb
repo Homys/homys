@@ -21,7 +21,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
   def default_url
   #   # For Rails 3.1+ asset pipeline compatibility:
     ActionController::Base.helpers.asset_path("fallback/" + [version_name, "robohash.png"].compact.join('_'))
-  # "https://robohash.org/#{current_user.first_name}"
+  
+    # Faker::Avatar.image("#{current_user}", "50x50", "bmp")
   # {}"/images/fallback/" + [version_name, "robohash.png"].compact.join('_')
   end
 

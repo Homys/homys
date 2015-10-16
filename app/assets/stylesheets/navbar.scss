@@ -22,6 +22,7 @@ div.mdl-layout__drawer.navbar-container {
   top: 20px;
   height: 100px;
   color: white !important;
+  padding-left: 30px;
 
 }
 
@@ -40,4 +41,22 @@ div.mdl-layout__drawer.navbar-container {
   color: black;
   font-size: 25px;
 }
+
+.drawer-header {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px;
+  height: 151px;
+  background-color: #263238;
+}
+
+.header-points {
+  top: 80px;
+  padding-left: 20px;
+  color: white;
+}
+
+
 

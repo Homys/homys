@@ -1,9 +1,16 @@
 <div class="mdl-layout__drawer navbar-container">
 
-  <%= image_tag current_user.avatar, id: 'avatar' %>
+	<header class="drawer-header">
+  	<%= image_tag current_user.avatar, id: 'avatar' %>
 
-	<span class="mdl-layout-title"><%= current_user.first_name if current_user %>
-  </span>
+		<span class="mdl-layout-title"><%= current_user.first_name if current_user %>
+  	</span>
+
+  	<span class = "header-points">Points: <%= current_user.points if current_user %>
+
+  	<i class="material-icons">arrow_drop_down</i>
+
+  </header>
 
 	<nav class="mdl-navigation">
 
