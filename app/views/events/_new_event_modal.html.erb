@@ -13,7 +13,7 @@
         <h1>Create a New Event</h1>
       <p class="modal-content">
         <div id="new-event">
-          <%= form_for([current_user.house, @event], remote:true) do |f| %>
+          <%= form_for([current_user.house, @event]) do |f| %>
 
             <div id="event-form-errors">
               <%= render "event_errors" %>

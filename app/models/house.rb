@@ -6,6 +6,7 @@ class House < ActiveRecord::Base
   has_many :chore_items
   has_many :announcements
   has_many :commandments
+  has_many :events
   validates :name, presence: true
 
   require 'twilio-ruby'
