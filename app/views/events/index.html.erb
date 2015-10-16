@@ -1,8 +1,5 @@
-<br>
+<%= button_to "Add Event", new_house_event_path, :id => "open-contacts-dialog-btn", :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent", method: :get %>
 
-<%= link_to "Add event", new_house_event_path %>
-<br>
-<br>
 <%= month_calendar(events: @events, attribute: 'date') do |date, events| %>
   <% if Date.today == date %>
     <span id="today_number"><%= date.day %></span>
