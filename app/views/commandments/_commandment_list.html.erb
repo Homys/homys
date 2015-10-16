@@ -11,7 +11,7 @@
  			Description: <%= commandment.description %> <br>
 
  		<div class="delete-button">
- 			<%= link_to('<i class="material-icons">remove_circle</i>'.html_safe, house_commandment_path(current_user.house_id, commandment), method: :delete) if commandment.owner_id == current_user.id %>
+ 			<%= link_to('<i class="material-icons">delete</i>'.html_safe, house_commandment_path(current_user.house_id, commandment), method: :delete) if commandment.owner_id == current_user.id %>
  		</div>
  	</div>
  </div>

@@ -31,7 +31,7 @@
     </div>
 
     <div class="delete-button">
-      <%= link_to('<i class="material-icons">remove_circle</i>'.html_safe, house_expense_path(current_user.house_id, expense), method: :delete) if expense.owner_id == current_user.id %>
+      <%= link_to('<i class="material-icons">delete</i>'.html_safe, house_expense_path(current_user.house_id, expense), method: :delete) if expense.owner_id == current_user.id %>
     </div>
 
 

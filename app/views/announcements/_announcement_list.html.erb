@@ -9,7 +9,7 @@
     			<%= announcement.importance %> <br>
             <div class="delete-button">
 
-            <%= link_to('<i class="material-icons">remove_circle</i>'.html_safe, house_announcement_path(current_user.house_id, announcement), method: :delete) if announcement.owner_id == current_user.id %>
+            <%= link_to('<i class="material-icons">delete</i>'.html_safe, house_announcement_path(current_user.house_id, announcement), method: :delete) if announcement.owner_id == current_user.id %>
             </div>
         </div>
     </div>
