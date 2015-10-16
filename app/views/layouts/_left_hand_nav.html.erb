@@ -5,7 +5,7 @@
 
 		<%= image_tag current_user.avatar, id: 'avatar' %>
 
-		<span class="mdl-layout-title"><%= current_user.first_name if current_user %>
+		<span class="mdl-layout-title"><%= current_user.first_name.capitalize if current_user %>
 		</span>
 
 		<div class = "header-points">
