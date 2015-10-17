@@ -45,14 +45,14 @@ class AnnouncementsController < ApplicationController
 		redirect_to house_announcements_path(current_user.house_id)
 	end
 
+	def text_sender(body)
+		current_user.house.send_to_all_users(body)
+	end
+
 private
 
 	def announcement_params
 		params.require(:announcement).permit(:title, :description, :importance)
-	end
-
-	def text_sender(body)
-		current_user.house.send_to_all_users(body)
 	end
 
 end
