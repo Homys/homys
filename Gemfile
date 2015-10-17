@@ -64,6 +64,8 @@ gem 'twilio-ruby'
 gem 'delayed_job_active_record'
 gem 'daemons'
 
+gem 'sendgrid-ruby'
+
 gem 'whenever', :require => false
 
 # Use ActiveModel has_secure_password

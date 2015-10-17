@@ -1,4 +1,5 @@
 class HomysMailer < ApplicationMailer
+	include SendGrid
 	default from: "homys.team@gmail.com"
 
 	def invite(email, user)
