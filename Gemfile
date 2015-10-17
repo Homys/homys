@@ -67,7 +67,7 @@ gem 'twilio-ruby'
 gem 'delayed_job_active_record'
 gem 'daemons'
 
-gem 'omniauth-venmo'
+gem 'sendgrid-ruby'
 
 gem 'whenever', :require => false
 
