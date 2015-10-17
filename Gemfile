@@ -36,9 +36,6 @@ gem 'figaro'
 #mailer
 gem 'letter_opener'
 
-#nested forms
-gem 'cocoon'
-
 gem 'better_errors'
 
 #pagination

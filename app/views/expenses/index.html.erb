@@ -1,12 +1,8 @@
 <h1>All About $$$</h1>
 
-<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-  My Dues
-</button>
+<p>Here you can let your housemates know what they owe you and see your IOUs</p>
 
-<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-  All Expenses
-</button>
+<%= link_to "My Dues", house_expense_path(@house, "ious"), :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"%>
 
 <span class="new-expense">
   <%= render "new_expense_modal" %>

@@ -45,6 +45,11 @@ class ExpensesController < ApplicationController
     redirect_to house_expense_path(current_user.house_id, @expense)
 
   end
+
+  def show
+    @user_payments = Payment.where(user_id: current_user.id)
+  end
+
   private
   def expense_params
     params.require(:expense).permit(:title, :amount, :date_due, :owner_id, :user_ids => [])

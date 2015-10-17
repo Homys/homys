@@ -10,11 +10,11 @@ Rails.application.routes.draw do
   post 'phone_numbers/verify' => "phone_numbers#verify"
 
   resources :houses, only: [:create, :new, :index, :show, :destroy] do
-    resources :expenses, only: [:index, :create, :destroy, :update] do
+    resources :expenses, only: [:index, :create, :destroy, :update, :show] do
       resources :payments, only: [] do
-        patch :paid 
-      end 
-    end 
+        patch :paid
+      end
+    end
     resources :chore_items, only: [:create, :index, :destroy, :update]
     resources :shopping_items, only: [:create, :index, :destroy, :update]
     resources :commandments, only: [:create, :index, :destroy]
