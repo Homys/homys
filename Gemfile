@@ -36,9 +36,6 @@ gem 'figaro'
 #mailer
 gem 'letter_opener'
 
-#nested forms
-gem 'cocoon'
-
 gem 'better_errors'
 
 #pagination
@@ -66,8 +63,6 @@ gem 'twilio-ruby'
 #schedulers & background workers
 gem 'delayed_job_active_record'
 gem 'daemons'
-
-gem 'omniauth-venmo'
 
 gem 'whenever', :require => false
 
