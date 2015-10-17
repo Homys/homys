@@ -1,20 +1,26 @@
-<!-- <h1> Your IOUs </h1>
+<h1> Your IOUs </h1>
 
-  <% @expenses.each do |expense| %>
-    <div class="expense-info">
-    <%= expense.title %><br>
-    Total Amount: <%= expense.amount %><br>
-    Pay By: <%= expense.date_due %><br>
-  </div>
+<%= link_to "All Expenses", house_expenses_path(@house), :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"%>
 
-  <div class="user-expenses">
-    <% expense.users.each do |user| %>
-          <div class="expense-info">
-    <%= expense.title %><br>
-    Total Amount: <%= expense.amount %><br>
-    Pay By: <%= expense.date_due %><br>
-  </div>
-    <% end %>
-  </div>
-    <%= link_to "Delete", house_expense_path(current_user.house, expense), method: :delete %><br><br>
-  <% end %> -->
+<% @user_payments.each do |user_payment| %>
+  <% if user_payment.paid != true %>
+    <% expense = current_user_expense(user_payment) %>
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp list-card">
+      <div class="mdl-card__supporting-text">
+        <div class="expense-info">
+          <div class="expense-title">
+            <%= expense.title.capitalize %><br><br>
+          </div>
+          Total Amount: $<%= expense.amount %><br><br>
+          Pay By: <%= expense.date_due.strftime("%B %d, %Y") %><br><br>
+        </div>
+        <div class="user-expenses">
+          <span class="who-paid">
+            You owe <br><br>
+          </span>
+          <%= expense.split_amount %>
+        </div>
+      </div>
+    </div>
+  <%end%>
+<% end %>
