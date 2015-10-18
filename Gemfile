@@ -59,11 +59,6 @@ gem "neat"
 #twilio API
 gem 'twilio-ruby'
 
-
-#schedulers & background workers
-gem 'delayed_job_active_record'
-gem 'daemons'
-
 gem 'sendgrid-ruby'
 
 gem 'whenever', :require => false
