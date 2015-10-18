@@ -13,9 +13,13 @@
 		</div>
 
 		<div class="drop-down-button">
-			<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+			<button id="optns" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
   			<i class="material-icons">arrow_drop_down</i>
 			</button>
+			<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="optns">
+              <li><%= link_to "Edit Profile", edit_user_registration_path, :class => "mdl-menu__item"%></li>
+              <li><%= link_to "Logout", destroy_user_session_path, :class => "mdl-menu__item"%></li>
+            </ul>
 		</div>
 
 
