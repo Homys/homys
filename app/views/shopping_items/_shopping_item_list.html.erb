@@ -1,30 +1,31 @@
 <% @shopping_items.each do |shopping_item| %>
 <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-
   <div class="mdl-card__supporting-text">
-    <div class="shopping-title">
+    <% if shopping_item.importance == "1" %> 
+      <i class="material-icons">error</i> <%= shopping_item.name.capitalize %><br><br>
+    <% else %>
       <%= shopping_item.name.capitalize %><br><br>
-    </div>
+    <% end %>
 
-      <%= shopping_item.importance %> <br><br>
+
 
     <% if shopping_item.user_id == nil %>
-
       <%= button_to "I've got it", house_shopping_item_path(@house, shopping_item), :id => "open-contacts-dialog-btn",
-      :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent", :method => :patch %>
-
+        :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent", :method => :patch %>
     <% else %>
-    Assigned to <%= shopping_item.user.full_name %> <br><br>
+      Assigned to <%= shopping_item.user.full_name %> <br><br>
+      
       <% if shopping_item.user_id == current_user.id %>
         <%= button_to "Bought it", house_shopping_item_path(current_user.house, shopping_item), :id => "open-contacts-dialog-btn",
         :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored", method: :delete %>
       <% end %>
-    <% end %> <br>
+    <% end %> 
+
+    <br>
 
     <div class="delete-button">
       <%= link_to('<i class="material-icons">delete</i>'.html_safe, house_shopping_item_path(current_user.house_id, shopping_item), method: :delete) if shopping_item.owner_id == current_user.id %>
     </div>
-
   </div>
 </div>
 <% end %>
