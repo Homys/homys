@@ -26,8 +26,15 @@
 
     <main class="mdl-layout__content mdl-color-text--black-600">
       <div class="page-content">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+        <% if flash[:notice] %>
+        <p class="flash-notice"><%= notice %></p>
+        <% end %>
+
+        <% if flash[:alert] %>
+        <p class="flash-alert"><%= alert %></p>
+        <% end %>
+
+
         <%= yield %>
       </div>
     </main>

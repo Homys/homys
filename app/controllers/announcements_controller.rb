@@ -7,9 +7,13 @@ class AnnouncementsController < ApplicationController
 		@announcement = Announcement.new
 
 		# if @announcements.count == 0
-  #     		flash[:alert] = "You have no announcements. Create one now to share with your housemates."
+  #     flash[:alert] = "You have no announcements. Create one now to share with your housemates."
 		# end
 
+    respond_to do |format|
+      format.html
+      format.js
+    end
 	end
 
 

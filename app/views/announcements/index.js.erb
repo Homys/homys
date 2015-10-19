@@ -1,0 +1,2 @@
+$('#announcement-list').append("<%= j render('announcement-list') %>");
+$('.pagination').replaceWith('<%= j paginate(@announcements) %>');

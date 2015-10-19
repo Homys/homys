@@ -8,9 +8,8 @@
   <%= render "new_announcement_modal" %>
 </span>
 
-<div id="announcement-list">
+<div id="announcements">
   <%= render "announcement_list" %>
-  <p> <%= link_to "Send text", house_text_sender_path(current_user.house_id), method: :patch %> </p>
 </div>
 
 
