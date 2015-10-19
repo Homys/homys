@@ -1,7 +1,0 @@
-<% if params[:search] && params[:page].nil? %>
-  $('#announcements').html("<%= j(render @announcements) %>");
-<% else %>
-  $('#announcements').append('<%= j render(@announcements) %>');
-<% end %>
-
-$('.pagination').replaceWith('<%= j paginate(@announcements) %>');

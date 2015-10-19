@@ -25,4 +25,8 @@ class House < ActiveRecord::Base
     end
   end
 
+  def self.point_updater 
+      1000
+  end 
+
 end
