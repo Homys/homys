@@ -21,12 +21,7 @@ class Expense < ActiveRecord::Base
     end
   end
 
-  def due_in_3days?
-    Time.now
-  end
-
-  def auto_text
-  end
+  
 
 end
 

@@ -44,6 +44,6 @@ class ShoppingItemsController < ApplicationController
 private
 
 	def shopping_item_params
-		params.require(:shopping_item).permit(:name, :importance, :points, :owner_id, :user_id)
+		params.require(:shopping_item).permit(:name, :importance, :points_rewarded, :owner_id, :user_id)
 	end
 end

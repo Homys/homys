@@ -31,7 +31,7 @@ end
 # 	end 
 # end 
 
-every 5.minutes do 
+every 10.seconds do 
 	ShoppingItem.all.each do |shopping_item|
 		runner "shopping_item.reduce_points"
 	end 
