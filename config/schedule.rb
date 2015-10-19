@@ -25,11 +25,15 @@ every :sunday, :at => '12am' do # Use any day of the week or :weekend, :weekday
   end 
 end
 
-every 1.day :at => '12am' do 
-	House.all.each do |house|
-		runner "house.auto_text"
+# every 1.day :at => '12am' do 
+# 	ShoppingItem.all.each do |shopping_item|
+# 		runner "shopping_item.reduce_points"
+# 	end 
+# end 
+
+every 5.minutes do 
+	ShoppingItem.all.each do |shopping_item|
+		runner "shopping_item.reduce_points"
 	end 
 end 
-
-
 

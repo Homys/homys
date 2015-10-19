@@ -15,6 +15,7 @@ class ExpensesController < ApplicationController
     @expense = Expense.new(expense_params)
     @expense.owner = current_user
     @expense.house = @house
+    @expense.points_rewarded = 1000
 
     respond_to do |format|
       if @expense.save
