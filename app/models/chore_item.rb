@@ -4,15 +4,19 @@ class ChoreItem < ActiveRecord::Base
   belongs_to :house
   validates_length_of :name, :maximum => 60, :allow_blank => false 
   validates_length_of :description, :maximum => 140, :allow_blank => true 
- # def self.point_updater
-    
- #    # users.each do |user|
- #      # user.total_points = 
- #      # 1000 
- #    # speed = Time.now - chore.updated_at
- #    # 100 - speed*(10**-3)
- #    # end 
- #  end 
+
+  def reduce_points
+  	if self.points_rewarded.nil?
+  		self.points_rewarded = 1000
+  	end  
+  	update_attribute(:points_rewarded, (self.points_rewarded - 100))
+  end 
+
+  def self.reduce_all_points
+  	self.all.each do |chore_item|
+  		chore_item.reduce_points
+  	end 
+  end 
 
 
 end

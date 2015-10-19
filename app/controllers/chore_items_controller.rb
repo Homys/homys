@@ -40,7 +40,7 @@ class ChoreItemsController < ApplicationController
 	def update
 		@chore_item = ChoreItem.find(params[:id])
 		@chore_item.done = 1
-		current_user.total_points += House.point_updater
+		current_user.total_points += @chore_item.points_rewarded
 		@chore_item.save
 		current_user.save
 

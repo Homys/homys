@@ -21,6 +21,19 @@ class Expense < ActiveRecord::Base
     end
   end
 
+  def reduce_points
+    if self.points_rewarded.nil?
+      self.points_rewarded = 1000
+    end  
+    update_attribute(:points_rewarded, (self.points_rewarded - 100))
+  end 
+
+  def self.reduce_all_points
+    self.all.each do |expense|
+      expense.reduce_points
+    end 
+  end 
+
   
 
 end

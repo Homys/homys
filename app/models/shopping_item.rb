@@ -5,7 +5,15 @@ class ShoppingItem < ActiveRecord::Base
   validates_length_of :name, :maximum => 60, :allow_blank => false
 
   def reduce_points
-  	new_points = points_rewarded - 100
-  	update_attribute(:points_rewarded, new_points)
+  	if self.points_rewarded.nil?
+  		self.points_rewarded = 1000
+  	end  
+  	update_attribute(:points_rewarded, (self.points_rewarded - 100))
+  end 
+
+  def self.reduce_all_points
+  	self.all.each do |shopping_item|
+  		shopping_item.reduce_points
+  	end 
   end 
 end

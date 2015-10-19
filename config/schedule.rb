@@ -20,20 +20,13 @@
 # Learn more: http://github.com/javan/whenever
 
 every :sunday, :at => '12am' do # Use any day of the week or :weekend, :weekday
-  House.all.each do |house|
-  	runner "house.assign_chores"
-  end 
+  # House.all.each do |house|
+  	runner "House.assign_all_chores"
 end
 
-# every 1.day :at => '12am' do 
-# 	ShoppingItem.all.each do |shopping_item|
-# 		runner "shopping_item.reduce_points"
-# 	end 
-# end 
-
-every 10.seconds do 
-	ShoppingItem.all.each do |shopping_item|
-		runner "shopping_item.reduce_points"
-	end 
+every 1.day, :at => '12am' do 
+	runner "ShoppingItem.reduce_all_points"
+	runner "ChoreItem.reduce_all_points"
+	runner "Expense.reduce_all_points"
 end 
 

@@ -11,13 +11,19 @@ class House < ActiveRecord::Base
 
   require 'twilio-ruby'
 
-	def assign_chores
+  def assign_chores
   	created_chores.each do |chore|
   		chore.user = users.sample
       chore.done = 0
   		chore.save
   	end
   end
+
+  def self.assign_all_chores  
+    self.all.each do |house|
+      house.assign_chores
+    end 
+  end 
 
   def send_to_all_users(body)
     users.each do |user|
@@ -28,5 +34,7 @@ class House < ActiveRecord::Base
   def self.point_updater 
       1000
   end 
+
+
 
 end
