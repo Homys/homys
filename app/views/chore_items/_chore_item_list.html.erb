@@ -1,7 +1,11 @@
 <% @chore_items.each do |chore| %>
 <div class="demo-card-wide mdl-card mdl-shadow--2dp list-card">
   <div class="mdl-card__supporting-text">
+
+  <% if chore.user %>
     <span class="avatar_chore_placement"><%= image_tag chore.user.avatar, id: 'avatar' %></span>
+  <% end %>
+
     <div class="chore-title">
      <%= chore.name.capitalize %> <br><br>
    </div>
