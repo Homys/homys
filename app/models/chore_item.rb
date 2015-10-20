@@ -9,11 +9,5 @@ class ChoreItem < ActiveRecord::Base
   	update_attribute(:points_rewarded, (self.points_rewarded - 100))
   end 
 
-  def self.reduce_all_points
-  	self.all.each do |chore_item|
-  		chore_item.reduce_points
-  	end 
-  end 
-
 
 end

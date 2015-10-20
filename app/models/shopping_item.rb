@@ -8,9 +8,4 @@ class ShoppingItem < ActiveRecord::Base
   	update_attribute(:points_rewarded, (self.points_rewarded - 100))
   end 
 
-  def self.reduce_all_points
-  	self.all.each do |shopping_item|
-  		shopping_item.reduce_points
-  	end 
-  end 
 end

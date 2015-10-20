@@ -25,8 +25,6 @@ every :sunday, :at => '12am' do # Use any day of the week or :weekend, :weekday
 end
 
 every 1.day, :at => '12am' do 
-	runner "ShoppingItem.reduce_all_points"
-	runner "ChoreItem.reduce_all_points"
-	runner "Expense.reduce_all_points"
+	runner "House.reduce_all_points"
 end 
 
