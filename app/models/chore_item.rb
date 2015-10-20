@@ -5,10 +5,7 @@ class ChoreItem < ActiveRecord::Base
   validates_length_of :name, :maximum => 60, :allow_blank => false 
   validates_length_of :description, :maximum => 140, :allow_blank => true 
 
-  def reduce_points
-  	if self.points_rewarded.nil?
-  		self.points_rewarded = 1000
-  	end  
+  def reduce_points 
   	update_attribute(:points_rewarded, (self.points_rewarded - 100))
   end 
 

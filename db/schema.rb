@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151019155844) do
+ActiveRecord::Schema.define(version: 20151020155848) do
 
   create_table "announcements", force: :cascade do |t|
     t.string   "title"
@@ -28,9 +28,9 @@ ActiveRecord::Schema.define(version: 20151019155844) do
     t.text     "description"
     t.integer  "user_id"
     t.integer  "owner_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.integer  "points_rewarded"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "points_rewarded", default: 1000
     t.integer  "house_id"
     t.boolean  "done"
   end
@@ -75,10 +75,10 @@ ActiveRecord::Schema.define(version: 20151019155844) do
     t.float    "amount"
     t.datetime "date_due"
     t.integer  "owner_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.integer  "house_id"
-    t.integer  "points_rewarded"
+    t.integer  "points_rewarded", default: 1000
   end
 
   create_table "houses", force: :cascade do |t|
@@ -106,9 +106,9 @@ ActiveRecord::Schema.define(version: 20151019155844) do
     t.string   "importance"
     t.integer  "user_id"
     t.integer  "owner_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.integer  "points_rewarded"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "points_rewarded", default: 1000
     t.integer  "house_id"
   end
 
