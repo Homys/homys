@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   root 'houses#index'
 
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
 
   resources :phone_numbers, only: [:new, :create]
   post 'phone_numbers/verify' => "phone_numbers#verify"
