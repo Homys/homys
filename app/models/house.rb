@@ -31,7 +31,15 @@ class House < ActiveRecord::Base
     end
   end
 
-  def self.point_updater
-      1000
-  end
+ 
+  def self.reduce_all_points
+    model_classes = [ChoreItem, ShoppingItem, Expense]
+    model_classes.each do |model_class| 
+      model_class.all.each do |item|
+        item.reduce_points
+      end 
+    end 
+  end 
+
+
 end
