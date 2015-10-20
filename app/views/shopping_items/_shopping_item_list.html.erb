@@ -1,10 +1,10 @@
 <% @shopping_items.each do |shopping_item| %>
 <div class="demo-card-wide mdl-card mdl-shadow--2dp">
   <div class="mdl-card__supporting-text">
-  <span class="avatar_shopping_items_placement"><%= image_tag shopping_item.user.avatar, id: 'avatar' %></span>
 
-  <% if shopping_item.user %>
-  <% end %>
+    <% if shopping_item.user %>
+      <span class="avatar_shopping_items_placement"><%= image_tag shopping_item.user.avatar, id: 'avatar' %></span>
+    <% end %>
 
     <% if shopping_item.importance == "1" %>
       <i class="material-icons">error</i> <%= shopping_item.name.capitalize %><br><br>
