@@ -14,6 +14,7 @@
         <div>
           <%= event.date.strftime("%l:%M %p ") %>
           <%= event.name %>
+          <%= link_to "Remove", house_event_path(@house, event), method: :delete %>
         </div>
       <% end %>
 

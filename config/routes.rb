@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     resources :shopping_items, only: [:create, :index, :destroy, :update]
     resources :commandments, only: [:create, :index, :destroy]
     resources :announcements, only: [:create, :index, :destroy]
-    resources :events, only: [:create, :index, :new]
+    resources :events, only: [:create, :destroy]
     resources :settings, only: [:index]
 
     patch 'chore_assigner' => 'chore_items#chore_assigner'
