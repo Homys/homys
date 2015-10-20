@@ -1,0 +1,24 @@
+<div class="calendar-container">
+  <div>
+    <div>
+
+
+      <%= month_calendar(events: @events, attribute: 'date') do |date, events| %>
+        <% if Date.today == date %>
+          <span id="today_number"><%= date.day %></span>
+        <% else %>
+          <%= date.day %>
+        <% end %>
+
+      <% events.each do |event| %>
+        <div>
+          <%= event.date.strftime("%l:%M %p ") %>
+          <%= event.name %>
+        </div>
+      <% end %>
+
+      <% end %>
+
+    </div>
+  </div>
+</div>

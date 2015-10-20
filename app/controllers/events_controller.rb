@@ -1,33 +1,28 @@
 class EventsController < ApplicationController
 
-	def new
-		@event = Event.new
-	end
+	before_action :authenticate_user!, :ensure_house_exists, :get_house
 
 	def create
 		@event = Event.new(event_params)
-		@event.house = @house 
+		@event.house = @house
 		@event.owner = current_user
 
-		if @event.save
-			redirect_to house_events_path(current_user.house)
-		else
-			render :new
+		respond_to do |format|
+			if @event.save
+				format.html { redirect_to house_events_path(current_user.house), notice: 'Event added.' }
+		    format.js {}
+
+			else
+				format.html { render :index, alert: 'There was an error.'  }
+		    format.js {render status: '422'}
+	  	end
 		end
 
-		# respond_to do |format|
-		# 	if @event.save
-		# 		format.html { redirect_to house_events_path(current_user.house), notice: 'Event created.' }
-	 #      format.js {}
-		# 	else
-		# 		format.html { render :index, alert: 'There was an error.'  }
-	 #      format.js {render status: '422'}
-		# 	end
-		# end
 	end
 
 	def index
-		@events = Event.all
+		@events = @house.events.all
+		@event = Event.new
 	end
 
 	private
