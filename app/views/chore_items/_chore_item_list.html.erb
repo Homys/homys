@@ -1,7 +1,7 @@
 <% @chore_items.each do |chore| %>
 <div class="demo-card-wide mdl-card mdl-shadow--2dp list-card">
   <div class="mdl-card__supporting-text">
-    <img src="http://www.panamericanworld.com/sites/default/files/jose-bautista-beard-4.jpg" class="image"/>
+    <span class="avatar_chore_placement"><%= image_tag current_user.avatar, id: 'avatar' %></span>
     <div class="chore-title">
      <%= chore.name.capitalize %> <br><br>
    </div>
@@ -16,7 +16,7 @@
    <%= link_to "Complete", house_chore_item_path(@house, chore), method: :patch, :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
 
    <% elsif chore.done == true %>
-   
+
    DONE
 
    <% end %>
