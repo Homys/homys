@@ -22,7 +22,9 @@ class Expense < ActiveRecord::Base
   end
 
   def reduce_points
-    update_attribute(:points_rewarded, (self.points_rewarded - 100))
+    if points_rewarded > 100
+      update_attribute(:points_rewarded, (self.points_rewarded - 100))
+    end 
   end 
 
   

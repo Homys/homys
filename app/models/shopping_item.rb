@@ -5,7 +5,9 @@ class ShoppingItem < ActiveRecord::Base
   validates_length_of :name, :maximum => 60, :allow_blank => false
 
   def reduce_points
+  	if points_rewarded > 100
   	update_attribute(:points_rewarded, (self.points_rewarded - 100))
+  end
   end 
 
 end
