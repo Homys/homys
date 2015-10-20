@@ -1,6 +1,6 @@
 @import 'bourbon';
 
-.label-switch {  
+.label-switch {
   $action-color: #477DCA !default;
   $base-background-color: white !default;
   $switch-width: 52px;
@@ -75,4 +75,10 @@
       }
     }
   }
+}
+
+.avatar_shopping_items_placement{
+  position: relative;
+  top: 20px;
+  left: 500px;
 }
