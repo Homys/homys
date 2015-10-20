@@ -33,6 +33,8 @@ class ExpensesController < ApplicationController
   def destroy
     expense = Expense.find(params[:id])
     expense.destroy
+    payments = Payment.where(expense_id: params[:id])
+    payments.destroy_all
     redirect_to house_expenses_path(current_user.house)
   end
 

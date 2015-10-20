@@ -61,7 +61,7 @@ gem 'twilio-ruby'
 
 gem 'sendgrid-ruby'
 
-gem 'whenever', :require => false
+gem 'whenever'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
