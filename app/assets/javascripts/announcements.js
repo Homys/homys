@@ -2,10 +2,12 @@
 // All this logic will automatically be available in application.js.
 
 $(document).on('ready page:load', function() {
+    console.log("test");
+   $(".mdl-layout__content").scroll(function() {
+    console.log("test");
 
-   $(window).scroll(function() {
       var url = $('.pagination span.next').children().attr('href');
-      if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 10) {
+      if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
         $('.pagination').text("Fetching more products...");
         return $.getScript(url);
       }

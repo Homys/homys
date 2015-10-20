@@ -20,10 +20,11 @@ class EventsController < ApplicationController
 
 	end
 
-	def index
-		@events = @house.events.all
-		@event = Event.new
-	end
+	def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to house_path(@house)
+  end
 
 	private
 
