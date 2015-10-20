@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   has_many :expenses, through: :payments
   has_many :created_expenses, class_name: "Expense", foreign_key: "owner_id"
   belongs_to :house
+  has_one :phone_number
 
   mount_uploader :avatar, AvatarUploader
 

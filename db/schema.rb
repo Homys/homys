@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151020155848) do
+ActiveRecord::Schema.define(version: 20151020223104) do
 
   create_table "announcements", force: :cascade do |t|
     t.string   "title"
@@ -130,7 +130,6 @@ ActiveRecord::Schema.define(version: 20151020155848) do
     t.string   "last_sign_in_ip"
     t.integer  "house_id"
     t.string   "avatar"
-    t.string   "verification_code"
     t.boolean  "is_verified"
     t.integer  "total_points",           default: 0
   end

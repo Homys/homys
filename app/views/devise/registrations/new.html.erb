@@ -10,8 +10,6 @@
   </div>
   </div>
 
-
-
   <div class="field">
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <%= f.label :last_name, :class => "mdl-textfield__label" %><br />
@@ -24,12 +22,11 @@
     <%= f.file_field :avatar %>
   </div>
 
-  <div class="field">
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <%= f.label :phone_num, :class => "mdl-textfield__label" %><br />
-    <%= f.text_field :phone_num, :placeholder => "e.g., +14161231234", :class => "mdl-textfield__input" %>
-  </div>
-  </div>
+<!-- 
+1. have a simple form that asks for name, email, password
+2. after user is created and logged in, redirect user to phone number verification page
+3. upon verification success, update the user's phone field to the phone number that is verified
+-->
 
   <div class="field">
    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
