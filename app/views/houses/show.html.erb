@@ -2,6 +2,17 @@
 
 <p>Add your Homys on the settings page</p>
 
+<h3> Events </h3>
+
+<div id="new-event">
+  <%= render "events/new_event_modal" %>
+</div>
+
+<div id="event-list">
+  <%= render "events/event_list" %>
+</div>
+
+
 <h3>Housemates</h3>
 
 <% @users.each do |user| %>
