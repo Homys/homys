@@ -10,7 +10,9 @@
             <%= housemate.full_name %><br><br>
             </div>
             <i class="material-icons">email</i><%= housemate.email %><br><br>
-            <i class="material-icons">smartphone</i><%= housemate.phone_num %><br><br>
+            <i class="material-icons">smartphone</i><%= housemate.phone_num %>
+              <span class="avatar_settings_placement"><%= image_tag housemate.avatar, id: 'avatar' %></span>
+            <br><br>
           <% end %>
         <% end %>
     <% end %>
