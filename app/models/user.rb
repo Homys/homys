@@ -42,6 +42,13 @@ class User < ActiveRecord::Base
     )
   end
 
+  def self.reset_points
+    self.all.each do |user|
+      user.total_points = 0
+      user.save
+    end
+  end
+
 
 
 

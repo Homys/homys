@@ -24,7 +24,11 @@ every :sunday, :at => '12am' do # Use any day of the week or :weekend, :weekday
   	runner "House.assign_all_chores"
 end
 
-every 1.day, :at => '12am' do 
+every 1.day, :at => '12am' do
 	runner "House.reduce_all_points"
-end 
+end
+
+every '0 0 1 * *' do
+  runner "User.reset_points"
+end
 
