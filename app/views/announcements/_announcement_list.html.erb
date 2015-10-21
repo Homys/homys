@@ -1,5 +1,7 @@
+
 <% @announcements.each do |announcement| %>
-	<div class="demo-card-wide mdl-card mdl-shadow--2dp list-card">
+	<div class=" mdl-cell mdl-cell--6-col">
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp list-card">
       	<div class="mdl-card__supporting-text">
     		<img src="http://www.panamericanworld.com/sites/default/files/jose-bautista-beard-4.jpg" class="image"/>
         	<% if announcement.importance == "1" %> <br>
@@ -13,6 +15,7 @@
             <%= link_to('<i class="material-icons">delete</i>'.html_safe, house_announcement_path(current_user.house_id, announcement), method: :delete) if announcement.owner_id == current_user.id %>
             </div>
         </div>
+    </div>
     </div>
 <% end %>
 
