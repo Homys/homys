@@ -4,7 +4,7 @@ class HomysMailer < ApplicationMailer
 
 	def invite(email, user)
 		@current_user = user
-    email = email
+    	email = email
 		mail(to: email, subject: "Come join your Homys")
 	end
 end

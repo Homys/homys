@@ -6,9 +6,9 @@ class AnnouncementsController < ApplicationController
 		@announcements = @house.announcements.order('importance DESC', 'created_at DESC').page(params[:page])
 		@announcement = Announcement.new
 
-		# if @announcements.count == 0
-  #     flash[:alert] = "You have no announcements. Create one now to share with your housemates."
-		# end
+		if @announcements.count == nil
+  	     flash[:alert] = "You have no announcements. Create one now to share with your housemates."
+		end
 
     respond_to do |format|
       format.html

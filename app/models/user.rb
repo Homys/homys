@@ -23,6 +23,10 @@ class User < ActiveRecord::Base
     "#{first_name.capitalize} #{last_name.capitalize}"
   end
 
+  def has_verified_phone?
+    phone_number && phone_number.verified
+  end
+
 
   def send_text_message(body)
     account_sid = ENV["twilio_account_sid"]

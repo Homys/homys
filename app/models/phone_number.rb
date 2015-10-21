@@ -1,6 +1,6 @@
 class PhoneNumber < ActiveRecord::Base
 
-belongs_to :user
+  belongs_to :user
 
 	def generate_pin
   	self.pin = rand(0000..9999).to_s.rjust(4, "0")
@@ -12,16 +12,16 @@ belongs_to :user
 	end
 
 
-def send_pin
-  twilio_client.messages.create(
-    to: phone_number,
-    from: ENV["our_twilio_num"],
-    body: "Your PIN is #{pin}"
-  )
-end
+  def send_pin
+    twilio_client.messages.create(
+      to: phone_number,
+      from: ENV["our_twilio_num"],
+      body: "Your PIN is #{pin}"
+    )
+  end
 
-def verify(entered_pin)
-  update(verified: true) if self.pin == entered_pin
-end
+  def verify(entered_pin)
+    update(verified: true) if self.pin == entered_pin
+  end
 
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151020223104) do
+ActiveRecord::Schema.define(version: 20151021180938) do
 
   create_table "announcements", force: :cascade do |t|
     t.string   "title"
@@ -99,6 +99,7 @@ ActiveRecord::Schema.define(version: 20151020223104) do
     t.boolean  "verified"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "user_id"
   end
 
   create_table "shopping_items", force: :cascade do |t|

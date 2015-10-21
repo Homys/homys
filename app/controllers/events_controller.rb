@@ -26,6 +26,7 @@ class EventsController < ApplicationController
     redirect_to house_path(@house)
   end
 
+
 	private
 
 	def event_params

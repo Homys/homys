@@ -36,10 +36,6 @@ class HousesController < ApplicationController
     @house = House.new
   end
 
-  def index
-
-  end
-
   def show
   	@house = House.find(params[:id])
     @users = @house.users
@@ -57,6 +53,13 @@ class HousesController < ApplicationController
       redirect_to houses_path
     end
   end
+
+  def index
+    if current_user.house_id != nil
+      redirect_to house_path(current_user.house)
+    end 
+
+  end 
 
 
   private

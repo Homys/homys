@@ -21,8 +21,11 @@
 
 <body>
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-    <%= render 'layouts/header' %>
-    <%= render 'layouts/left_hand_nav' %>
+
+    <% if user_verified_phone? %>
+      <%= render 'layouts/header' %>
+      <%= render 'layouts/left_hand_nav' %>
+    <% end %>
 
     <main class="mdl-layout__content mdl-color-text--black-600">
       <div class="page-content">

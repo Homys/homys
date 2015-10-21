@@ -3,7 +3,7 @@
   <%= form_for @phone_number, remote: true do |f| %>
     <div class="form-group">
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <%= f.text_field :phone_number, :class => "mdl-textfield__input" %>
+        <%= f.text_field :phone_number %>
       </div>
     </div>
     
@@ -13,10 +13,10 @@
 
 <div id="verify-pin">
   <h3>Enter your PIN</h3>
-    <%= form_tag phone_numbers_verify_path, remote: true do |f| %>
+    <%= form_tag phone_numbers_verify_path do |f| %>
     <%= hidden_field_tag 'hidden_phone_number', '' %>
   <div class="form-group">
-    <%= text_field_tag :pin, :class => "mdl-textfield__input" %>
+    <%= text_field_tag :pin %>
   </div>
   <%= submit_tag "Verify PIN", class: "btn btn-primary" %>
   <% end %>
