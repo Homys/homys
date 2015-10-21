@@ -20,7 +20,7 @@ class PhoneNumbersController < ApplicationController
     @phone_number = PhoneNumber.find_by(phone_number: params[:hidden_phone_number])
     @phone_number.verify(params[:pin])
 
-    redirect_to houses_path, notice: "Hey your phone has been verified"
+    redirect_to houses_path, notice: "Hey, your phone has been verified!"
 	end
 
 end 
