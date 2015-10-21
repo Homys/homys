@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   root 'houses#index'
 
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
 
   resources :phone_numbers, only: [:new, :create]
   post 'phone_numbers/verify' => "phone_numbers#verify"
@@ -19,13 +21,13 @@ Rails.application.routes.draw do
     resources :shopping_items, only: [:create, :index, :destroy, :update]
     resources :commandments, only: [:create, :index, :destroy]
     resources :announcements, only: [:create, :index, :destroy]
-    resources :events, only: [:create, :index, :new]
+    resources :events, only: [:create, :destroy]
     resources :settings, only: [:index]
 
     patch 'chore_assigner' => 'chore_items#chore_assigner'
     patch 'text_sender' => 'announcements#text_sender'
     patch 'add_housemate' => 'houses#add_housemate'
-    get 'invite_housemate' => 'houses#invite_housemate'
+    patch 'invite_housemate' => 'houses#invite_housemate'
 
   end
 

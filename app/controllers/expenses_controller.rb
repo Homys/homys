@@ -15,6 +15,7 @@ class ExpensesController < ApplicationController
     @expense = Expense.new(expense_params)
     @expense.owner = current_user
     @expense.house = @house
+    @expense.points_rewarded = 1000
 
     respond_to do |format|
       if @expense.save
@@ -32,6 +33,8 @@ class ExpensesController < ApplicationController
   def destroy
     expense = Expense.find(params[:id])
     expense.destroy
+    payments = Payment.where(expense_id: params[:id])
+    payments.destroy_all
     redirect_to house_expenses_path(current_user.house)
   end
 
@@ -52,7 +55,7 @@ class ExpensesController < ApplicationController
 
   private
   def expense_params
-    params.require(:expense).permit(:title, :amount, :date_due, :owner_id, :user_ids => [])
+    params.require(:expense).permit(:title, :amount, :points_rewarded, :date_due, :owner_id, :user_ids => [])
   end
 
 end

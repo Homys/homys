@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151016175804) do
+ActiveRecord::Schema.define(version: 20151020223104) do
 
   create_table "announcements", force: :cascade do |t|
     t.string   "title"
@@ -28,9 +28,9 @@ ActiveRecord::Schema.define(version: 20151016175804) do
     t.text     "description"
     t.integer  "user_id"
     t.integer  "owner_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "points"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "points_rewarded", default: 1000
     t.integer  "house_id"
     t.boolean  "done"
   end
@@ -75,9 +75,10 @@ ActiveRecord::Schema.define(version: 20151016175804) do
     t.float    "amount"
     t.datetime "date_due"
     t.integer  "owner_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.integer  "house_id"
+    t.integer  "points_rewarded", default: 1000
   end
 
   create_table "houses", force: :cascade do |t|
@@ -105,9 +106,9 @@ ActiveRecord::Schema.define(version: 20151016175804) do
     t.string   "importance"
     t.integer  "user_id"
     t.integer  "owner_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "points"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "points_rewarded", default: 1000
     t.integer  "house_id"
   end
 
@@ -129,9 +130,8 @@ ActiveRecord::Schema.define(version: 20151016175804) do
     t.string   "last_sign_in_ip"
     t.integer  "house_id"
     t.string   "avatar"
-    t.string   "verification_code"
     t.boolean  "is_verified"
-    t.integer  "points"
+    t.integer  "total_points",           default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

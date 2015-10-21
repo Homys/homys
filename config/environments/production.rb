@@ -13,6 +13,8 @@ ActionMailer::Base.smtp_settings = {
 
 
 
+config.action_mailer.default_url_options = { host: 'homys.herokuapp.com' }
+
 
 
 
@@ -26,7 +28,7 @@ ActionMailer::Base.smtp_settings = {
   config.eager_load = true
 
   # Full error reports are disabled and caching is turned on.
-  config.consider_all_requests_local       = false
+  config.consider_all_requests_local       = true
   config.action_controller.perform_caching = true
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application

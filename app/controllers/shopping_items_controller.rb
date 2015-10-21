@@ -7,6 +7,7 @@ class ShoppingItemsController < ApplicationController
 		@shopping_item = ShoppingItem.new(shopping_item_params)
 		@shopping_item.house = @house
 		@shopping_item.owner = current_user
+		@shopping_item.points_rewarded = 1000
 
 		respond_to do |format|
 			if @shopping_item.save
@@ -34,6 +35,8 @@ class ShoppingItemsController < ApplicationController
 
 	def destroy
 		@shopping_item = ShoppingItem.find(params[:id])
+		current_user.total_points += @shopping_item.points_rewarded
+		current_user.save
 		@shopping_item.destroy
 		redirect_to house_shopping_items_path(current_user.house)
 	end
@@ -41,6 +44,6 @@ class ShoppingItemsController < ApplicationController
 private
 
 	def shopping_item_params
-		params.require(:shopping_item).permit(:name, :importance, :points, :owner_id, :user_id)
+		params.require(:shopping_item).permit(:name, :importance, :points_rewarded, :owner_id, :user_id)
 	end
 end

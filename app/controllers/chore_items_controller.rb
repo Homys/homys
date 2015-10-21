@@ -7,6 +7,7 @@ class ChoreItemsController < ApplicationController
 		@chore_item = ChoreItem.new(chore_item_params)
 		@chore_item.owner = current_user
 		@chore_item.house = @house
+		@chore_item.user = @house.users.sample
 
 		respond_to do |format|
 			if @chore_item.save
@@ -40,7 +41,9 @@ class ChoreItemsController < ApplicationController
 	def update
 		@chore_item = ChoreItem.find(params[:id])
 		@chore_item.done = 1
+		current_user.total_points += @chore_item.points_rewarded
 		@chore_item.save
+		current_user.save
 
 		redirect_to house_chore_items_path(current_user.house)
 	end 

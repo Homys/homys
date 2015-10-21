@@ -6,14 +6,14 @@ class AnnouncementsController < ApplicationController
 		@announcements = @house.announcements.order('importance DESC', 'created_at DESC').page(params[:page])
 		@announcement = Announcement.new
 
-		if @announcements.length == 0
-      		flash[:alert] = "You have no announcements. Create one now to share with your housemates."
-		end
+		# if @announcements.count == 0
+  #     flash[:alert] = "You have no announcements. Create one now to share with your housemates."
+		# end
 
-		respond_to do |format|
-			format.html
-			format.js
-		end
+    respond_to do |format|
+      format.html
+      format.js
+    end
 	end
 
 
@@ -25,7 +25,7 @@ class AnnouncementsController < ApplicationController
 		respond_to do |format|
 			if @announcement.save
 				if @announcement.importance == "1"
-					text_sender(@announcement.title)
+					text_sender(@announcement.description)
 				end
 
 				format.html { redirect_to house_announcements_path(current_user.house), notice: 'Announcement added.' }

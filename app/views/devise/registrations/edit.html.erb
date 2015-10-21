@@ -3,19 +3,24 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-   <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
+  <div class="field">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <%= f.label :first_name, :class => "mdl-textfield__label" %><br />
+      <%= f.text_field :first_name, :class => "mdl-textfield__input"  %>
+    </div>
+  </div>
+
+
+  <div class="field">
+     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <%= f.label :last_name, :class => "mdl-textfield__label" %><br />
+    <%= f.text_field :last_name, :class => "mdl-textfield__input" %>
+    </div>
   </div>
 
   <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :avatar %>
-    <%= f.file_field :avatar %>
+    <%= f.label :avatar%>
+    <%= f.file_field :avatar  %>
   </div>
 
   <div class="field">
@@ -24,8 +29,10 @@
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email%>
+   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <%= f.label :email,  :class => "mdl-textfield__label"  %><br />
+    <%= f.email_field :email, :class => "mdl-textfield__input"%>
+    </div>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -33,18 +40,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <%= f.label :password, :class => "mdl-textfield__label" %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "off", :class => "mdl-textfield__input" %>
+  </div>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <%= f.label :password_confirmation, :class => "mdl-textfield__label" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off", :class => "mdl-textfield__input"  %>
+  </div>
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <%= f.label :current_password, :class => "mdl-textfield__label" %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "off", :class => "mdl-textfield__input" %>
+  </div>
   </div>
 
   <div class="actions">

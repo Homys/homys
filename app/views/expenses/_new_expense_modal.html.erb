@@ -10,38 +10,43 @@
   <div class="modal-fade-screen">
     <div class="modal-inner">
       <div class="modal-close" for="modal-1"></div>
-        <h1>Get Paid Back</h1>
+      <h1>Get Paid Back</h1>
       <p class="modal-content">
         <div id="new-expense">
           <%= form_for([current_user.house, @expense], remote: true) do |f| %>
 
-            <div id="expense-errors">
-              <%= render "expense_errors" %>
-            </div><br>
+          <div id="expense-errors">
+            <%= render "expense_errors" %>
+          </div><br>
 
-            <div class="field">
-              <%= f.label :title %><br />
-              <%= f.text_field :title %>
+          <div class="field">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <%= f.label :title, :class => "mdl-textfield__label" %><br />
+              <%= f.text_field :title, :class => "mdl-textfield__input" %>
             </div>
+          </div>
 
-            <div class="field">
-              <%= f.label :amount, "Total $$$" %><br />
-              <%= f.number_field :amount, :step => 0.01 %>
-            </div>
 
-            <div class="field">
-              <%= f.label :date_due, "When's that money due by?" %><br />
-              <%= f.date_field :date_due%>
+          <div class="field">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <%= f.label :amount, "Total $$$", :class => "mdl-textfield__label"  %><br />
+              <%= f.number_field :amount, :step => 0.01, :class => "mdl-textfield__input"  %>
             </div>
+          </div>
 
-            <div class="field">
-              <%= f.label :user_ids, "Who owes you" %><br />
-              <%= f.select :user_ids, @housemates.collect{ |u| [ u.full_name, u.id ] },{}, {:multiple => true, class: "housemates"} %>
-            </div>
+          <div class="field">
+            <%= f.label :date_due, "When's that money due by?" %><br />
+            <%= f.date_field :date_due%>
+          </div>
 
-            <div class="actions">
-              <%= f.submit %>
-            </div>
+          <div class="field">
+            <%= f.label :user_ids, "Who owes you" %><br />
+            <%= f.select :user_ids, @housemates.collect{ |u| [ u.full_name, u.id ] },{}, {:multiple => true, class: "housemates"} %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit %>
+          </div>
           <% end %>
         </div>
       </p>

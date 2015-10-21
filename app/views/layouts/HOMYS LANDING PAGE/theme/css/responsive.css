@@ -1,0 +1,562 @@
+/****************************************************************************************************
+TOC
+1. CSS RESET
+2. GLOBAL STYLES
+3. PAGE PRELOADER
+4. MAIN PAGE
+4.1. HEADER
+4.2. MAIN SLIDER
+4.3. ABOUT US
+4.4. OUR TEAM
+4.5. SERVICES
+4.6. FEATURED WORKS
+4.7. TESTIMONIALS
+4.8. BLOG
+4.9. PRICING TABLES
+4.10. BACKGROUND VIDEO
+4.11. CONTACT
+4.12. MAP
+4.13. FOOTER
+5. BLOG PAGE
+
+
+
+COLORS
+cyan    #449bb5
+blue    #043d5d
+red     #eb5055
+green   #68c39f
+light   #fffcf5
+****************************************************************************************************/
+
+
+
+/****************************************************************************************************
+< 1199px
+****************************************************************************************************/
+@media (max-width: 1199px) {
+
+h1 {font-size: 40px;line-height: 1.2em;}
+
+
+
+/************************ 4.2. MAIN SLIDER ************************/
+.slider_main__caption h3 {padding: 97px 0 0 0;font-size: 35px;}
+.slider_main__caption h4 {width: 70%;font-size: 75px;line-height: 1em;}
+.slider_main__caption .btn_wrapper {padding: 65px 0 0 0;}
+
+
+
+/************************ 4.4. OUR TEAM ************************/
+.our_team__item img {height: 220px;}
+
+.our_team__item:hover .our_team__info {
+-webkit-transform: translateY(-210px);
+        transform: translateY(-210px);
+}
+
+.our_team__item:hover ul {
+-webkit-transform: translateY(-57px);
+        transform: translateY(-57px);
+}
+
+
+
+/************************ SERVICES ************************/
+.services_item i {width: 50px;font-size: 50px;}
+.services_item h4 {margin: 0 0 0 83px;}
+.services_item p {margin: 0 0 0 83px;}
+
+
+
+/************************ FEATURED SLIDER #1 ************************/
+#slider_featured__1 {margin: 50px 80px 0 80px;}
+
+
+
+/************************ FEATURED SLIDER #2 ************************/
+#slider_featured__2 {}
+#slider_featured__2 .item_caption {padding: 60px 20px 0 20px;}
+
+
+
+/************************ PRICES ************************/
+.prices_item {}
+.prices_item .price span {font-size: 65px;}
+.prices_item .price span:before {top: 17px;}
+
+
+
+/************************ 5. BLOG PAGE ************************/
+.blog_post__header h1 {margin: -10px 0 0 100px;}
+
+.blog_tags a {padding: 7px 10px;font-size: 14px;}
+
+
+
+}
+
+
+
+/****************************************************************************************************
+< 991px
+****************************************************************************************************/
+@media (max-width: 991px) {
+
+h2 {font-size: 45px;}
+
+.container {padding: 0 15px;}
+
+#wrapper_scroll {padding: 50px 0;}
+
+.main_column,
+.sidebar {padding-top: 50px;}
+
+
+
+/************************ HEADER ************************/
+header {height: 50px !important;position: absolute !important;}
+
+header .container {position: relative;}
+
+.logo_main {padding: 2px 0 0 0;}
+
+
+
+header .icon_menu {width: 30px;height: 30px;display: block;background: rgba(0,0,0,.2);font-size: 30px;line-height: 30px;color: #fff;text-align: center;position: absolute;right: 15px;top: 10px;cursor: pointer;
+-webkit-transition: background .3s ease-in-out;
+        transition: background .3s ease-in-out;
+}
+header .icon_menu.active {background: #68c39f;}
+
+
+
+header .back_top_mobile {width: 30px;height: 30px;display: inline-block;background: rgba(0,0,0,.5);font-size: 21px;line-height: 30px;color: #fff;text-align: center;position: fixed;right: 15px;top: 10px;z-index: 1000;cursor: pointer;
+-webkit-transition: background .3s ease-in-out;
+        transition: background .3s ease-in-out;
+}
+
+
+
+#menu_main {width: 100%;float: none;padding: 8px 15px 20px 15px;background: #043d5d;position: absolute;right: 0;top: 50px;
+-webkit-box-shadow: inset 0 0 0 1px rgba(255,255,255,.2);
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,.2);
+}
+#menu_main li {height: auto !important;display: block;margin: 0 !important;padding: 7px 0 0 0 !important;}
+#menu_main li:before {display: none;}
+
+#menu_main li a {font-size: 13px;}
+
+#menu_main li a:before,
+#menu_main li a:after {display: none;}
+
+
+
+/************************ MAIN SLIDER ************************/
+.slider_main__wrapper {}
+
+#slider_main .slide {padding: 50px 0 0 0;}
+
+.slider_main__caption h3 {padding: 68px 0 0 0;font-size: 30px;}
+.slider_main__caption h4 {font-size: 55px;}
+.slider_main__caption h5 {padding: 25px 0 0 0;}
+.slider_main__caption h5:before {display: none;}
+
+.slider_main__caption .btn_wrapper {padding: 30px 0 0 0;}
+.slider_main__caption .btn {padding: 15px 20px;}
+
+
+
+/************************ ABOUT US ************************/
+.about_us__text h3 {font-size: 30px;line-height: 1.5em;}
+
+.about_us__item h4 {font-size: 14px;}
+
+
+
+/************************ OUR TEAM ************************/
+.our_team__item {margin: 50px 0 0 0;padding: 0;text-align: left;
+-webkit-transform: none !important;
+        transform: none !important;
+}
+.our_team__item:hover {
+-webkit-transform: none !important;
+        transform: none !important;
+}
+
+.our_team__item img {width: 260px;height: 260px;float: left;
+opacity: 1 !important;
+}
+
+.our_team__info {margin: 0 0 0 260px;padding: 20px 20px 0 20px;
+-webkit-transform: none !important;
+        transform: none !important;
+}
+.our_team__info h4 {padding: 0;}
+
+.our_team__desc {
+opacity: 1;
+}
+.our_team__desc p {margin: 10px 0 0 0;padding: 10px 0 0 0;position: relative;left: auto;top: auto;}
+.our_team__desc p:before {margin: 0;left: 0;}
+.our_team__desc p:after {display: none;}
+
+.our_team__item ul {margin: 0 0 0 260px;padding: 15px 20px 0 20px;
+-webkit-transform: none !important;
+        transform: none !important;
+}
+
+.our_team__address {margin: 0 0 0 260px;padding: 10px 20px 0 20px;
+opacity: 1;
+
+-webkit-transform: none !important;
+        transform: none !important;
+}
+.our_team__address address {position: relative;left: auto;top: auto;}
+
+
+
+/************************ SERVICES ************************/
+.services_item i {width: 33px;font-size: 31px;
+-webkit-transform: none !important;
+        transform: none !important;
+}
+.services_item h4 {margin: 0 0 0 51px;}
+.services_item p {margin: 0 0 0 51px;}
+
+
+
+/************************ FEATURED SLIDER #2 ************************/
+#slider_featured__2 {}
+#slider_featured__2 .item_caption {padding: 27px 20px 0 20px;}
+
+
+
+/************************ TESTIMONIALS ************************/
+.testimonials {}
+.testimonials h3 {margin: 0;padding: 20px 0 0 0;font-size: 90px;}
+.testimonials h4 {font-size: 28px;line-height: 1.5em;}
+
+
+
+/************************ BLOG ************************/
+.blog_article__title {padding: 20px 0 0 0;}
+.blog_article__title:before {display: none;}
+.blog_article__title a {font-size: 15px;}
+
+.blog_article__text {padding: 10px 0 0 0;}
+
+.blog_article__info {padding: 15px 0 0 0;text-align: center;}
+
+.blog_article__info .date {display: block;float: none;}
+
+.blog_article__info .comments {display: block;padding: 5px 0 0 0;float: none;margin: 0;}
+.blog_article__info .comments:before {display: none;}
+
+.blog_article__info .fav {display: block;padding: 5px 0 0 0;float: none;}
+
+
+
+/************************ PRICES ************************/
+.prices_item {
+-webkit-box-shadow: none !important;
+        box-shadow: none !important;
+
+-webkit-transform: none !important;
+        transform: none !important;
+}
+.prices_item:hover {
+-webkit-transform: none !important;
+        transform: none !important;
+}
+.prices_item .price {background: #043d5d !important;}
+.prices_item .price:before {display: none;}
+
+
+
+/************************ BACKGROUND VIDEO ************************/
+.background_video {height: auto;padding: 56.25% 0 0 0;position: relative;}
+
+#video_player {width: auto;height: 100%;position: absolute;left: 0;top: 0;}
+
+
+
+/************************ FOOTER ************************/
+footer {padding: 0;text-align: center;}
+
+.footer_left {float: none;padding: 15px 0;}
+.footer_left p {line-height: 1.5em;}
+
+.footer_right {float: none;padding: 0 0 15px 0;
+-webkit-box-shadow:inset 0 1px 0 0 rgba(255,255,255,.2);
+box-shadow:inset 0 1px 0 0 rgba(255,255,255,.2);
+}
+
+footer .social_links {padding: 0;}
+footer .social_links li {margin: 15px 10px 0 0 !important;}
+footer .social_links li a {padding: 0 10px;}
+
+footer .back_top {margin: 15px 0 0 0;}
+
+
+
+/************************ 5. BLOG PAGE ************************/
+.blog_post__date {width: auto;float: none;padding: 0 0 0 7px;border: none;border-left: 2px solid #68c39f;text-align: left;}
+.blog_post__date b {display: inline-block;vertical-align: baseline;margin: 0;padding: 0 4px 0 0;font-size: 15px;line-height: 1em;}
+.blog_post__date span {display: inline-block;vertical-align: baseline;margin: 0;padding: 0 4px 0 0;font-size: 15px;line-height: 1em;}
+
+.blog_post__header h1 {margin: 20px 0 0 0;font-size: 30px;}
+
+.blog_post__header p {margin: 20px 0 0 0;}
+
+
+
+}
+
+
+
+/****************************************************************************************************
+< 767px
+****************************************************************************************************/
+@media (max-width: 767px) {
+
+h2 {padding: 40px 0 0 0;font-size: 27px;}
+
+
+
+/************************ MAIN SLIDER ************************/
+.slider_main__caption {}
+
+.slider_main__caption h3 {padding: 33px 0 0 0;font-size: 25px;}
+.slider_main__caption h4 {display: none;}
+.slider_main__caption h5 {display: none;}
+.slider_main__caption .btn_wrapper {padding: 30px 0 0 0;}
+
+
+
+/************************ ABOUT US ************************/
+.about_us {padding: 0 0 30px 0;}
+
+.about_us__text .row {padding: 0;}
+.about_us__text h3 {margin: 15px 0 0 0;font-size: 20px;}
+.about_us__text p {margin: 15px 0 0 0;}
+
+
+.about_us__item {overflow: hidden;margin: 30px 0 0 0;padding: 30px 0 0 0;text-align: left;
+-webkit-box-shadow: inset 0 1px 0 0 rgba(0,0,0,.2);
+        box-shadow: inset 0 1px 0 0 rgba(0,0,0,.2);
+}
+
+.about_us__item i {width: 60px;float: left;
+-webkit-transform: none !important;
+        transform: none !important;
+}
+.about_us__item h4 {margin: 0 0 0 75px;padding: 0;color: #333 !important;}
+.about_us__item p {margin: 0 0 0 75px;padding: 10px 0 0 0;line-height: 1.5em;color: #333 !important;}
+.about_us__item div {margin: 17px 0 0 75px;}
+.about_us__item .btn {margin: 0;border-color: #043d5d;color: #043d5d;
+opacity: 1;
+
+-webkit-transform: none;
+        transform: none;
+
+-webkit-transition: border-color .4s ease-in-out, color .4s ease-in-out;
+        transition: border-color .4s ease-in-out, color .4s ease-in-out;
+}
+
+
+.about_us__item .btn:hover {border-color: #68c39f;color: #68c39f;}
+
+.about_us__item .item_hover {display: none;}
+
+
+
+/************************ OUR TEAM ************************/
+.our_team {padding: 0 0 30px 0;}
+
+.our_team__item {margin: 30px 0 0 0;padding: 0 0 15px 0;}
+
+.our_team__item img {width: 120px;height: 120px;}
+
+.our_team__info {margin: 0 0 0 120px;padding: 15px 15px 0 15px;}
+
+.our_team__desc {}
+
+.our_team__item ul {margin: 0 0 0 120px;padding: 15px 15px 0 15px;}
+
+.our_team__address {margin: 0 0 0 120px;padding: 10px 15px 0 15px;}
+
+
+
+/************************ SERVICES ************************/
+.services {padding: 0 0 30px 0;}
+
+.services_item {margin: 30px 0 0 0;padding: 0 0 30px 0;
+-webkit-box-shadow: inset 0 -1px 0 0 rgba(0,0,0,.2);
+        box-shadow: inset 0 -1px 0 0 rgba(0,0,0,.2);
+}
+.services_item i {width: 50px;font-size: 50px;}
+.services_item h4 {margin: 0 0 0 65px;}
+.services_item p {margin: 0 0 0 65px;padding: 5px 0 0 0;}
+
+.services_logo {margin: 30px 0 0 0;}
+
+
+
+/************************ FEATURED SLIDER #1 ************************/
+#slider_featured__1 {margin: 40px 0 0 0;
+-webkit-box-shadow: none;
+        box-shadow: none;
+}
+
+#slider_featured__1 .flex-direction-nav {padding: 30px 0 0 0;text-align: center;}
+
+#slider_featured__1 a.flex-prev {margin: 0;position: relative;left: auto;top: auto;right: auto;}
+#slider_featured__1 a.flex-next {margin: 0 0 0 30px;position: relative;left: auto;top: auto;right: auto;}
+
+
+
+/************************ FEATURED SLIDER #2 ************************/
+.featured {padding: 0 0 50px 0;}
+
+#slider_featured__2 {padding: 40px 0 0 0;}
+#slider_featured__2 .item_caption {padding: 0;}
+#slider_featured__2 .item_caption span {margin: -22px 0 0 -22px;position: absolute;left: 50%;top: 50%;}
+#slider_featured__2 .item_caption h4 {display: none;}
+#slider_featured__2 .item_caption p {display: none;}
+
+#slider_featured__2 .owl-controls {padding: 30px 0 0 0;}
+
+
+#slider_featured__2 .row {margin: 0 -5px;padding: 10px 0 0 0;}
+#slider_featured__2 .col-xs-4 {padding: 0 5px;}
+
+
+
+/************************ TESTIMONIALS ************************/
+.testimonials {padding: 0 0 40px 0;}
+.testimonials h3 {padding: 15px 0 0 0;font-size: 70px;}
+.testimonials h4 {font-size: 20px;}
+.testimonials .owl-buttons {padding: 30px 0 0 0;}
+
+
+
+/************************ BLOG ************************/
+.blog {padding: 0 0 40px 0;}
+.blog_article {margin: 40px 0 0 0;text-align: center;}
+.blog_article__title {}
+
+
+
+/************************ PRICES ************************/
+.prices {padding: 0 0 40px 0;}
+.prices_item {min-height: 1px;margin: 40px 0 0 0;}
+.prices_item .btn_wrapper {padding: 0 30px 30px 30px;}
+
+
+
+/************************ BG VIDEO ************************/
+.background_video #video_btn.pause {top: auto;bottom: 3%;}
+
+
+
+/************************ CONTACTS ************************/
+.contact {padding: 0 0 40px 0;}
+
+.contact .contact_content {padding: 20px 0 0 0;}
+
+.contact_info {padding: 40px 0 0 0;}
+.contact_address{padding: 40px 0 0 0;}
+
+
+
+/************************ MAP ************************/
+#google_map_toggle {padding: 15px 0;}
+#google_map_container {height: 300px;}
+#google_map {height: 300px;position: relative;z-index: 1;}
+
+
+
+/************************ 5. BLOG PAGE ************************/
+.blog_post__comments h3 {font-size: 22px;}
+
+.blog_post__content p {font-size: 14px;}
+
+.comment_info {margin: -5px 0 0 85px;}
+.comment_content {margin: 5px 0 0 85px;}
+
+#comment_form {padding: 0 15px 15px 15px;}
+#comment_form h4 {padding: 10px 0 0 0;font-size: 22px;}
+#comment_form input[type="text"] {margin: 15px 0 0 0;}
+#comment_form textarea {margin: 15px 0 0 0;}
+#comment_form .btn_comment {margin: 15px 0 0 0;}
+
+}
+
+
+
+/****************************************************************************************************
+< 480px
+****************************************************************************************************/
+@media (max-width: 480px) {
+
+/************************ MAIN SLIDER ************************/
+.slider_main__caption {display: none;}
+
+
+
+/************************ OUR TEAM ************************/
+.our_team {}
+
+.our_team__item {}
+
+.our_team__item img {width: 110px;height: 110px;}
+
+.our_team__info {margin: 0;padding: 0;}
+.our_team__info h4 {margin: 0 0 0 110px;padding: 15px 15px 0 15px;}
+
+.our_team__desc {clear: both;
+-webkit-box-shadow: inset 0 1px 0 0 rgba(0,0,0,.2);
+        box-shadow: inset 0 1px 0 0 rgba(0,0,0,.2);
+}
+.our_team__desc p {margin: 0;padding: 15px 15px 0 15px;}
+.our_team__desc p:before {display: none;}
+
+.our_team__item ul {margin: 20px 15px 0 15px;padding: 0;text-align: center;}
+
+.our_team__address {margin: 15px 15px 0 15px;padding: 0;text-align: center;}
+
+
+
+/************************ FEATURED SLIDER #2 ************************/
+#slider_featured__2 .item_caption {display: none;}
+
+
+
+/************************ TESTIMONIALS ************************/
+.testimonials h4 {font-size: 16px;}
+.testimonials p {font-weight: normal;}
+
+
+
+/************************ PRICES ************************/
+.prices .col-xs-6 {width: 100%;float: none;}
+
+
+
+/************************ BACKGROUND VIDEO ************************/
+.background_video #video_btn {width: 80px;height: 80px;margin: -40px 0 0 -40px;}
+
+.background_video #video_btn:after,
+.background_video #video_btn.play:after {font-size: 60px;line-height: 80px;}
+
+.background_video #video_btn.pause:after {font-size: 70px;line-height: 80px;}
+
+
+
+/************************ 5. BLOG PAGE ************************/
+.comment_date {display: block;margin: 0;padding: 5px 0 0 0;border: none;}
+
+
+
+}

@@ -14,8 +14,10 @@ class User < ActiveRecord::Base
   has_many :expenses, through: :payments
   has_many :created_expenses, class_name: "Expense", foreign_key: "owner_id"
   belongs_to :house
+  has_one :phone_number
 
   mount_uploader :avatar, AvatarUploader
+
 
   def full_name
     "#{first_name.capitalize} #{last_name.capitalize}"
@@ -35,6 +37,14 @@ class User < ActiveRecord::Base
       :body => body
     )
   end
+
+  def self.reset_points
+    self.all.each do |user|
+      user.total_points = 0
+      user.save
+    end
+  end
+
 
 
 

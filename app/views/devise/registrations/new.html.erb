@@ -4,13 +4,17 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <%= f.label :first_name, :class => "mdl-textfield__label" %><br />
+    <%= f.text_field :first_name, :class => "mdl-textfield__input" %>
+  </div>
   </div>
 
   <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <%= f.label :last_name, :class => "mdl-textfield__label" %><br />
+    <%= f.text_field :last_name, :class => "mdl-textfield__input" %>
+  </div>
   </div>
 
   <div class="field">
@@ -18,14 +22,17 @@
     <%= f.file_field :avatar %>
   </div>
 
-  <div class="field">
-    <%= f.label :phone_num %><br />
-    <%= f.text_field :phone_num, :placeholder => "e.g., +14161231234" %>
-  </div>
+<!-- 
+1. have a simple form that asks for name, email, password
+2. after user is created and logged in, redirect user to phone number verification page
+3. upon verification success, update the user's phone field to the phone number that is verified
+-->
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <%= f.label :email, :class => "mdl-textfield__label" %><br />
+    <%= f.email_field :email, autofocus: true, :class => "mdl-textfield__input" %>
+  </div>
   </div>
 
   <div class="field">

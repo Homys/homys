@@ -2,6 +2,17 @@
 
 <p>Add your Homys on the settings page</p>
 
+<h3> Events </h3>
+
+<div id="new-event">
+  <%= render "events/new_event_modal" %>
+</div>
+
+<div id="event-list">
+  <%= render "events/event_list" %>
+</div>
+
+
 <h3>Housemates</h3>
 
 <% @users.each do |user| %>
@@ -12,11 +23,9 @@
 
 		<div class="name-title">
 			<%= user.full_name %> <br><br>
+      <span class="avatar_home_placement"><%= image_tag user.avatar, id: 'avatar' %><span>
 		</div>
-		<i class="material-icons">smartphone</i> Phone Number: <%= user.phone_num %> <br><br>
-		<i class="material-icons">email</i> Email: <%= user.email %><br><br>
-		<i class="material-icons">local_activity</i> Points: <%= user.points %> <br><br>
-
+		<i class="material-icons">local_activity</i> Points: <%= user.total_points %> <br><br>
 	</div>
 </div>
 
