@@ -6,13 +6,6 @@
 <p> Add and view your house responsibilities. You will be randomly assigned to new Quests every Sunday </p>
 
 
-    <%= button_to "Randomize Chores", house_chore_assigner_path(current_user.house_id), :id => "open-contacts-dialog-btn",
-      :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent", :method => :patch %>
-
-<br>
-
-
-
 <div id="chore-list">
   <%= render "chore_item_list" %>
 </div>
