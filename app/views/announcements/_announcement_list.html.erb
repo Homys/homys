@@ -1,20 +1,28 @@
 
 <% @announcements.each do |announcement| %>
-    <div class="custom mdl-card mdl-shadow--2dp list-card">
-      	<div class="mdl-card__supporting-text">
-    		<img src="http://www.panamericanworld.com/sites/default/files/jose-bautista-beard-4.jpg" class="image"/>
-        	<% if announcement.importance == "1" %> <br>
-                <i class="material-icons">error</i> <%= announcement.description %> <br><br>
-            <% else %>
-                <%= announcement.description %> <br><br>
-            <% end %>
 
-            <div class="delete-button">
-
-            <%= link_to('<i class="material-icons">delete</i>'.html_safe, house_announcement_path(current_user.house_id, announcement), method: :delete) if announcement.owner_id == current_user.id %>
-            </div>
-        </div>
+<div class="custom mdl-card mdl-shadow--2dp list-card mdl-grid">
+    <!--         <div class="mdl-grid"> -->
+    <div class="mdl-card__supporting-text mdl-cell mdl-cell--8-col">
+        <!-- <div class="mdl-cell mdl-cell--8-col"> -->
+        <% if announcement.importance == "1" %>
+            <i class="material-icons">error</i> <%= announcement.description %>
+        <% else %>
+            <%= announcement.description %>
+        <% end %>
     </div>
 
+    <div class="mdl-cell mdl-cell--4-col">
+        <%= image_tag announcement.owner.avatar, id: 'avatar' %>
+
+        <div class="delete-button">
+            <%= link_to('<i class="material-icons">delete</i>'.html_safe, house_announcement_path(current_user.house_id, announcement), method: :delete) if announcement.owner_id == current_user.id %>
+        </div>
+    </div>
+    <!-- </div> -->
+    <!-- </div> -->
+</div>
+
 <% end %>
+
 
