@@ -1,7 +1,6 @@
 
 <% @announcements.each do |announcement| %>
-	<div class=" mdl-cell mdl-cell--6-col">
-    <div class="demo-card-wide mdl-card mdl-shadow--2dp list-card">
+    <div class="custom mdl-card mdl-shadow--2dp list-card">
       	<div class="mdl-card__supporting-text">
     		<img src="http://www.panamericanworld.com/sites/default/files/jose-bautista-beard-4.jpg" class="image"/>
         	<% if announcement.importance == "1" %> <br>
@@ -16,7 +15,6 @@
             </div>
         </div>
     </div>
-    </div>
-<% end %>
 
+<% end %>
 

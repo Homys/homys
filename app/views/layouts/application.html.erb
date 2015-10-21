@@ -26,16 +26,19 @@
 
     <main class="mdl-layout__content mdl-color-text--black-600">
       <div class="page-content mdl-grid">
-        <% if flash[:notice] %>
-        <p class="flash-notice"><%= notice %></p>
-        <% end %>
+        <div class="mdl-cell mdl-cell--3-col"></div>
+        <div class="mdl-cell mdl-cell--6-col">
+          <% if flash[:notice] %>
+          <p class="flash-notice"><%= notice %></p>
+          <% end %>
 
-        <% if flash[:alert] %>
-        <p class="flash-alert"><%= alert %></p>
-        <% end %>
+          <% if flash[:alert] %>
+          <p class="flash-alert"><%= alert %></p>
+          <% end %>
 
-
-        <%= yield %>
+          <%= yield %>
+        </div>
+        <div class="mdl-cell mdl-cell--3-col"></div>
       </div>
     </main>
   </div>
