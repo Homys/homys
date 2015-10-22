@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 
-	before_action :authenticate_user!, :ensure_house_exists, :get_house
+	before_action :authenticate_user!, :ensure_house_exists, :get_house, :verified_phone
 
 	def create
 		@event = Event.new(event_params)

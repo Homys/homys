@@ -1,5 +1,5 @@
 class HousesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :verified_phone
   def create
   	@house = House.new(house_params)
     @house.users << current_user

@@ -1,6 +1,6 @@
 class ShoppingItemsController < ApplicationController
 
-	before_action :authenticate_user!, :ensure_house_exists, :get_house
+	before_action :authenticate_user!, :ensure_house_exists, :get_house, :verified_phone
 
 	def create
 		@shopping_item = ShoppingItem.new(shopping_item_params)
