@@ -1,6 +1,13 @@
 <h1>All About $$$</h1>
 
-<p>Here you can let your housemates know what they owe you and see your IOUs</p>
+<div class="tooltip-item">
+  <i class="material-icons">help</i>
+  <div class="tooltip">
+    <p>Here you can let your housemates know what they owe you and see your IOUs.</p>
+  </div>
+</div>
+
+
 
 <%= link_to "My Dues", house_expense_path(@house, "ious"), :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"%>
 
