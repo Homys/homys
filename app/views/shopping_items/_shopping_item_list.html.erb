@@ -1,32 +1,33 @@
 <% @shopping_items.each do |shopping_item| %>
-<div class="custom mdl-card mdl-shadow--2dp">
-  <div class="mdl-card__supporting-text">
-
-    <% if shopping_item.user %>
-      <span class="avatar_shopping_items_placement"><%= image_tag shopping_item.user.avatar, id: 'avatar' %></span>
-    <% end %>
-
+<div class="custom mdl-card mdl-shadow--2dp mdl-grid">
+  <div class="mdl-card__supporting-text mdl-cell mdl-cell--8-col">
     <% if shopping_item.importance == "1" %>
-      <i class="material-icons">error</i> <%= shopping_item.name.capitalize %><br><br>
+      <i class="material-icons">error</i> <%= shopping_item.name.capitalize %>
     <% else %>
-      <%= shopping_item.name.capitalize %><br><br>
+      <%= shopping_item.name.capitalize %>
     <% end %>
 
+    <br> <br>
     <% if shopping_item.user_id == nil %>
       <%= button_to "I've got it", house_shopping_item_path(@house, shopping_item), :id => "open-contacts-dialog-btn",
-        :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent", :method => :patch %>
-
+    :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent", :method => :patch %>
     <% else %>
-
       <% if shopping_item.user_id == current_user.id %>
-        <%= button_to "Bought it", house_shopping_item_path(current_user.house, shopping_item), :id => "open-contacts-dialog-btn",
-          :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored", method: :delete %>
+       <%= button_to "Bought it", house_shopping_item_path(current_user.house, shopping_item), :id => "open-contacts-dialog-btn",
+      :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored", method: :delete %>
       <% end %>
     <% end %>
-    <br>
+  </div>
 
-    <div class="delete-button">
-      <%= link_to('<i class="material-icons">delete</i>'.html_safe, house_shopping_item_path(current_user.house_id, shopping_item), method: :delete) if shopping_item.owner_id == current_user.id %>
+  <div class="mdl-cell mdl-cell--4-col">
+    <div class="card">
+      <div class="delete-button">
+        <%= link_to('<i class="material-icons">delete</i>'.html_safe, house_shopping_item_path(current_user.house_id, shopping_item), method: :delete) if shopping_item.owner_id == current_user.id %>
+      </div>
+        <% if shopping_item.user %>
+          <%= image_tag shopping_item.user.avatar, :class => 'avatar' %>
+          <div class="clear center-horizontal"><%= shopping_item.user.first_name %></div>
+        <% end %>
     </div>
   </div>
 </div>
