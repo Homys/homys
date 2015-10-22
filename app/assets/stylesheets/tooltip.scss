@@ -25,6 +25,10 @@
     visibility: visible;
   }
 
+  .material-icons {
+    color: #7e7e7e
+  }
+
   .tooltip {
     @include position(absolute, null 0 $tooltip-distance-from-item 0);
     @include transition (all 0.2s ease-in-out);
