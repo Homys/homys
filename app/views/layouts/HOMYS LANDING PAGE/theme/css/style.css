@@ -219,7 +219,7 @@ header .back_top_mobile {display: none;}
 .logo_main a {display: inline-block;color: #fffcf5;}
 .logo_main a:hover {color: #68c39f;}
 .logo_main a span {vertical-align: middle;margin: 0 0 0 10px;font: 700 30px "Noto Sans";}
-.logo_main a img {vertical-align: middle;}
+.logo_main a img {vertical-align: middle; padding-bottom: 5px;}
 
 
 
