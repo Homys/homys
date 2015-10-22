@@ -1,15 +1,20 @@
 <h1> What's Happenin'? </h1>
 
-    <p> Let your housemates know about house related announcements</p>
-
-
-<span class="new-announcement">
-  <%= render "new_announcement_modal" %>
-</span>
-
-<div id="announcements-list">
-  <%= render "announcement_list" %>
+<div class="description">
+ <p> Let your housemates know about house related announcements</p>
 </div>
 
 
-<%= paginate @announcements %>
+<span class="new-announcement">
+ <%= render "new_announcement_modal" %>
+</span>
+
+
+<div id="announcements-list">
+ <%= render "announcement_list" %>
+</div>
+
+<div class="center-horizontal">
+  <%= paginate @announcements %>
+</div>
+

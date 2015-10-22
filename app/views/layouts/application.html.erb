@@ -21,16 +21,19 @@
 
 <body>
 
+
  <% if current_user && current_user.house_id != nil && current_user.has_verified_phone? %>
 
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
 
-     
+
         <%= render 'layouts/header' %>
         <%= render 'layouts/left_hand_nav' %>
-   
-      <main class="mdl-layout__content mdl-color-text--black-600">
-        <div class="page-content">
+
+    <main class="mdl-layout__content mdl-color-text--black-600">
+      <div class="page-content mdl-grid">
+        <div class="mdl-cell mdl-cell--3-col"></div>
+        <div class="mdl-cell mdl-cell--6-col">
           <% if flash[:notice] %>
           <p class="flash-notice"><%= notice %></p>
           <% end %>
@@ -38,16 +41,14 @@
           <% if flash[:alert] %>
           <p class="flash-alert"><%= alert %></p>
           <% end %>
-
-
           <%= yield %>
         </div>
+        <div class="mdl-cell mdl-cell--3-col"></div>
       </main>
     </div>
   <% else %>
     <%= yield %>
   <% end %>
-
 
 </body>
 </html>
