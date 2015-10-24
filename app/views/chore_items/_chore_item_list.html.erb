@@ -28,11 +28,8 @@
     <i class="material-icons nav">timer</i> <em>Pending</em>
     <% end %>
 
-   <br><br>
-   <div class="delete-button">
-    <%= link_to('<i class="material-icons">close</i>'.html_safe, house_chore_item_path(current_user.house_id, chore), method: :delete) if chore.owner_id == current_user.id %> <br><br>
-    </div>
+
+  </div>
 
 </div>
 <% end %>
-
