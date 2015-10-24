@@ -18,8 +18,7 @@
             <div id="event-form-errors">
               <%= render "events/event_errors" %>
             </div>
-            <br>
-
+            
             <div class="field">
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <%= f.label :name, :class => "mdl-textfield__label" %>
@@ -28,10 +27,8 @@
             </div>
 
             <div class="field">
-              <div class="mdl-textfield mdl-js-textfield">
-                <%= f.label :date, :class => "mdl-textfield__label" %>
-                <%= f.datetime_select :date, :minute_step => 30, :class => "mdl-textfield__input" %>
-              </div>
+                <%= f.label :date %>
+                <%= f.datetime_select :date, :minute_step => 30 %> <br><br>
             </div>
 
             <div class="actions">
