@@ -1,12 +1,15 @@
 <h1> Loot List </h1>
 
-    <p>Here you can add and view the loot that your house is missing.
-  When viewing the list, you can be hero the house needs by picking up the item.</p>
-
-
 <span class="new-shopping-item">
   <%= render "new_shopping_item_modal" %>
 </span>
+
+<div class="custom mdl-card mdl-shadow--2dp description">
+  <div class="mdl-card__supporting-text">
+   <span class="descrition-text"> Here you can add and view the loot that your house is missing. When viewing the list, you can be hero the house needs by picking up the item. </span>
+  </div>
+</div>
+
 
 <div id="shopping-list">
   <%= render "shopping_item_list" %>

@@ -24,7 +24,7 @@
   <div class="mdl-cell mdl-cell--4-col">
     <div class="card">
       <div class="delete-button">
-        <%= link_to('<i class="material-icons">delete</i>'.html_safe, house_shopping_item_path(current_user.house_id, shopping_item), method: :delete) if shopping_item.owner_id == current_user.id %>
+        <%= link_to('<i class="material-icons">close</i>'.html_safe, house_shopping_item_path(current_user.house_id, shopping_item), method: :delete) if shopping_item.owner_id == current_user.id %>
       </div>
         <% if shopping_item.user %>
           <%= image_tag shopping_item.user.avatar, :class => 'avatar' %>
