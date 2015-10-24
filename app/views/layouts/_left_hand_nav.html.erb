@@ -3,7 +3,7 @@
 	<% if user_verified_phone? %>
 	<header class="drawer-header">
 
-		<%= image_tag current_user.avatar, :class => 'avatar' %>
+		<%= image_tag current_user.avatar, id: 'navavatar' %>
 
 		<span id="name" class="mdl-layout-title"><%= current_user.first_name.capitalize if current_user %>
 		</span>
