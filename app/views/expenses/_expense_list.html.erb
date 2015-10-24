@@ -1,41 +1,36 @@
+
+
+
 <% @expenses.each do |expense| %>
+<div class="custom mdl-card mdl-shadow--2dp mdl-grid">
+  <div class="mdl-cell mdl-cell--8-col">
 
-<div class="custom mdl-card mdl-shadow--2dp list-card">
-
-  <div class="mdl-card__supporting-text">
-
-    <div class="expense-info">
+    <div class="mdl-card__supporting-text">
       <div class="expense-title">
         <%= expense.title.capitalize %><br><br>
       </div>
       Total Amount: $<%= expense.amount %><br><br>
       Pay By: <%= expense.date_due.strftime("%B %d, %Y") %><br><br>
     </div>
+  </div>
+  <div class="mdl-cell mdl-cell--4-col">
+    <div class="card">
+      <div class="delete-button">
+        <%= link_to('<i class="material-icons">close</i>'.html_safe, house_expense_path(current_user.house_id, expense), method: :delete) if expense.owner_id == current_user.id %>
+      </div>
+    </div>
+  </div>
 
-    <div class="user-expenses">
-      <span class="who-paid">
-        Who Paid? <br><br>
-      </span>
-
-      <% expense.users.each do |user| %>
-      <%= user.full_name %> owes: <%= expense.split_amount %> ,
+  <div class="mdl-card__actions mdl-card--border">
+    <% expense.users.each do |user| %>
       <% if user_payment_status(expense, user).paid != true %>
-      <%= link_to("Paid?", payment_paid_link(current_user.house, expense, user), method: :patch) if expense.owner_id == current_user.id %>
-
+        <%= user.full_name %> owes: <%= expense.split_amount %>
+        <%= link_to("Paid?", payment_paid_link(current_user.house, expense, user), method: :patch, :class => "mdl-button mdl-js-button mdl-button--accent") if expense.owner_id == current_user.id %>
       <% else %>
-
-      PAID
-
-      <% end %> <br><br>
+        <strike><%= user.full_name %> owes: <%= expense.split_amount %></strike>
       <% end %>
-    </div>
-
-    <div class="delete-button">
-      <%= link_to('<i class="material-icons">close</i>'.html_safe, house_expense_path(current_user.house_id, expense), method: :delete) if expense.owner_id == current_user.id %>
-    </div>
-
-
+      <br>
+    <% end %>
   </div>
 </div>
-
 <% end %>
