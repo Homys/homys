@@ -1,6 +1,6 @@
 <% @expenses.each do |expense| %>
 
-<div class="demo-card-wide mdl-card mdl-shadow--2dp list-card">
+<div class="custom mdl-card mdl-shadow--2dp list-card">
 
   <div class="mdl-card__supporting-text">
 
@@ -20,7 +20,7 @@
       <% expense.users.each do |user| %>
       <%= user.full_name %> owes: <%= expense.split_amount %> ,
       <% if user_payment_status(expense, user).paid != true %>
-      <%= link_to("Paid?", payment_paid_link(current_user.house, expense, user), method: :patch) if expense.owner_id == current_user.id %> 
+      <%= link_to("Paid?", payment_paid_link(current_user.house, expense, user), method: :patch) if expense.owner_id == current_user.id %>
 
       <% else %>
 

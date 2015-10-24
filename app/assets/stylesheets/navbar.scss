@@ -1,6 +1,6 @@
 main.mdl-layout__content {
-	padding-left: 50px;
-  padding-right: 50px;
+/*	padding-left: 50px;
+  padding-right: 50px;*/
   background-color: #FAFAFA;
 }
 
@@ -8,10 +8,7 @@ div.mdl-layout__drawer.navbar-container {
   background-color: #37474F;
 }
 
-#avatar {
-  position: absolute;
-  left: 10px;
-  top: 10px;
+.avatar {
   height: 85px;
   width: 85px;
   border-radius: 50%;
@@ -81,7 +78,14 @@ i {
   display: none;
 }
 
+.center-horizontal{
+  margin: auto;
+  width: 40%;
+}
 
+.clear{
+  clear: both;
+}
 
 
 
