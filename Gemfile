@@ -33,8 +33,6 @@ gem 'devise'
 
 gem 'figaro'
 
-#mailer
-gem 'letter_opener'
 
 gem 'better_errors'
 
@@ -46,9 +44,6 @@ gem 'fog', require: 'fog/aws'
 
 #jQuery based replacement for select boxes
 gem "select2-rails"
-
-#provide fake information
-gem "faker"
 
 
 #Bourbon.io
@@ -63,8 +58,7 @@ gem 'sendgrid-ruby'
 
 gem 'whenever'
 
-gem 'ri_cal'
-gem 'icalendar'
+gem 'chart-js-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -85,6 +79,7 @@ group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
   gem 'sqlite3'
+  gem "faker"
 end
 
 group :development do

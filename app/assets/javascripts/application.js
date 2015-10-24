@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require select2
+//= require Chart
 //= require jquery.migrate.1.2.1
 //= require device.min
 //= require jquery.scrollto.min

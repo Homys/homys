@@ -264,7 +264,9 @@ header.stuck #menu_main li {height: 50px;padding: 16px 0 0 0;}
 
 
 /* 4.2. MAIN SLIDER ********************************************************************************/
-.slider_main__wrapper {overflow: hidden;}
+.slider_main__wrapper {
+        @include clearfix();
+}
 
 #slider_main {overflow: visible;}
 #slider_main .container {position: relative;}
