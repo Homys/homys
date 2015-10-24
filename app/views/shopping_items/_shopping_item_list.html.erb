@@ -11,11 +11,13 @@
     <% if shopping_item.user_id == nil %>
       <%= button_to "I've got it", house_shopping_item_path(@house, shopping_item), :id => "open-contacts-dialog-btn",
     :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent", :method => :patch %>
-    <% else %>
-      <% if shopping_item.user_id == current_user.id %>
+    <% elsif shopping_item.user_id == current_user.id %>
        <%= button_to "Bought it", house_shopping_item_path(current_user.house, shopping_item), :id => "open-contacts-dialog-btn",
       :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored", method: :delete %>
-      <% end %>
+    <% else %>
+      <div class="mdl-button mdl-js-button">
+        Pending
+      </div>
     <% end %>
   </div>
 

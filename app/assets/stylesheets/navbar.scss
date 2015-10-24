@@ -1,6 +1,4 @@
 main.mdl-layout__content {
-/*	padding-left: 50px;
-  padding-right: 50px;*/
   background-color: #FAFAFA;
 }
 
@@ -61,7 +59,7 @@ div.mdl-layout__drawer.navbar-container {
   left: 150px;
 }
 
-i {
+i.nav {
   position: relative;
   top: 5px;
   right: 5px;
@@ -87,5 +85,7 @@ i {
   clear: both;
 }
 
-
+.progress{
+  font-size: 14px;
+}
 

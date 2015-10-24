@@ -1,30 +1,36 @@
 <% @chore_items.each do |chore| %>
-<div class="custom mdl-card mdl-shadow--2dp list-card">
-  <div class="mdl-card__supporting-text">
+<div class="custom mdl-card mdl-shadow--2dp mdl-grid">
+  <div class="mdl-cell mdl-cell--8-col">
+    <div class="mdl-card__supporting-text">
 
-    <% if chore.user %>
-      <span class="avatar_chore_placement"><%= image_tag chore.user.avatar, id: 'avatar' %></span>
-    <% end %>
+      <strong><%= chore.description %></strong>
 
-    <div class="chore-title">
-      <%= chore.name.capitalize %> <br><br>
     </div>
+  </div>
+  <div class="mdl-cell mdl-cell--4-col">
+    <div class="card">
+      <div class="delete-button">
+        <%= link_to('<i class="material-icons">close</i>'.html_safe, house_chore_item_path(current_user.house_id, chore), method: :delete) if chore.owner_id == current_user.id %>
+      </div>
+      <% if chore.user %>
+      <span class="avatar_chore_placement"><%= image_tag chore.user.avatar, class: 'avatar' %></span>
+      <% end %>
+      <div class="clear center-horizontal"><%= chore.user.first_name %></div>
+    </div>
+  </div>
 
-    <%= chore.description %> <br><br>
-
+  <div class="mdl-card__actions mdl-card--border">
     <% if chore.done != true && chore.user == current_user%>
-      <%= link_to "Complete", house_chore_item_path(@house, chore), method: :patch, :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
+    <%= link_to "Complete", house_chore_item_path(@house, chore), method: :patch, :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
     <% elsif chore.done == true %>
-
-      DONE
-
+      <i class="material-icons nav">check_circle</i> <span>Done</span>
+    <% elsif chore.user != current_user %>
+    <i class="material-icons nav">timer</i> <em>Pending</em>
     <% end %>
 
-   <br><br>
-   <div class="delete-button">
-    <%= link_to('<i class="material-icons">delete</i>'.html_safe, house_chore_item_path(current_user.house_id, chore), method: :delete) if chore.owner_id == current_user.id %> <br><br>
+
   </div>
-</div>
+
 </div>
 <% end %>
 
