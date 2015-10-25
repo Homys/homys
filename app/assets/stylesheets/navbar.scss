@@ -37,6 +37,11 @@ div.mdl-layout__drawer.navbar-container {
   font-size: 25px;
 }
 
+.mdl-layout__header-row.login {
+  background-color: #37474F;
+  color: white;
+  }
+
 .drawer-header {
   box-sizing: border-box;
   display: flex;
@@ -109,3 +114,4 @@ i.nav {
 .mdl-card__supporting-text {
   overflow-wrap: break-word;
 }
+
