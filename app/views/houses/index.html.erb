@@ -9,21 +9,31 @@
       <% end %>
 
 
-<h1>Welcome to Homys</h1>
+<h3>Create Your House</h3>
+
+<%= form_for @house do |f| %>
 
 
-<% if current_user.house_id == nil %>
-  Add a House
-  <div class = "add_button">
-  	<%= link_to new_house_path do %>
-  		<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
-  		  <i class="material-icons">add</i>
-  		</button>
-  	<% end %>
+ <div class="form-group">
+      <div class="mdl-textfield mdl-js-textfield">
+    <%= f.label :name, :class => "mdl-textfield__label" %><br />
+    <%= f.text_field :name, :class => "mdl-textfield__input" %>
   </div>
+
+  <div class="actions">
+     <%= f.submit "Create", :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
+  </div>
+
+  <div class="actions">
+
+  </div>
+
 <% end %>
 
-<p>To join an existing house ask one of the members to invite you to it.</p>
+  </div>
+<div class="mdl-cell mdl-cell--3-col"></div>
+
+<p>To join an existing house, ask one of the members to add you to it.</p>
 
   </div>
 <div class="mdl-cell mdl-cell--3-col"></div>
