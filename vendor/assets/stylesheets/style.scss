@@ -156,7 +156,8 @@ header .back_top_mobile {display: none;}
 #menu_main {float: right;}
 #menu_main ul {font-size: 0;}
 #menu_main li {height: 100px;display: inline-block;padding: 42px 0 0 0;position: relative;
-
+-webkit-transition: all .25s ease-in-out;
+        transition: all .25s ease-in-out;
 }
 #menu_main li a {position: relative;}
 #menu_main li ~ li {margin: 0 0 0 40px;}
@@ -165,8 +166,19 @@ opacity: .1;
 }
 
 #menu_main a {font: 700 12px "Noto Sans";color: #fffcf5;text-transform: uppercase;}
-#menu_main a:hover {color: #68c39f;}
 
+
+/* ACTIVE ITEM */
+#menu_main li:after {content: '';width: 16px;height: 16px;display: block;margin: 0 0 0 -8px;border: 8px solid transparent;position: absolute;left: 50%;bottom: 0;
+opacity: 0;
+-webkit-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+}
+
+#menu_main li.active a {color: #68c39f;}
+#menu_main li.active:after {border-top-color: #043d5d;bottom: -16px;z-index: 1;
+opacity: 1;
+}
 
 
 
@@ -179,12 +191,14 @@ header.stuck #menu_main li {height: 50px;padding: 16px 0 0 0;}
 
 
 
+
+
 /* 4.5. SERVICES ***********************************************************************************/
 .services {padding: 0 0 52px 0;}
 .services h2 {}
 
 .services_item {margin: 50px 0 0 0;}
-.services_item i {width: 70px;display: inline-block;float: left;font-size: 60px;color: #68c39f;text-align: center;cursor: default;
+.services_item i {width: 70px;display: inline-block;float: left;font-size: 60px;color: #7e7e7e;text-align: center;cursor: default;
 -webkit-transform: rotate3d(0,100,0,0deg);
         transform: rotate3d(0,100,0,0deg);
 
@@ -194,7 +208,7 @@ header.stuck #menu_main li {height: 50px;padding: 16px 0 0 0;}
 
 .services_item h4 {margin: 0 0 0 100px;}
 .services_item h4 a {font-weight: bold;font-size: 20px;color: #333;text-transform: uppercase;}
-.services_item h4 a:hover {color: #68c39f;}
+.services_item h4 a:hover {color: #7e7e7e;}
 
 .services_item p {margin: 0 0 0 100px;padding: 14px 0 0 0;line-height: 22px;}
 
@@ -228,7 +242,7 @@ opacity: .25;
 
 .footer_right {float: right;}
 
-footer .back_top {width: 50px;height: 50px;display: inline-block;border: 2px solid #68c39f;color: #68c39f;text-align: center;cursor: pointer;}
+footer .back_top {width: 50px;height: 50px;display: inline-block;border: 2px solid #2196F3;color: #2196F3;text-align: center;cursor: pointer;}
 footer .back_top i {font-weight: bold;font-size: 30px;line-height: 45px;}
 footer .back_top:hover {border-color: #fff;color: #fff;}
 

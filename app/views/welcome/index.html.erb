@@ -1,23 +1,25 @@
 <div id="wrapper_main">
 <!-- HEADER -->
 	<header id="header">
-		<div class="container">
+		<div class="wrapper">		
+			<div class="container">
 <!-- LOGO -->
-			<div class="logo_main">
-				<a href="/">
-					<%= image_tag("homy-sml")%><span>Homys</span>
-				</a>
-			</div>
+				<div class="logo_main">
+					<a href="/">
+						<%= image_tag("homy-sml")%><span>Homys</span>
+					</a>
+				</div>
 
 <!-- MAIN MENU -->
-			<i class="icon_menu visible-sm visible-xs"></i>
-			<i class="back_top_mobile arrow_carrot-up"></i>
-			<nav id="menu_main">
-				<ul>
-					<li><a href="#home">Home</a></li>
-					<li><a href="#services">Features</a></li>
-				</ul>
-			</nav>
+				<i class="icon_menu visible-sm visible-xs"></i>
+				<i class="back_top_mobile arrow_carrot-up"></i>
+				<nav id="menu_main">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#services">Features</a></li>
+					</ul>
+				</nav>
+			</div>
 		</div>
 	</header>
 
@@ -27,19 +29,16 @@
 	<section class="top-header-bar">
 		<h3> </h3>
 		<h4>Welcome to Homys</h4>
-		<h5>Your Housemate Management App.</h5>
+		<h5>The Ultimate Shared Housing Platform.</h5>
 
 		<div class="sign_log_buttons">
 
 	
-			<div class="btn_wrapper">
-				<a href="#" class="btn btn_shadow"><%= link_to "Sign Up Now", new_user_registration_path %></a>
-			</div>
+			<span class="btn_wrapper">
+				<%= link_to "Sign Up", new_user_registration_path, class: "btn btn_shadow" %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		
-
-			<div class="btn_wrapper">
-				<a href="#" class="btn btn_shadow"><%= link_to "Log In", new_user_session_path %></a>
-			</div>
+				<%= link_to "Log In", new_user_session_path, class: "btn btn_shadow" %>
+			</span>
 			<div style="clear: both;"></div>
 		</div>
 	</section>
@@ -54,8 +53,8 @@
 			<div class="col-sm-4">
 				<div class="services_item">
 					<i class="icon_heart"></i>
-					<h4><a href="#">Rewards</a></h4>
-					<p>Collect points and win real prizes each month. </p>
+					<h4><a href="#">Points</a></h4>
+					<p>Compete with your housemates by collecting the most points.</p>
 				</div>
 			</div>
 
@@ -70,7 +69,7 @@
 			<div class="col-sm-4">
 				<div class="services_item">
 					<i class="material-icons">attach_money</i>
-					<h4><a href="#">Expenses</a></h4>
+					<h4><a href="#">Money Management</a></h4>
 					<p>Create invoices for housemates and send them reminder text messages to pay their bills.</p>
 				</div>
 			</div>
@@ -80,7 +79,7 @@
 			<div class="col-sm-4">
 				<div class="services_item">
 					<i class="icon_cart"></i>
-					<h4><a href="#">Shopping List</a></h4>
+					<h4><a href="#">Loot List</a></h4>
 					<p>Organize who's buying what on the communal shopping list. </p>
 				</div>
 			</div>
@@ -120,7 +119,6 @@
 				<li><a href="#"><i class="social_facebook"></i></a></li>
 				<li><a href="#"><i class="social_linkedin"></i></a></li>
 			</ul>
-			<a class="back_top" title="Back to top"><i class="arrow_carrot-up"></i></a>
 		</div>
 	</div>
 	</footer>

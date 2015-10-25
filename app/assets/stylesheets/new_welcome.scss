@@ -19,3 +19,11 @@
 .sign_log_buttons {
 	padding: 50px;
 }
+
+#header {
+	position: fixed;
+	.wrapper {
+		background-color: #37474F;
+	}
+	@include clearfix;
+}
