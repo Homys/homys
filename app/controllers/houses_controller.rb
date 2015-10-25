@@ -32,9 +32,6 @@ class HousesController < ApplicationController
      redirect_to house_settings_path(current_user.house), notice: "Sent invite email to your homy"
   end
 
-  def new
-    @house = House.new
-  end
 
   def show
   	@house = House.find(params[:id])

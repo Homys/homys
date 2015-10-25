@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :phone_numbers, only: [:new, :create]
   post 'phone_numbers/verify' => "phone_numbers#verify"
 
-  resources :houses, only: [:create, :new, :index, :show, :destroy] do
+  resources :houses, only: [:create, :index, :show, :destroy] do
     resources :expenses, only: [:index, :create, :destroy, :update, :show] do
       resources :payments, only: [] do
         patch :paid
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     resources :chore_items, only: [:create, :index, :destroy, :update]
     resources :shopping_items, only: [:create, :index, :destroy, :update] do
       delete :bought_item
-    end 
+    end
     resources :commandments, only: [:create, :index, :destroy]
     resources :announcements, only: [:create, :index, :destroy]
     resources :events, only: [:create, :destroy]
