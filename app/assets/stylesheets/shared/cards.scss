@@ -21,7 +21,6 @@
 	font-size: 14px;
 }
 
-/*.commandment.custom.mdl-card{
-  width: 50%;
-  min-width: 330px;
-}*/
+.mdl-card__supporting-text {
+  overflow-wrap: break-word;
+}

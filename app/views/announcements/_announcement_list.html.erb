@@ -4,7 +4,7 @@
 <div class="custom mdl-card mdl-shadow--2dp mdl-grid">
     <div class="mdl-card__supporting-text mdl-cell mdl-cell--8-col">
         <% if announcement.importance == "1" %>
-            <i class="material-icons">error</i> <%= announcement.description %>
+            <i class="material-icons">error</i> <br> <%= announcement.description %>
         <% else %>
             <%= announcement.description %>
         <% end %>
