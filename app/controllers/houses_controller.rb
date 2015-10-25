@@ -1,5 +1,5 @@
 class HousesController < ApplicationController
-  before_action :authenticate_user!, :verified_phone
+  before_action [:verified_phone, :authenticate_user!], :except => [:index]
   def create
   	@house = House.new(house_params)
     @house.users << current_user
@@ -38,38 +38,6 @@ class HousesController < ApplicationController
     @users = @house.users
     @events = @house.events.all
     @event = Event.new
-
-
-data = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
-    datasets: [
-        {
-            label: "My First dataset",
-            fillColor: "rgba(220,220,220,0.2)",
-            strokeColor: "rgba(220,220,220,1)",
-            pointColor: "rgba(220,220,220,1)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(220,220,220,1)",
-            data: [65, 59, 80, 81, 56, 55, 40]
-        },
-        {
-            label: "My Second dataset",
-            fillColor: "rgba(151,187,205,0.2)",
-            strokeColor: "rgba(151,187,205,1)",
-            pointColor: "rgba(151,187,205,1)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(151,187,205,1)",
-            data: [28, 48, 40, 19, 86, 27, 90]
-        }
-    ]
-}
-options = {}
-
-
-
-
   end
 
   def destroy
@@ -84,12 +52,15 @@ options = {}
   end
 
   def index
-    if current_user.house_id != nil
-      redirect_to house_path(current_user.house)
+    if current_user
+      if current_user.house_id != nil
+        redirect_to house_path(current_user.house)
+      else
+        @house = House.new
+      end
     else
-      @house = House.new
-    end
-
+      redirect_to welcome_index_path
+    end 
   end
 
 
