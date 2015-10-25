@@ -1,16 +1,12 @@
-<% @commandments.each do |commandment| %>
-
-  <div class="custom mdl-card mdl-shadow--2dp mdl-grid">
-
-    <div class="mdl-card__supporting-text mdl-cell mdl-cell--11-col">
-
- 	    <strong class="commandment-text"><%= commandment.description %></strong>
-    </div>
- 	  <div class="mdl-cell mdl-cell--1-col">
-      <div class="delete-button">
-   			<%= link_to('<i class="material-icons">close</i>'.html_safe, house_commandment_path(current_user.house_id, commandment), method: :delete) %>
-   		</div>
-    </div>
+<div class="custom mdl-card mdl-shadow--2dp mdl-grid">
+  <div class="mdl-card__supporting-text mdl-cell mdl-cell--12-col">
+    <ol>
+      <% @commandments.each do |commandment| %>
+      <li> <strong class="commandment-text"><%= commandment.description %></strong>
+        <span id="commandment-delete"> <%= link_to('<i class="material-icons">close</i>'.html_safe, house_commandment_path(current_user.house_id, commandment), method: :delete) %></span>
+      </li>
+      <% end %>
+    </ol>
   </div>
-<% end %>
+</div>
 
