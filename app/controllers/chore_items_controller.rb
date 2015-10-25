@@ -45,7 +45,7 @@ class ChoreItemsController < ApplicationController
 		@chore_item.save
 		current_user.save
 
-		redirect_to house_chore_items_path(current_user.house)
+		redirect_to house_chore_items_path(current_user.house), notice: "+ #{@chore_item.points_rewarded} points!"
 	end 
 
 private
