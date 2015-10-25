@@ -1,5 +1,7 @@
 class HousesController < ApplicationController
-  before_action [:verified_phone, :authenticate_user!], :except => [:index]
+  before_action :verified_phone, :except => [:index]
+  before_action :authenticate_user!, :except => [:index]
+
   def create
   	@house = House.new(house_params)
     @house.users << current_user
