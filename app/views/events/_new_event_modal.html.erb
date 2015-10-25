@@ -1,9 +1,7 @@
 <div class="modal">
   <label for="modal-1">
     <div class="modal-trigger">
-      <div class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
-        <i class="material-icons">add</i>
-      </div>
+       <span class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">New Event</span>
     </div>
   </label>
   <input class="modal-state" id="modal-1" type="checkbox" />
@@ -18,7 +16,7 @@
             <div id="event-form-errors">
               <%= render "events/event_errors" %>
             </div>
-            
+
             <div class="field">
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <%= f.label :name, :class => "mdl-textfield__label" %>
