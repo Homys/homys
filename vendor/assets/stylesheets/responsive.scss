@@ -1,0 +1,180 @@
+/****************************************************************************************************
+TOC
+1. CSS RESET
+2. GLOBAL STYLES
+3. PAGE PRELOADER
+4. MAIN PAGE
+4.1. HEADER
+4.2. MAIN SLIDER
+4.3. ABOUT US
+4.4. OUR TEAM
+4.5. SERVICES
+4.6. FEATURED WORKS
+4.7. TESTIMONIALS
+4.8. BLOG
+4.9. PRICING TABLES
+4.10. BACKGROUND VIDEO
+4.11. CONTACT
+4.12. MAP
+4.13. FOOTER
+5. BLOG PAGE
+COLORS
+cyan    #449bb5
+blue    #043d5d
+red     #eb5055
+green   #68c39f
+light   #fffcf5
+****************************************************************************************************/
+
+
+
+/****************************************************************************************************
+< 1199px
+****************************************************************************************************/
+@media (max-width: 1199px) {
+
+h1 {font-size: 40px;line-height: 1.2em;}
+
+
+/************************ SERVICES ************************/
+.services_item i {width: 50px;font-size: 50px;}
+.services_item h4 {margin: 0 0 0 83px;}
+.services_item p {margin: 0 0 0 83px;}
+
+}
+
+
+
+/****************************************************************************************************
+< 991px
+****************************************************************************************************/
+@media (max-width: 991px) {
+
+h2 {font-size: 45px;}
+
+.container {padding: 0 15px;}
+
+#wrapper_scroll {padding: 50px 0;}
+
+.main_column,
+.sidebar {padding-top: 50px;}
+
+
+
+/************************ HEADER ************************/
+header {height: 50px !important;position: absolute !important;}
+
+header .container {position: relative;}
+
+.logo_main {padding: 2px 0 0 0;}
+
+
+
+header .icon_menu {width: 30px;height: 30px;display: block;background: rgba(0,0,0,.2);font-size: 30px;line-height: 30px;color: #fff;text-align: center;position: absolute;right: 15px;top: 10px;cursor: pointer;
+-webkit-transition: background .3s ease-in-out;
+        transition: background .3s ease-in-out;
+}
+header .icon_menu.active {background: #68c39f;}
+
+
+
+header .back_top_mobile {width: 30px;height: 30px;display: inline-block;background: rgba(0,0,0,.5);font-size: 21px;line-height: 30px;color: #fff;text-align: center;position: fixed;right: 15px;top: 10px;z-index: 1000;cursor: pointer;
+-webkit-transition: background .3s ease-in-out;
+        transition: background .3s ease-in-out;
+}
+
+
+
+#menu_main {width: 100%;float: none;padding: 8px 15px 20px 15px;background: #043d5d;position: absolute;right: 0;top: 50px;
+-webkit-box-shadow: inset 0 0 0 1px rgba(255,255,255,.2);
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,.2);
+}
+#menu_main li {height: auto !important;display: block;margin: 0 !important;padding: 7px 0 0 0 !important;}
+#menu_main li:before {display: none;}
+
+#menu_main li a {font-size: 13px;}
+
+#menu_main li a:before,
+#menu_main li a:after {display: none;}
+
+
+
+
+/************************ SERVICES ************************/
+.services_item i {width: 33px;font-size: 31px;
+-webkit-transform: none !important;
+        transform: none !important;
+}
+.services_item h4 {margin: 0 0 0 51px;}
+.services_item p {margin: 0 0 0 51px;}
+
+
+
+
+
+
+
+/************************ FOOTER ************************/
+footer {padding: 0;text-align: center;}
+
+.footer_left {float: none;padding: 15px 0;}
+.footer_left p {line-height: 1.5em;}
+
+.footer_right {float: none;padding: 0 0 15px 0;
+-webkit-box-shadow:inset 0 1px 0 0 rgba(255,255,255,.2);
+box-shadow:inset 0 1px 0 0 rgba(255,255,255,.2);
+}
+
+footer .social_links {padding: 0;}
+footer .social_links li {margin: 15px 10px 0 0 !important;}
+footer .social_links li a {padding: 0 10px;}
+
+footer .back_top {margin: 15px 0 0 0;}
+
+
+
+
+
+}
+
+
+
+/****************************************************************************************************
+< 767px
+****************************************************************************************************/
+@media (max-width: 767px) {
+
+h2 {padding: 40px 0 0 0;font-size: 27px;}
+
+
+
+
+
+/************************ SERVICES ************************/
+.services {padding: 0 0 30px 0;}
+
+.services_item {margin: 30px 0 0 0;padding: 0 0 30px 0;
+-webkit-box-shadow: inset 0 -1px 0 0 rgba(0,0,0,.2);
+        box-shadow: inset 0 -1px 0 0 rgba(0,0,0,.2);
+}
+.services_item i {width: 50px;font-size: 50px;}
+.services_item h4 {margin: 0 0 0 65px;}
+.services_item p {margin: 0 0 0 65px;padding: 5px 0 0 0;}
+
+.services_logo {margin: 30px 0 0 0;}
+
+
+
+
+}
+
+
+
+/****************************************************************************************************
+< 480px
+****************************************************************************************************/
+@media (max-width: 480px) {
+
+
+
+}

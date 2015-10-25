@@ -1,0 +1,125 @@
+<div id="wrapper_main">
+<!-- HEADER -->
+	<header id="header">
+		<div class="wrapper">		
+			<div class="container">
+<!-- LOGO -->
+				<div class="logo_main">
+					<a href="/">
+						<%= image_tag("homy-sml")%><span>Homys</span>
+					</a>
+				</div>
+
+<!-- MAIN MENU -->
+				<i class="icon_menu visible-sm visible-xs"></i>
+				<i class="back_top_mobile arrow_carrot-up"></i>
+				<nav id="menu_main">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#services">Features</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<div id="wrapper_scroll">
+<!-- MAIN SLIDER -->
+
+	<section class="top-header-bar">
+		<h3> </h3>
+		<h4>Welcome to Homys</h4>
+		<h5>The Ultimate Shared Housing Platform.</h5>
+
+		<div class="sign_log_buttons">
+
+	
+			<span class="btn_wrapper">
+				<%= link_to "Sign Up", new_user_registration_path, class: "btn btn_shadow" %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		
+				<%= link_to "Log In", new_user_session_path, class: "btn btn_shadow" %>
+			</span>
+			<div style="clear: both;"></div>
+		</div>
+	</section>
+
+
+<!-- FEATURES -->
+<section id="services" class="services">
+	<div class="container">
+		<h2>Features</h2>
+
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="services_item">
+					<i class="icon_heart"></i>
+					<h4><a href="#">Points</a></h4>
+					<p>Compete with your housemates by collecting the most points.</p>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="services_item">
+					<i class="material-icons">content_paste</i>
+					<h4><a href="#">House Quests</a></h4>
+					<p>Keep track of the chore list and randomize chores each week.</p>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="services_item">
+					<i class="material-icons">attach_money</i>
+					<h4><a href="#">Money Management</a></h4>
+					<p>Create invoices for housemates and send them reminder text messages to pay their bills.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="services_item">
+					<i class="icon_cart"></i>
+					<h4><a href="#">Loot List</a></h4>
+					<p>Organize who's buying what on the communal shopping list. </p>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="services_item">
+					<i class="material-icons">chat</i>
+					<h4><a href="#">Announcements</a></h4>
+					<p>Update your housemates on what's happening in the house.</p>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="services_item">
+					<i class="icon_calendar"></i>
+					<h4><a href="#">Calendar</a></h4>
+					<p>Share important events with your housemates.</p>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	</section>
+
+<!-- FOOTER -->
+	<footer>
+	<div class="container">
+
+		<div class="footer_right">
+			<ul class="social_links">
+				<li><a href="#"><i class="social_twitter"></i></a></li>
+				<li><a href="#"><i class="social_facebook"></i></a></li>
+				<li><a href="#"><i class="social_linkedin"></i></a></li>
+			</ul>
+		</div>
+	</div>
+	</footer>
+</div>

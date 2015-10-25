@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   get 'payments/paid'
 
-  root 'houses#index'
+  # root 'houses#index'
+
+  root 'welcome#index'
 
   devise_for :users, controllers: {
     registrations: 'users/registrations'

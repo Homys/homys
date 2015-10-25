@@ -1,0 +1,256 @@
+/****************************************************************************************************
+TOC
+1. CSS RESET
+2. GLOBAL STYLES
+3. PAGE PRELOADER
+4. MAIN PAGE
+4.1. HEADER
+4.2. MAIN SLIDER
+4.3. ABOUT US
+4.4. OUR TEAM
+4.5. SERVICES
+4.6. FEATURED WORKS
+4.7. TESTIMONIALS
+4.8. BLOG
+4.9. PRICING TABLES
+4.10. BACKGROUND VIDEO
+4.11. CONTACT
+4.12. MAP
+4.13. FOOTER
+5. BLOG PAGE
+
+
+
+COLORS
+cyan 	#449bb5
+blue 	#043d5d
+red 	#eb5055
+green 	#68c39f
+light 	#fffcf5
+****************************************************************************************************/
+
+
+
+/****************************************************************************************************
+1. CSS RESET
+****************************************************************************************************/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, 
+del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, 
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, input, textarea, button, header, section, footer, aside, nav, article
+{margin: 0;padding: 0;border: 0;outline: none !important;vertical-align: top;background: transparent;line-height: 1.5em;}
+
+header, section, footer, aside, nav, article {display: block;}
+
+ol, ul {list-style: none;}
+
+img {max-width: 100%;}
+
+
+
+/****************************************************************************************************
+2. GLOBAL STYLES
+****************************************************************************************************/
+html, body {background: #37474F ;font: normal 13px "Noto Sans";color: #666;}
+
+h1 {font: 700 50px/60px "Noto Sans";color: #333;}
+h2 {padding: 78px 0 0 0;font: 700 60px "Noto Sans";color: #333;text-align: center;text-transform: uppercase;}
+
+a {
+-webkit-transition: color .4s ease-in-out, background .4s ease-in-out, border-color .4s ease-in-out;
+        transition: color .4s ease-in-out, background .4s ease-in-out, border-color .4s ease-in-out;
+}
+a:hover, a:focus {text-decoration: none;}
+
+.container {padding: 0;}
+
+#wrapper_main {overflow-x: hidden;background: #fff;position: relative;z-index: 1;}
+
+#wrapper_scroll {padding: 100px 0 80px 0;}
+.page_index #wrapper_scroll {padding: 0;}
+
+
+
+.main_column,
+.sidebar {padding-top: 80px;}
+
+
+
+/* BUTTONS */
+.btn {padding: 12px 15px;background: none;border: 2px solid #043d5d;font-weight: bold;font-size: 14px;line-height: 1em;color: #043d5d;text-transform: uppercase;letter-spacing: 1px;
+-webkit-border-radius: 0;
+        border-radius: 0;
+}
+.btn_shadow {
+-webkit-box-shadow: 3px 3px 0 0 #043d5d;
+        box-shadow: 3px 3px 0 0 #043d5d;
+
+-webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+}
+.btn_shadow:hover {
+-webkit-box-shadow: none;
+        box-shadow: none;
+
+-webkit-transform: translate3d(2px,2px,0);
+        transform: translate3d(2px,2px,0);
+}
+
+
+
+/* TRANSITIONS */
+.trs_all {
+-webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+}
+.trs_size {
+-webkit-transition: width .3s ease-in-out, height .3s ease-in-out;
+        transition: width .3s ease-in-out, height .3s ease-in-out;
+}
+.trs_color {
+-webkit-transition: color .3s ease-in-out, background .3s ease-in-out, border-color .3s ease-in-out;
+        transition: color .3s ease-in-out, background .3s ease-in-out, border-color .3s ease-in-out;
+}
+.trs_indent {
+-webkit-transition: margin .3s ease-in-out, padding .3s ease-in-out;
+        transition: margin .3s ease-in-out, padding .3s ease-in-out;
+}
+.trs_position {
+-webkit-transition: top .3s ease-in-out, right .3s ease-in-out, bottom .3s ease-in-out, left .3s ease-in-out;
+        transition: top .3s ease-in-out, right .3s ease-in-out, bottom .3s ease-in-out, left .3s ease-in-out;
+}
+.trs_transform {
+-webkit-transition: transform .3s ease-in-out;
+        transition: transform .3s ease-in-out;
+}
+.trs_opacity {
+-webkit-transition: opacity .3s ease-in-out;
+        transition: opacity .3s ease-in-out;
+}
+
+
+
+
+
+
+/****************************************************************************************************
+4. MAIN PAGE
+****************************************************************************************************/
+
+
+/* 4.1. HEADER *************************************************************************************/
+header {width: 100%;height: 0;background: #37474F; position: fixed;z-index: 100;
+}
+
+header .back_top_mobile {display: none;}
+
+
+
+.logo_main {float: left;padding: 26px 0 0 0;
+}
+.logo_main a {display: inline-block;color: #fffcf5;}
+.logo_main a span {vertical-align: middle;margin: 0 0 0 10px;font: 700 30px "Noto Sans";}
+.logo_main a img {vertical-align: middle; padding-bottom: 5px;}
+
+
+
+#menu_main {float: right;}
+#menu_main ul {font-size: 0;}
+#menu_main li {height: 100px;display: inline-block;padding: 42px 0 0 0;position: relative;
+-webkit-transition: all .25s ease-in-out;
+        transition: all .25s ease-in-out;
+}
+#menu_main li a {position: relative;}
+#menu_main li ~ li {margin: 0 0 0 40px;}
+#menu_main li ~ li a:before {content: '\2022';font-size: 17px;line-height: 1em;color: #fffcf5;position: absolute;left: -23px;top: -1px;
+opacity: .1;
+}
+
+#menu_main a {font: 700 12px "Noto Sans";color: #fffcf5;text-transform: uppercase;}
+
+
+/* ACTIVE ITEM */
+#menu_main li:after {content: '';width: 16px;height: 16px;display: block;margin: 0 0 0 -8px;border: 8px solid transparent;position: absolute;left: 50%;bottom: 0;
+opacity: 0;
+-webkit-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+}
+
+#menu_main li.active a {color: #68c39f;}
+#menu_main li.active:after {border-top-color: #043d5d;bottom: -16px;z-index: 1;
+opacity: 1;
+}
+
+
+
+header.normal {height: 100px;}
+
+header.stuck {height: 50px;}
+header.stuck .logo_main {padding: 2px 0 0 0;}
+
+header.stuck #menu_main li {height: 50px;padding: 16px 0 0 0;}
+
+
+
+
+
+/* 4.5. SERVICES ***********************************************************************************/
+.services {padding: 0 0 52px 0;}
+.services h2 {}
+
+.services_item {margin: 50px 0 0 0;}
+.services_item i {width: 70px;display: inline-block;float: left;font-size: 60px;color: #7e7e7e;text-align: center;cursor: default;
+-webkit-transform: rotate3d(0,100,0,0deg);
+        transform: rotate3d(0,100,0,0deg);
+
+-webkit-transition: none;
+        transition: none;
+}
+
+.services_item h4 {margin: 0 0 0 100px;}
+.services_item h4 a {font-weight: bold;font-size: 20px;color: #333;text-transform: uppercase;}
+.services_item h4 a:hover {color: #7e7e7e;}
+
+.services_item p {margin: 0 0 0 100px;padding: 14px 0 0 0;line-height: 22px;}
+
+
+
+/* HOVER */
+.services_item:hover i {
+-webkit-transform: rotate3d(0,100,0,360deg);
+        transform: rotate3d(0,100,0,360deg);
+
+-webkit-transition: transform .6s ease-in-out;
+        transition: transform .6s ease-in-out;
+}
+
+.services_logo {margin: 52px 0 0 0;}
+.services_logo a {display: block;text-align: center;}
+.services_logo a img {}
+.services_logo a:hover img {}
+
+
+
+
+/* 4.13. FOOTER ************************************************************************************/
+footer {padding: 20px 0;background: #37474F;}
+
+.footer_left {float: left;}
+.footer_left p {font-size: 15px;line-height: 50px;color: #fff;
+opacity: .25;
+}
+
+
+.footer_right {float: right;}
+
+footer .back_top {width: 50px;height: 50px;display: inline-block;border: 2px solid #2196F3;color: #2196F3;text-align: center;cursor: pointer;}
+footer .back_top i {font-weight: bold;font-size: 30px;line-height: 45px;}
+footer .back_top:hover {border-color: #fff;color: #fff;}
+
+footer .social_links {display: inline-block;padding: 0 10px 0 0;font-size: 0;}
+footer .social_links li {display: inline-block;}
+footer .social_links li ~ li {margin: 0 0 0 10px;}
+footer .social_links a {height: 50px;display: inline-block;padding: 0 25px;color: #fff;text-align: center;}
+footer .social_links a:hover {color: #68c39f;}
+footer .social_links i {font-size: 22px;line-height: 50px;}
+
+

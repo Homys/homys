@@ -42,6 +42,20 @@ div.mdl-layout__drawer.navbar-container {
   color: white;
   }
 
+.logo_main a {
+  color: white;
+  text-decoration: none;
+  vertical-align: middle;
+  margin: 0 0 0 10px;
+  font: 700 30px "Noto Sans";
+}
+
+.logo_main img {
+  padding-bottom: 5px;
+}
+
+
+
 .drawer-header {
   box-sizing: border-box;
   display: flex;
@@ -115,5 +129,11 @@ i.nav {
 
 h1, h2{
   text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+.mdl-layout__header {
+    display: block;
+}
 }
 
