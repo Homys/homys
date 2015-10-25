@@ -1,6 +1,4 @@
 main.mdl-layout__content {
-	padding-left: 50px;
-  padding-right: 50px;
   background-color: #FAFAFA;
 }
 
@@ -8,10 +6,7 @@ div.mdl-layout__drawer.navbar-container {
   background-color: #37474F;
 }
 
-#avatar {
-  position: absolute;
-  left: 10px;
-  top: 10px;
+.avatar {
   height: 85px;
   width: 85px;
   border-radius: 50%;
@@ -42,6 +37,11 @@ div.mdl-layout__drawer.navbar-container {
   font-size: 25px;
 }
 
+.mdl-layout__header-row.login {
+  background-color: #37474F;
+  color: white;
+  }
+
 .drawer-header {
   box-sizing: border-box;
   display: flex;
@@ -64,7 +64,7 @@ div.mdl-layout__drawer.navbar-container {
   left: 150px;
 }
 
-i {
+i.nav {
   position: relative;
   top: 5px;
   right: 5px;
@@ -81,7 +81,37 @@ i {
   display: none;
 }
 
+.center-horizontal{
+  margin: auto;
+  width: 40%;
+}
+
+.clear{
+  clear: both;
+}
 
 
+.select2-container .select2-selection--multiple {
+  width: 750%;
+}
 
+
+#navavatar {
+ position: absolute;
+ left: 10px;
+ top: 10px;
+ height: 85px;
+ width: 85px;
+ border-radius: 50%;
+}
+
+#commandment-delete{
+  float: right;
+  margin-left: 5px;
+  clear: both;
+}
+
+.mdl-card__supporting-text {
+  overflow-wrap: break-word;
+}
 

@@ -1,3 +1,14 @@
+ <div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--3-col"></div>
+    <div class="mdl-cell mdl-cell--6-col">
+      <% if flash[:notice] %>
+        <p class="flash-notice"><%= notice %></p>
+      <% end %>
+      <% if flash[:alert] %>
+        <p class="flash-alert"><%= alert %></p>
+      <% end %>
+
+
 <h1>Welcome to Homys</h1>
 
 
@@ -12,3 +23,7 @@
   </div>
 <% end %>
 
+<p>To join an existing house ask one of the members to invite you to it.</p>
+
+  </div>
+<div class="mdl-cell mdl-cell--3-col"></div>

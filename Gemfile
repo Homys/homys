@@ -33,7 +33,6 @@ gem 'devise'
 
 gem 'figaro'
 
-
 gem 'better_errors'
 
 #pagination
@@ -57,8 +56,6 @@ gem 'twilio-ruby'
 gem 'sendgrid-ruby'
 
 gem 'whenever'
-
-gem 'chart-js-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

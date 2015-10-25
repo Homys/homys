@@ -20,16 +20,20 @@ Rails.application.routes.draw do
       end
     end
     resources :chore_items, only: [:create, :index, :destroy, :update]
-    resources :shopping_items, only: [:create, :index, :destroy, :update]
+    resources :shopping_items, only: [:create, :index, :destroy, :update] do
+      delete :bought_item
+    end 
     resources :commandments, only: [:create, :index, :destroy]
     resources :announcements, only: [:create, :index, :destroy]
     resources :events, only: [:create, :destroy]
     resources :settings, only: [:index]
 
+
     patch 'chore_assigner' => 'chore_items#chore_assigner'
     patch 'text_sender' => 'announcements#text_sender'
     patch 'add_housemate' => 'houses#add_housemate'
     patch 'invite_housemate' => 'houses#invite_housemate'
+
 
   end
 

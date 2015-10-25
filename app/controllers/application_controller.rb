@@ -26,4 +26,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def verified_phone
+    unless current_user.has_verified_phone?
+      redirect_to new_phone_number_path
+    end  
+  end 
+  
+
 end

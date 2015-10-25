@@ -1,6 +1,6 @@
 class ChoreItemsController < ApplicationController
 
-	before_action :authenticate_user!, :ensure_house_exists, :get_house
+	before_action :authenticate_user!, :ensure_house_exists, :get_house, :verified_phone
 
 
 	def create
@@ -45,7 +45,7 @@ class ChoreItemsController < ApplicationController
 		@chore_item.save
 		current_user.save
 
-		redirect_to house_chore_items_path(current_user.house)
+		redirect_to house_chore_items_path(current_user.house), notice: "+ #{@chore_item.points_rewarded} points!"
 	end 
 
 private

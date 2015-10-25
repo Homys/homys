@@ -1,10 +1,27 @@
+<header class="mdl-layout__header">
+  <div class="mdl-layout__header-row login">
+    Homys
+    <div class="mdl-layout-spacer"></div>
+  </div>
+</header>
+
+ <div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--3-col"></div>
+    <div class="mdl-cell mdl-cell--6-col">
+      <% if flash[:notice] %>
+        <p class="flash-notice"><%= notice %></p>
+      <% end %>
+      <% if flash[:alert] %>
+        <p class="flash-alert"><%= alert %></p>
+      <% end %>
+
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <%= f.label :email, :class => "mdl-textfield__label" %><br />
-    <%= f.email_field :email, autofocus: true, :class => "mdl-textfield__input" %>
+    <%= f.email_field :email, :class => "mdl-textfield__input" %>
   </div>
   </div>
 
@@ -28,3 +45,8 @@
 <% end %>
 <br>
 <%= render "devise/shared/links" %>
+
+
+  </div>
+<div class="mdl-cell mdl-cell--3-col"></div>
+

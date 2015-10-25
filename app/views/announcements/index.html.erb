@@ -1,20 +1,21 @@
 <h1> What's Happenin'? </h1>
 
-<div class="tooltip-item">
-  <i class="material-icons">help</i>
-  <div class="tooltip">
-    <p> Let your housemates know about house related announcements</p>
+<span class="new-announcement">
+ <%= render "new_announcement_modal" %>
+</span>
+
+
+<div class="custom mdl-card mdl-shadow--2dp description">
+  <div class="mdl-card__supporting-text">
+   <span class="descrition-text"> Let your housemates know about house related announcements. </span>
   </div>
 </div>
 
-
-<span class="new-announcement">
-  <%= render "new_announcement_modal" %>
-</span>
-
 <div id="announcements-list">
-  <%= render "announcement_list" %>
+ <%= render "announcement_list" %>
 </div>
 
+<div class="center-horizontal">
+  <%= paginate @announcements %>
+</div>
 
-<%= paginate @announcements %>

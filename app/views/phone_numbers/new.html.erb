@@ -1,10 +1,20 @@
+ <div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--3-col"></div>
+    <div class="mdl-cell mdl-cell--6-col">
+      <% if flash[:notice] %>
+        <p class="flash-notice"><%= notice %></p>
+      <% end %>
+      <% if flash[:alert] %>
+        <p class="flash-alert"><%= alert %></p>
+      <% end %>
+
+
 <div id="send-pin">
   <h3>What's your phone number?</h3>
   <%= form_for @phone_number, remote: true do |f| %>
 
     <div class="form-group">  
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-      <!--   <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" /> -->
           <%= f.label :phone_number, :class => "mdl-textfield__label" %>
           <%= f.text_field :phone_number, :class => "mdl-textfield__input", :pattern => "-?[0-9]*(\.[0-9]+)?" %>
         <span class="mdl-textfield__error">Input is not a number!</span>
@@ -12,8 +22,13 @@
     </div>
     
     <%= f.submit "Send PIN", :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent", id: 'send-pin-link' %> 
+
+
+
   <% end %>
 </div>
+
+
 
 <div id="verify-pin">
 
@@ -32,6 +47,12 @@
   <% end %>
 </div>
 
+
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+
+    
+  </div>
+<div class="mdl-cell mdl-cell--3-col"></div>
 
 
 
