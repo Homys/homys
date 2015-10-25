@@ -9,31 +9,24 @@
       <% end %>
 
 
-<h3>Create Your House</h3>
+      <h3>Create Your House</h3>
 
-<%= form_for @house do |f| %>
+      <%= form_for @house do |f| %>
+       <div class="form-group">
+        <div class="mdl-textfield mdl-js-textfield">
+          <%= f.label :name, :class => "mdl-textfield__label" %><br />
+          <%= f.text_field :name, :class => "mdl-textfield__input" %>
+        </div>
 
+        <div class="actions">
+           <%= f.submit "Create", :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
+        </div>
 
- <div class="form-group">
-      <div class="mdl-textfield mdl-js-textfield">
-    <%= f.label :name, :class => "mdl-textfield__label" %><br />
-    <%= f.text_field :name, :class => "mdl-textfield__input" %>
-  </div>
+      <% end %>
 
-  <div class="actions">
-     <%= f.submit "Create", :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
-  </div>
-
-  <div class="actions">
-
-  </div>
-
-<% end %>
-
-  </div>
+       </div>
+        <p>To join an existing house, ask one of the members to add you to it.</p>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+</div>
 <div class="mdl-cell mdl-cell--3-col"></div>
-
-<p>To join an existing house, ask one of the members to add you to it.</p>
-
-  </div>
-<div class="mdl-cell mdl-cell--3-col"></div>
+</div>
