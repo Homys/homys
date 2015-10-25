@@ -9,7 +9,7 @@
 
 .simple-calendar {
   .day {
-    border: 3px solid black;
+    border: 1px solid black;
     padding: 0px;
   }
 
@@ -23,7 +23,7 @@
   }
 
   tr, th {
-    border: 3px solid black;
+    border: 1px solid black;
   }
 
   .today {
@@ -36,8 +36,14 @@
     border-radius: 50%;
     display: inline-block;
     color: white;
-    height: 20px;
-    width: 20px;
+    height: 23px;
+    width: 23px;
     text-align: center;
   }
+
+  a {
+    font-size: 14px;
+  }
+
+
 }
