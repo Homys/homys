@@ -3,9 +3,14 @@ class ExpensesController < ApplicationController
   before_action :authenticate_user!, :ensure_house_exists, :get_house, :verified_phone
 
   def index
-    @expenses = @house.expenses.all
+    @expenses = @house.expenses.all.page(params[:page])
     @expense = Expense.new
     @housemates = @house.users
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
