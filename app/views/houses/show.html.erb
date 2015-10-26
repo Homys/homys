@@ -30,3 +30,40 @@
   </div>
 <% end %>
 
+<h5>Add Homy</h5>
+<div class="custom mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__supporting-text">
+    <% if flash[:alert] %>
+      <%= form_tag house_invite_housemate_path(current_user.house_id), method: :patch do %>
+
+
+      <div class="field">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <%= label_tag :email, "Email", :class => "mdl-textfield__label" %>
+          <%= email_field_tag :email, params[:email], :class => "mdl-textfield__input" %>
+        </div>
+      </div>
+
+        <div class="actions">
+          <%= submit_tag "Invite Homy", :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
+        </div>
+      <%end%>
+
+    <% else %>
+      <%= form_tag house_add_housemate_path(current_user.house_id), method: :patch do %>
+
+        <div class="field">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <%= label_tag :email, "Email", :class => "mdl-textfield__label" %>
+              <%= email_field_tag :email, params[:email], :class => "mdl-textfield__input" %>
+            </div>
+        </div>
+
+      <div class="actions">
+        <%= submit_tag "Add Homy", :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"%>
+      </div>
+    <% end %>
+  <% end %>
+
+  </div>
+</div>
