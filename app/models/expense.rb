@@ -12,7 +12,7 @@ class Expense < ActiveRecord::Base
   end
 
 	def expense_text
-    "Just a friendly reminder, you owe #{owner.first_name} $#{amount} for #{title}."
+    "Just a friendly reminder, you owe #{owner.first_name} $#{split_amount} for #{title}."
   end
 
   def text_sender

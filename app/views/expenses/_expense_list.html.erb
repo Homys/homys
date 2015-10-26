@@ -21,7 +21,7 @@
   <div class="mdl-card__actions mdl-card--border">
     <% expense.users.each do |user| %>
       <% if user_payment_status(expense, user).paid != true %>
-        <%= user.full_name %> owes: <%= expense.split_amount %>
+        <%= user.full_name %> owes: $<%= expense.split_amount %>
         <%= link_to("Paid?", payment_paid_link(current_user.house, expense, user), method: :patch, :class => "mdl-button mdl-js-button mdl-button--accent") if expense.owner_id == current_user.id %>
       <% else %>
         <strike><%= user.full_name %> owes: <%= expense.split_amount %></strike>
