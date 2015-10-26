@@ -26,23 +26,31 @@
 	<div id="wrapper_scroll">
 <!-- MAIN SLIDER -->
 
-	<section class="top-header-bar">
-		<h3> </h3>
-		<h4>Welcome to Homys</h4>
-		<h5>The Ultimate Shared Housing Platform.</h5>
-
-		<div class="sign_log_buttons">
-			<span class="btn_wrapper">
-				<%= link_to "Sign Up", new_user_registration_path, class: "btn btn_shadow" %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-				<%= link_to "Log In", new_user_session_path, class: "btn btn_shadow" %>
-		</span>
 
 
-		<%= image_tag("homys.png", class: "homys_image") %>
+	<section class="top-header-bar mdl-grid">
+		
+			
+			<div class="mdl-cell mdl-cell--8-col">
+			<h3> </h3>
+			<h4>Welcome to Homys</h4>
+			<h5>The Ultimate Shared Housing Platform.</h5>
 
-			<div style="clear: both;"></div>
+			<div class="sign_log_buttons">
+				<span class="btn_wrapper">
+					<%= link_to "Sign Up", new_user_registration_path, class: "btn btn_shadow" %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+					<%= link_to "Log In", new_user_session_path, class: "btn btn_shadow" %>
+				</span>
+			</div>
 		</div>
+		
+
+		<div class="mdl-cell mdl-cell--4-col">
+			<%= image_tag("homys.png", class: "homys_image") %>
+		</div>
+		<div style="clear: both;"></div>
+		
 	</section>
 
 
