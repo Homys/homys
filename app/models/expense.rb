@@ -3,7 +3,7 @@ class Expense < ActiveRecord::Base
   has_many :users, through: :payments
   belongs_to :owner, class_name: "User"
   belongs_to :house
-  validates_length_of :title, :maximum => 60, :allow_blank => false 
+  validates_length_of :title, :maximum => 60, :allow_blank => false
 
   def split_amount
     num_users = users.size
@@ -12,7 +12,7 @@ class Expense < ActiveRecord::Base
   end
 
 	def expense_text
-    "You owe #{owner.first_name} $#{amount}. Due #{date_due.strftime("%B %d")}."
+    "Just a friendly reminder, you owe #{owner.first_name} $#{amount} for #{title}."
   end
 
   def text_sender
@@ -24,10 +24,10 @@ class Expense < ActiveRecord::Base
   def reduce_points
     if points_rewarded > 100
       update_attribute(:points_rewarded, (self.points_rewarded - 100))
-    end 
-  end 
+    end
+  end
 
-  
+
 
 end
 

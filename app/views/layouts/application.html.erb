@@ -34,8 +34,8 @@
 
     <main class="mdl-layout__content mdl-color-text--black-600">
       <div class="page-content mdl-grid">
-        <div class="mdl-cell mdl-cell--3-col"></div>
-        <div class="mdl-cell mdl-cell--6-col">
+        <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-phone"></div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-phone">
           <% if flash[:notice] %>
           <p class="flash-notice"><%= notice %></p>
           <% end %>
@@ -45,7 +45,7 @@
           <% end %>
           <%= yield %>
         </div>
-        <div class="mdl-cell mdl-cell--3-col"></div>
+        <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-phone"></div>
       </main>
     </div>
   <% else %>
