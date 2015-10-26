@@ -28,8 +28,13 @@ class ShoppingItemsController < ApplicationController
 	end 
 
 	def index
-		@shopping_items = @house.shopping_items.order('importance DESC', 'created_at DESC')
+		@shopping_items = @house.shopping_items.order('importance DESC', 'created_at DESC').page(params[:page])
 		@shopping_item = ShoppingItem.new
+
+		respond_to do |format|
+      format.html
+      format.js
+    end
 	end
 
 	def destroy
