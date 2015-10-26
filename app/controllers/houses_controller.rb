@@ -37,7 +37,7 @@ class HousesController < ApplicationController
 
   def show
   	@house = House.find(params[:id])
-    @users = @house.users
+    @users = @house.users.order('total_points DESC')
     @events = @house.events.all
     @event = Event.new
   end
@@ -62,7 +62,7 @@ class HousesController < ApplicationController
       end
     else
       redirect_to welcome_index_path
-    end 
+    end
   end
 
 

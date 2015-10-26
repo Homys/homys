@@ -21,9 +21,14 @@
     <div class="mdl-card__supporting-text mdl-cell mdl-cell--8-col">
 
       <div class="name-title">
-        <%= user.full_name %><br><br>
+        <% if user == @users.first %>
+          <%= user.full_name %> <i class="material-icons">stars</i>
+        <% else %>
+          <%= user.full_name %>
+        <% end %>
+        <br><br>
       </div>
-      <i class="material-icons">local_activity</i> Points: <%= user.total_points %> <br><br>
+       Points: <%= user.total_points %> <br><br>
     </div>
 
     <div class="mdl-cell mdl-cell--4-col">
