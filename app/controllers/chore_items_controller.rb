@@ -55,7 +55,12 @@ class ChoreItemsController < ApplicationController
 		current_user.save
 
 		redirect_to house_chore_items_path(current_user.house), notice: "+ #{@chore_item.points_rewarded} points!"
-	end 
+	end
+
+	def show
+		@chore_items = ChoreItem.where(user_id: current_user.id)
+
+	end
 
 private
 

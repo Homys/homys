@@ -1,6 +1,6 @@
 <h1> Your IOUs </h1>
 
-<%= link_to "All Expenses", house_expenses_path(@house), :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"%><br><br>
+<%= link_to "All Expenses", house_expenses_path(@house), :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"%>
 
 <% @user_payments.each do |user_payment| %>
   <% if user_payment.paid != true %>

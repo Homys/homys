@@ -19,7 +19,7 @@ Rails.application.routes.draw do
         patch :paid
       end
     end
-    resources :chore_items, only: [:create, :index, :destroy, :update]
+    resources :chore_items, only: [:create, :index, :destroy, :update, :show]
     resources :shopping_items, only: [:create, :index, :destroy, :update] do
       delete :bought_item
     end

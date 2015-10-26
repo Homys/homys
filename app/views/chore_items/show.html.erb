@@ -1,0 +1,31 @@
+<h1>My Quests</h1>
+<%= link_to "All Quests", house_chore_items_path(@house), :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"%>
+<% @chore_items.each do |chore| %>
+<% if chore.done != true %>
+  <div class="custom mdl-card mdl-shadow--2dp mdl-grid">
+    <div class="mdl-cell mdl-cell--8-col mdl-cell--3-col-phone">
+
+      <div class="mdl-card__supporting-text">
+        <strong><%= chore.description %></strong>
+      </div>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone">
+      <div class="card">
+        <div class="delete-button">
+          <%= link_to('<i class="material-icons">close</i>'.html_safe, house_chore_item_path(current_user.house_id, chore), method: :delete)  %>
+        </div>
+        <% if chore.user %>
+          <span class="avatar_chore_placement"><%= image_tag chore.user.avatar, class: 'avatar' %></span>
+        <% end %>
+        <div class="clear center-horizontal"><%= chore.user.first_name %></div>
+      </div>
+    </div>
+
+    <div class="mdl-card__actions mdl-card--border">
+      <% if chore.done != true && chore.user == current_user%>
+      <%= link_to "Complete", house_chore_item_path(@house, chore), method: :patch, :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+<% end %>

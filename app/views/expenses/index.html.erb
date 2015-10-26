@@ -1,11 +1,12 @@
 <h1>All About $$$</h1>
 
-<%= link_to "My Dues", house_expense_path(@house, "ious"), :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"%>
+
 
 <span class="new-expense">
   <%= render "new_expense_modal" %>
 </span>
 
+<%= link_to "My Dues", house_expense_path(@house, "ious"), :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"%>
 <div class="custom mdl-card mdl-shadow--2dp description">
   <div class="mdl-card__supporting-text">
    <span class="descrition-text"> <strong>Hey, <%= current_user.first_name %>! Let your housemates know what they owe you and see your IOUs here. Texts get sent to those involved in a new expense. The sooner you pay back your homy, the more points you will earn. </strong> </span>
