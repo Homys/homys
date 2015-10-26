@@ -57,10 +57,8 @@ gem 'sendgrid-ruby'
 
 gem 'whenever'
 
-source 'https://rails-assets.org' do
-  gem 'rails-assets-datetimepicker'
-end
-
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
