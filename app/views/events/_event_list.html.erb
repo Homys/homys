@@ -1,7 +1,6 @@
 <div class="calendar mdl-card mdl-shadow--2dp">
 <div class="calendar-container">
-  <div>
-    <div>
+
       <%= month_calendar(events: @events, attribute: 'date') do |date, events| %>
         <% if Date.today == date %>
           <span id="today_number"><%= date.day %></span>
@@ -19,7 +18,6 @@
 
       <% end %>
 
-    </div>
-  </div>
+
 </div>
 </div>

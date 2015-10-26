@@ -1,6 +1,6 @@
 <h1> Your IOUs </h1>
 
-<%= link_to "All Expenses", house_expenses_path(@house), :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"%>
+<%= link_to "All Expenses", house_expenses_path(@house), :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"%><br><br>
 
 <% @user_payments.each do |user_payment| %>
   <% if user_payment.paid != true %>
@@ -15,10 +15,7 @@
           Pay By: <%= expense.date_due.strftime("%B %d, %Y") %><br><br>
         </div>
         <div class="user-expenses">
-          <span class="who-paid">
-            You owe <br><br>
-          </span>
-          <%= expense.split_amount %>
+            <strong>You Owe:</strong> $<%= expense.split_amount %>
         </div>
       </div>
     </div>
