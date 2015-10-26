@@ -2,6 +2,13 @@
   <%= render "events/new_event_modal" %>
 </div>
 
+<div class="custom mdl-card mdl-shadow--2dp description">
+  <div class="mdl-card__supporting-text">
+   <span class="descrition-text"> <strong>Hey, <%= current_user.first_name %>! Here's what's on tap for this month. </strong> </span>
+   <%= image_tag('events.png') %>
+  </div>
+</div>
+
 <div id="event-list">
   <%= render "events/event_list" %>
 </div>
