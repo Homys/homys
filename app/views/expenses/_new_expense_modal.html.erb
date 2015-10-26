@@ -1,3 +1,8 @@
+<link rel="stylesheet" type="text/css" href="jquery.datetimepicker.css"/ >
+<script src="jquery.js"></script>
+<script src="build/jquery.datetimepicker.full.min.js"></script>
+
+
 <div class="modal">
   <label for="modal-1">
     <span class="modal-trigger">
@@ -39,13 +44,17 @@
             <%= f.date_field :date_due%>
           </div>
 
+          <script> 
+          </script>
+
+
+<input id="datetimepicker" type="text" >
+
+
           <div id="date_container" class="mdl-textfield mdl-js-textfield">
             <input class="mdl-textfield__input" type="text" id="date" readonly />
             <label class="mdl-textfield__label" id="date_label" for="date">Date</label>
           </div>
-
-
-
 
           <div class="field">
             <%= f.label :user_ids, "Who owes you" %><br />

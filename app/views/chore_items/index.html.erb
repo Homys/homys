@@ -5,10 +5,14 @@
 </span>
 
 <div class="custom mdl-card mdl-shadow--2dp description">
-  <div class="mdl-card__supporting-text">
-   <span class="descrition-text"> Add and view your house responsibilities. You will be randomly assigned to new Quests every Sunday.  </span>
-  </div>
+	
+		<div class="mdl-card__supporting-text">
+			<strong>Hey, <%= current_user.first_name %>! Add house quests here. </strong>
+			<span class="descrition-text"> You will be randomly assigned to new Quests every Sunday.  </span>
+			<%= image_tag('chores.png') %>
+		</div>
 </div>
+
 
 <div id="chore-list">
   <%= render "chore_item_list" %>
@@ -17,5 +21,3 @@
 <div class="center-horizontal">
   <%= paginate @chore_items %>
 </div>
-
-
