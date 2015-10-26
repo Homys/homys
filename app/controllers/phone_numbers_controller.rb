@@ -19,9 +19,6 @@ class PhoneNumbersController < ApplicationController
 	def verify
     @phone_number = PhoneNumber.find_by(phone_number: params[:hidden_phone_number])
     @phone_number.verify(params[:pin])
-    current_user.phone_num = @phone_number 
-    current_user.is_verified = true
-    current_user.save
 
     redirect_to houses_path, notice: "Hey, your phone has been verified!"
 	end

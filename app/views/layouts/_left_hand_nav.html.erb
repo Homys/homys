@@ -1,6 +1,6 @@
 <div class="mdl-layout__drawer navbar-container">
 
-	
+	<% if user_verified_phone? %>
 	<header class="drawer-header">
 
 		<%= image_tag current_user.avatar, id: 'navavatar' %>
@@ -27,7 +27,7 @@
 
 
 		</header>
-	
+		<% end %>
 
 		<nav class="mdl-navigation">
 

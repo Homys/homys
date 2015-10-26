@@ -1,5 +1,5 @@
 class HousesController < ApplicationController
-  before_action :verified_phone, :except => [:index, :show]
+  before_action :verified_phone, :except => [:index]
   before_action :authenticate_user!, :except => [:index]
 
   def create
