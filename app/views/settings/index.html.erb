@@ -4,7 +4,7 @@
   <% @housemates.each do |housemate| %>
     <% if current_user != housemate %>
       <div class="custom mdl-card mdl-shadow--2dp mdl-grid">
-        <div class="mdl-card__supporting-text mdl-cell mdl-cell--8-col">
+        <div class="mdl-card__supporting-text mdl-cell mdl-cell--8-col mdl-cell--4-col-phone">
 
           <div class="name-title">
             <%= housemate.full_name %><br><br>
@@ -12,13 +12,6 @@
           <i class="material-icons">email</i><%= housemate.email %><br><br>
           <i class="material-icons">smartphone</i><%= housemate.phone_num %>
         </div>
-
-        <div class="mdl-cell mdl-cell--4-col">
-          <div class="card">
-            <%= image_tag housemate.avatar, :class => 'avatar' %>
-          </div>
-        </div>
-
       </div>
     <% end %>
   <% end %>

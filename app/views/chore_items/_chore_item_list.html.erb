@@ -1,12 +1,12 @@
 <% @chore_items.each do |chore| %>
 <div class="custom mdl-card mdl-shadow--2dp mdl-grid">
-  <div class="mdl-cell mdl-cell--8-col">
+  <div class="mdl-cell mdl-cell--8-col mdl-cell--3-col-phone">
 
     <div class="mdl-card__supporting-text">
       <strong><%= chore.description %></strong>
     </div>
   </div>
-  <div class="mdl-cell mdl-cell--4-col">
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone">
     <div class="card">
       <div class="delete-button">
         <%= link_to('<i class="material-icons">close</i>'.html_safe, house_chore_item_path(current_user.house_id, chore), method: :delete)  %>

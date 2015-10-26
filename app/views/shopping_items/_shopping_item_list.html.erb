@@ -1,6 +1,6 @@
 <% @shopping_items.each do |shopping_item| %>
 <div class="custom mdl-card mdl-shadow--2dp mdl-grid">
-  <div class="mdl-cell mdl-cell--8-col">
+  <div class="mdl-cell mdl-cell--8-col mdl-cell--3-col-phone">
 
     <div class="mdl-card__supporting-text">
       <% if shopping_item.importance == "1" %>
@@ -10,7 +10,7 @@
     <% end %>
     </div>
   </div>
-  <div class="mdl-cell mdl-cell--4-col">
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone">
     <div class="card">
       <div class="delete-button">
         <%= link_to('<i class="material-icons">close</i>'.html_safe, house_shopping_item_path(current_user.house_id, shopping_item), method: :delete) %>

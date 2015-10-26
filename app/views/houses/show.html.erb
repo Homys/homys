@@ -18,7 +18,7 @@
 
 <% @users.each do |user| %>
   <div class="custom mdl-card mdl-shadow--2dp mdl-grid">
-    <div class="mdl-card__supporting-text mdl-cell mdl-cell--8-col">
+    <div class="mdl-card__supporting-text mdl-cell mdl-cell--8-col mdl-cell--4-col-phone">
 
       <div class="name-title">
         <% if user == @users.first %>
@@ -30,13 +30,6 @@
       </div>
        Points: <%= user.total_points %> <br><br>
     </div>
-
-    <div class="mdl-cell mdl-cell--4-col">
-      <div class="card">
-        <%= image_tag user.avatar, :class => 'avatar' %>
-      </div>
-    </div>
-
   </div>
 <% end %>
 
