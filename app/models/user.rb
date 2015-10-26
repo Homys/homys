@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   end
 
   def has_verified_phone?
-    phone_num && phone_number.verified
+    phone_number && phone_number.verified
   end
 
 
