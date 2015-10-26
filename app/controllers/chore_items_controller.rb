@@ -22,8 +22,17 @@ class ChoreItemsController < ApplicationController
 	end
 
 	def index
-		@chore_items = @house.chore_items.all
+		@chore_items = @house.chore_items.all.page(params[:page])
 		@chore_item = ChoreItem.new
+
+		if @chore_items.count == nil
+  	     flash[:alert] = "You have no chore items. Create one now."
+		end
+
+		respond_to do |format|
+      format.html
+      format.js
+    end
 	end
 
 	def chore_assigner

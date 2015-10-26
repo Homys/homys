@@ -1,0 +1,2 @@
+$('#chore-list').append("<%= j render('chore_item_list') %>");
+$('.pagination').replaceWith('<%= j paginate(@chore_items) %>');
