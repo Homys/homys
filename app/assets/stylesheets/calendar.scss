@@ -18,8 +18,8 @@
   }
 
   div {
-    background-color: #448AFF;
-    color: white;
+    background-color: white;
+    color: black;
   }
 
   tr, th {
@@ -45,5 +45,8 @@
     font-size: 14px;
   }
 
+  .calendar-delete {
+    text-decoration: none;
+  }
 
 }

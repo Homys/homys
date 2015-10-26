@@ -1,6 +1,6 @@
 <header class="mdl-layout__header">
 	<div class="mdl-layout__header-row">
-    <span class="mdl-layout-title"><%= link_to(current_user.house.name, house_path(current_user.house_id), :class => "mdl-button mdl-js-button mdl-js-ripple-effect") if current_user && current_user.house %></span>
+    <span class="mdl-layout-title"><%= link_to(current_user.house.name, house_path(current_user.house_id), :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect") if current_user && current_user.house %></span>
 		<div class="mdl-layout-spacer"></div>
   	</div>
 </header>
