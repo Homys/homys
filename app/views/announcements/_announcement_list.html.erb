@@ -13,7 +13,7 @@
     <div class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone">
         <div class="card">
             <div class="delete-button">
-                <%= link_to('<i class="material-icons">close</i>'.html_safe, house_announcement_path(current_user.house_id, announcement), method: :delete) if announcement.owner_id == current_user.id %>
+                <%= link_to('<i class="material-icons">close</i>'.html_safe, house_announcement_path(current_user.house_id, announcement), method: :delete) %>
             </div>
             <%= image_tag announcement.owner.avatar, :class => 'avatar' %>
             <div class="clear center-horizontal"><%= announcement.owner.first_name %></div>
