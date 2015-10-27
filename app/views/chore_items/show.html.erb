@@ -1,5 +1,5 @@
 <h1>My Quests</h1>
-<%= link_to "All Quests", house_chore_items_path(@house), :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"%>
+<div class="tab"><%= link_to "All Quests", house_chore_items_path(@house), :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"%></div>
 <% @chore_items.each do |chore| %>
 <% if chore.done != true %>
   <div class="custom mdl-card mdl-shadow--2dp mdl-grid">

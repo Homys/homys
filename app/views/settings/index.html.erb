@@ -1,6 +1,6 @@
-<h1>Settings</h1>
+
 <% unless @housemates.empty? %>
-  <h5>Homys Contact Information</h5>
+  <h2>Homys Contact Information</h2>
   <% @housemates.each do |housemate| %>
     <% if current_user != housemate %>
       <div class="custom mdl-card mdl-shadow--2dp mdl-grid">
@@ -18,7 +18,7 @@
 <% end %>
 
 
-<h5>Other Options</h5>
+<h2>Other Options</h2>
 <div class="custom mdl-card mdl-shadow--2dp">
   <div class="mdl-card__supporting-text">
     <% if @house.users.size != 1 %>
