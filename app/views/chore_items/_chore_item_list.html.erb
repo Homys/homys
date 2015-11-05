@@ -13,8 +13,8 @@
       </div>
       <% if chore.user %>
         <span class="avatar_chore_placement"><%= image_tag chore.user.avatar, class: 'avatar' %></span>
+        <div class="clear center-horizontal"><%= chore.user.first_name %></div>
       <% end %>
-      <div class="clear center-horizontal"><%= chore.user.first_name %></div>
     </div>
   </div>
 
@@ -23,6 +23,8 @@
     <%= link_to "Complete", house_chore_item_path(@house, chore), method: :patch, :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
     <% elsif chore.done == true %>
       <i class="material-icons nav">check_circle</i> Done
+    <% elsif chore.user == nil %>
+      <i class="material-icons nav">new_releases</i> NEW
     <% elsif chore.user != current_user %>
     <i class="material-icons nav">timer</i> <em>Pending</em>
     <% end %>
