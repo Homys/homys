@@ -4,4 +4,7 @@ class SettingsController < ApplicationController
   def index
     @housemates = @house.users
   end
+
+  def show
+  end
 end
