@@ -21,7 +21,7 @@
 
 every :sunday, :at => '12am' do # Use any day of the week or :weekend, :weekday
   # House.all.each do |house|
-  	runner "House.assign_all_chores"
+  runner "House.assign_all_chores"
 end
 
 every 1.day, :at => '12am' do

@@ -6,8 +6,6 @@ class ChoreItemsController < ApplicationController
 	def create
 		@chore_item = ChoreItem.new(chore_item_params)
 		@chore_item.owner = current_user
-		@chore_item.house = @house
-		@chore_item.user = @house.users.sample
 
 		respond_to do |format|
 			if @chore_item.save

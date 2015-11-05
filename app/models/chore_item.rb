@@ -10,5 +10,4 @@ class ChoreItem < ActiveRecord::Base
   	end
   end
 
-
 end
