@@ -1,4 +1,8 @@
-$('#hidden_phone_number').val('<%= @phone_number.phone_number %>' )
-$('#send-pin').hide()
-$('#verify-pin').fadeToggle()
-$('#pin').focus()
+<% if @phone_number.id %>
+	$('#hidden_phone_number').val('<%= @phone_number.phone_number %>' )
+	$('#send-pin').hide()
+	$('#verify-pin').fadeToggle()
+	$('#pin').focus()
+<% else %>
+	$('#error-message-phone').html("Phone number taken");
+<% end %>
