@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'payments/paid'
-
   root 'houses#index'
 
   resources :welcome, only: [:index]

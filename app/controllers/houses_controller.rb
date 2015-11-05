@@ -47,7 +47,7 @@ class HousesController < ApplicationController
       current_user.house_id = nil
       redirect_to houses_path
     else
-      @house = House.find(params[:id]) # do i need to remove users associations to the house before?
+      @house = House.find(params[:id])
       @house.destroy
       redirect_to houses_path
     end
@@ -55,8 +55,10 @@ class HousesController < ApplicationController
 
   def index
     if current_user
-      if current_user.house_id != nil
+      if current_user.house_id != nil && current_user.has_verified_phone?
         redirect_to house_path(current_user.house)
+      elsif  current_user.has_verified_phone? == nil
+          redirect_to new_phone_number_path
       else
         @house = House.new
       end
