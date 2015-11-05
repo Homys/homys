@@ -1,12 +1,4 @@
-<header class="mdl-layout__header">
-  <div class="mdl-layout__header-row login">
-      <div class="logo_main">
-          <%= image_tag("homy-sml")%>
-          <%= link_to "Homys", root_path %>
-      </div>
-    <div class="mdl-layout-spacer"></div>
-  </div>
-</header>
+<%= render "layouts/setup_header" %>
 
       <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--3-col"></div>
@@ -43,7 +35,7 @@
     <%= f.file_field :avatar %>
   </div>
 
-<!-- 
+<!--
 1. have a simple form that asks for name, email, password
 2. after user is created and logged in, redirect user to phone number verification page
 3. upon verification success, update the user's phone field to the phone number that is verified
