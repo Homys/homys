@@ -12,12 +12,33 @@ class House < ActiveRecord::Base
   require 'twilio-ruby'
 
   def assign_chores
-  	created_chores.each do |chore|
-  		chore.user = users.sample
-      chore.done = 0
-  		chore.save
-  	end
+
+      #assign a user one by one to each chore, start at beginning of users once gone through all
+
+
+  # number_of_users = users.length
+
+  # chore_items.shuffle.each_with_index do |chore, index|
+  #   chore.user = users[index % number_of_users]
+  #   chore.done = false
+  #   chore.save
+  # end
+
+  #either method seems to work, understand this one a bit more
+  chores = chore_items.shuffle
+  i = 0
+  chores.each do |chore|
+    if i == users.count
+      i = 0
+    end
+
+    chore.user = users[i]
+    chore.done = 0
+    chore.save
+    i += 1
   end
+end
+
 
   def self.assign_all_chores
     self.all.each do |house|
@@ -31,15 +52,15 @@ class House < ActiveRecord::Base
     end
   end
 
- 
+
   def self.reduce_all_points
     model_classes = [ChoreItem, ShoppingItem, Expense]
-    model_classes.each do |model_class| 
+    model_classes.each do |model_class|
       model_class.all.each do |item|
         item.reduce_points
-      end 
-    end 
-  end 
+      end
+    end
+  end
 
 
 end
