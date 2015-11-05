@@ -40,6 +40,4 @@ class House < ActiveRecord::Base
       end 
     end 
   end 
-
-
 end

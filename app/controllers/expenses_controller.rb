@@ -51,7 +51,6 @@ class ExpensesController < ApplicationController
     #the method then checks to see if it can update the expenses_users table
     @expense.update_attributes(expense_params)
     redirect_to house_expense_path(current_user.house_id, @expense)
-
   end
 
   def show

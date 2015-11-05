@@ -31,6 +31,5 @@ class ApplicationController < ActionController::Base
       redirect_to new_phone_number_path
     end  
   end 
-  
 
 end

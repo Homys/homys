@@ -51,7 +51,6 @@ class ShoppingItemsController < ApplicationController
 		redirect_to house_shopping_items_path(current_user.house), notice: "+#{@shopping_item.points_rewarded} points!"
 	end 
 
-
 private
 
 	def shopping_item_params
