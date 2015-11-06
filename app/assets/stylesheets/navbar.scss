@@ -125,8 +125,6 @@ i.nav {
   clear: both;
 }
 
-
-
 h1, h2{
   text-align: center;
 }
@@ -149,4 +147,10 @@ h1, h2{
 #points {
   text-align: center;
 }
+
+.progress {
+  visibility: hidden;
+  width: 100%;
+}
+
 

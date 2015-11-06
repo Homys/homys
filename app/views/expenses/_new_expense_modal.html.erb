@@ -10,9 +10,10 @@
   <div class="modal-fade-screen">
     <div class="modal-inner">
       <div class="modal-close" for="modal-1"></div>
+        <%= render 'layouts/progress' %>
       <h4>Get Paid Back</h4>
       <p class="modal-content">
-        <div id="new-expense">
+        <div id="new-expense", class="progress_bar">
           <%= form_for([current_user.house, @expense], remote: true) do |f| %>
 
           <div id="expense-errors">

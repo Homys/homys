@@ -4,7 +4,6 @@ $(document).on('ready page:load', function() {
     if ($(this).is(":checked")) {
       $("body").addClass("modal-open");
     } else {
-      console.log('removeclass modal-open');
       $("body").removeClass("modal-open");
     }
   });

@@ -42,6 +42,7 @@
           <% if flash[:alert] %>
           <p class="flash-alert"><%= alert %></p>
           <% end %>
+          <%= render 'layouts/progress' %>
           <%= yield %>
         </div>
         <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-phone"></div>

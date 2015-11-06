@@ -10,10 +10,11 @@
   <div class="modal-fade-screen">
     <div class="modal-inner">
       <div class="modal-close" for="modal-1"></div>
+        <%= render 'layouts/progress' %>
         <h4>Make a House Commandment</h4>
       <p class="modal-content">
   
-        <div id="new-commandment">
+        <div id="new-commandment", class="progress_bar">
           <%= form_for([current_user.house, @commandment], remote:true) do |f| %>
 
             <div id="commandment-form-errors">
