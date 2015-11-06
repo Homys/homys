@@ -4,11 +4,15 @@
 	<%=render 'new_chore_modal' %>
 </span>
 
+
+<% if @new_chore_items.count == @chore_items.count %>
+    <%= link_to "Randomize Chores", house_chore_assigner_path(@house), method: :patch %>
+<% end %>
+
 <div class="container">
   <div class="tab"><%= link_to "My Quests", house_chore_item_path(@house, "myquests"), :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent tabs"%></div>
 
   <div class="custom mdl-card mdl-shadow--2dp description">
-
   		<div class="mdl-card__supporting-text">
   			<span class="descrition-text"> <strong>Hey, <%= current_user.first_name %>! Add house chores here. You will be randomly assigned to new Quests every Sunday. Keep in mind, the faster you get your Quests done, the more points you will earn.<strong> </span>
   			<div><%= image_tag('chores.png') %></div>

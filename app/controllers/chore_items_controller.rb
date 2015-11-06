@@ -22,6 +22,7 @@ class ChoreItemsController < ApplicationController
 
 	def index
 		@chore_items = @house.chore_items.all.page(params[:page])
+		@new_chore_items = @house.chore_items.where("user_id is null")
 		@chore_item = ChoreItem.new
 
 		if @chore_items.count == nil
@@ -35,7 +36,7 @@ class ChoreItemsController < ApplicationController
 	end
 
 	def chore_assigner
-		current_user.house.assign_chores
+		@house.assign_chores
 
 		redirect_to house_chore_items_path(current_user.house)
 	end
