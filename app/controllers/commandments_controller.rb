@@ -31,7 +31,12 @@ class CommandmentsController < ApplicationController
 	def destroy
 		@commandment = Commandment.find(params[:id])
 		@commandment.destroy
-		redirect_to house_commandments_path(current_user.house)
+		
+		respond_to do |format|
+			format.html {redirect_to house_commandments_path(current_user.house)}
+			format.js
+		end 
+
 	end
 
 private

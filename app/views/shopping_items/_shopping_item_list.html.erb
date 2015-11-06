@@ -13,7 +13,7 @@
   <div class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone">
     <div class="card">
       <div class="delete-button">
-        <%= link_to('<i class="material-icons">close</i>'.html_safe, house_shopping_item_path(current_user.house_id, shopping_item), method: :delete) %>
+        <%= link_to('<i class="material-icons">close</i>'.html_safe, house_shopping_item_path(current_user.house_id, shopping_item), method: :delete, remote: true) %>
       </div>
       <% if shopping_item.user %>
         <span class="avatar_shopping_item_placement"><%= image_tag shopping_item.user.avatar, class: 'avatar' %></span>

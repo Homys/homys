@@ -1,0 +1,3 @@
+<% @chore_items = @house.chore_items.all.page(params[:page]) %>
+
+$("#chore-list").html(("<%= j(render "chore_item_list") %>"));

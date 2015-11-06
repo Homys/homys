@@ -44,7 +44,12 @@ class ChoreItemsController < ApplicationController
 	def destroy
 		@chore_item = ChoreItem.find(params[:id])
 		@chore_item.destroy
-		redirect_to house_chore_items_path(current_user.house_id)
+	
+		respond_to do |format|
+			format.html {redirect_to house_chore_items_path(current_user.house)}
+			format.js
+		end 
+
 	end
 
 	def update

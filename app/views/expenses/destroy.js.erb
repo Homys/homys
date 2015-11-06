@@ -1,0 +1,3 @@
+<% @expenses = @house.expenses.all.page(params[:page]) %>
+
+$("#expense-list").html(("<%= j(render "expense_list") %>"));

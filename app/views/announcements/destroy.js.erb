@@ -1,0 +1,3 @@
+<% @announcements = @house.announcements.order('importance DESC', 'created_at DESC').page(params[:page]) %>
+
+$("#announcement-list").html(("<%= j(render "announcement_list") %>"));

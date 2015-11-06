@@ -23,7 +23,11 @@ class EventsController < ApplicationController
 	def destroy
     @event = Event.find(params[:id])
     @event.destroy
-    redirect_to house_path(@house)
+
+    respond_to do |format|
+			format.html {redirect_to house_path(@house)}
+			format.js
+		end 
   end
 
 

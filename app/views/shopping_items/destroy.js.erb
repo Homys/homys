@@ -1,0 +1,3 @@
+<% @shopping_items = @house.shopping_items.order('importance DESC', 'created_at DESC').page(params[:page]) %>
+
+$("#shopping-list").html(("<%= j(render "shopping_item_list") %>"));

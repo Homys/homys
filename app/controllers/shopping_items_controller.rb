@@ -40,7 +40,12 @@ class ShoppingItemsController < ApplicationController
 	def destroy
 		@shopping_item = ShoppingItem.find(params[:id])
 		@shopping_item.destroy
-		redirect_to house_shopping_items_path(current_user.house)
+
+		respond_to do |format|
+      		format.html {redirect_to house_shopping_items_path(current_user.house)}
+      		format.js
+    	end 
+		
 	end
 
 	def bought_item

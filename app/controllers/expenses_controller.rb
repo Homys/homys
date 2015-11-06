@@ -40,7 +40,12 @@ class ExpensesController < ApplicationController
     expense.destroy
     payments = Payment.where(expense_id: params[:id])
     payments.destroy_all
-    redirect_to house_expenses_path(current_user.house)
+
+    respond_to do |format|
+      format.html {redirect_to house_expenses_path(current_user.house)}
+      format.js
+    end 
+    
   end
 
   def update

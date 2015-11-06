@@ -13,7 +13,7 @@
   <div class="mdl-cell mdl-cell--4-col">
     <div class="card">
       <div class="delete-button">
-        <%= link_to('<i class="material-icons">close</i>'.html_safe, house_expense_path(current_user.house_id, expense), method: :delete) if expense.owner_id == current_user.id %>
+        <%= link_to('<i class="material-icons">close</i>'.html_safe, house_expense_path(current_user.house_id, expense), method: :delete, remote: true) if expense.owner_id == current_user.id %>
       </div>
     </div>
   </div>

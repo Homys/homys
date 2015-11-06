@@ -38,7 +38,12 @@ class AnnouncementsController < ApplicationController
 	def destroy
 		@announcement = Announcement.find(params[:id])
 		@announcement.destroy
-		redirect_to house_announcements_path(current_user.house_id)
+
+		respond_to do |format|
+			format.html {redirect_to house_announcements_path(current_user.house)}
+			format.js
+		end 
+
 	end
 
 	def text_sender(body)

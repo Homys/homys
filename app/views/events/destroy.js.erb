@@ -1,0 +1,3 @@
+<%  @events = @house.events.all %>
+
+$("#event-list").html(("<%= j(render "events/event_list") %>"));
