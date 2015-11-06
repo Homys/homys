@@ -1,4 +1,5 @@
 <% @chore_items = @house.chore_items.all %>
+<% @new_chore_items = @house.chore_items.where("user_id is null") %>
 
 <% if @chore_item.errors.present? %>
   $("#chore-form-errors").html("<%= j(render "chore_item_errors") %>");

@@ -13,13 +13,7 @@
   			<div><%= image_tag('chores.png') %></div>
   		</div>
   </div>
-  <% if @new_chore_items.count == @chore_items.count %>
-     <div class="custom mdl-card mdl-shadow--2dp description">
-        <div class="mdl-card__supporting-text">
-          <span class="descrition-text"> <strong>INITIAL SETUP ONLY: Only click the randomize button below once you are satisfied with your chore list. Once this button is clicked, you will have to wait until Sunday until chores are randomized again.</strong><%= link_to "Randomize Chores Now", house_chore_assigner_path(@house), method: :patch, :class => "mdl-button mdl-js-button mdl-js-ripple-effect" %></span>
-        </div>
-    </div>
-  <% end %>
+ 
 </div>
 
 <div id="chore-list">

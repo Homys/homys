@@ -1,3 +1,4 @@
 <% @chore_items = @house.chore_items.all.page(params[:page]) %>
+<% @new_chore_items = @house.chore_items.where("user_id is null") %>
 
 $("#chore-list").html(("<%= j(render "chore_item_list") %>"));
