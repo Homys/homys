@@ -5,7 +5,7 @@
 </span>
 
 
-<% if @new_chore_items.count == @chore_items.count %>
+<% if @new_chore_items.count == @chore_items.count && @new_chore_items.count == @house.users.count %>
     <%= link_to "Randomize Chores", house_chore_assigner_path(@house), method: :patch %>
 <% end %>
 
