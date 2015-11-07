@@ -1,4 +1,3 @@
 <% @commandments = @house.commandments.all %>
 
 $("#commandment-list").html(("<%= j(render "commandment_list") %>"));
-$('.pagination').replaceWith('<%= j paginate(@commandments) %>');

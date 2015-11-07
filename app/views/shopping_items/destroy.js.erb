@@ -1,4 +1,3 @@
-<% @shopping_items = @house.shopping_items.order('importance DESC', 'created_at DESC').page(params[:page]) %>
+<% @shopping_items = @house.shopping_items.order('importance DESC', 'created_at DESC') %>
 
 $("#shopping-list").html(("<%= j(render "shopping_item_list") %>"));
-$('.pagination').replaceWith('<%= j paginate(@shopping_items) %>');

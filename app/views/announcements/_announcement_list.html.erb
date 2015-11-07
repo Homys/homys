@@ -1,7 +1,7 @@
 <% @announcements.each do |announcement| %>
 
 <div class="custom mdl-card mdl-shadow--2dp mdl-grid">
-  <div class="mdl-card__supporting-text mdl-cell mdl-cell--8-col mdl-cell--3-col-phone">
+  <div class="mdl-card__supporting-text mdl-cell mdl-cell--8-col mdl-cell--6-col-tablet mdl-cell--3-col-phone">
     <% if announcement.importance == "1" %>
       <i class="material-icons">error</i> <br> <%= announcement.description %>
     <% else %>
@@ -9,7 +9,7 @@
     <% end %>
   </div>
 
-  <div class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone">
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--1-col-phone">
     <div class="card">
       <div class="delete-button">
         <%= link_to('<i class="material-icons">close</i>'.html_safe, house_announcement_path(current_user.house_id, announcement), method: :delete, remote: true) %>

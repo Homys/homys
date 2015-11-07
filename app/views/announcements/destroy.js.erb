@@ -1,4 +1,3 @@
-<% @announcements = @house.announcements.order('importance DESC', 'created_at DESC').page(params[:page]) %>
+<% @announcements = @house.announcements.order('importance DESC', 'created_at DESC').%>
 
 $("#announcement-list").html(("<%= j(render "announcement_list") %>"));
-$('.pagination').replaceWith('<%= j paginate(@announcements) %>');

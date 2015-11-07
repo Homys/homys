@@ -33,8 +33,8 @@
 
     <main class="mdl-layout__content mdl-color-text--black-600">
       <div class="page-content mdl-grid">
-        <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-phone"></div>
-        <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-phone">
+        <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+        <div class="mdl-cell mdl-cell--6-col  mdl-cell--8-col-tablet mdl-cell--4-col-phone">
           <% if flash[:notice] %>
           <p class="flash-notice"><%= notice %></p>
           <% end %>
@@ -45,7 +45,7 @@
           <%= render 'layouts/progress' %>
           <%= yield %>
         </div>
-        <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-phone"></div>
+        <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
       </main>
     </div>
   <% else %>

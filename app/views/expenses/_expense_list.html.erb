@@ -1,6 +1,6 @@
 <% @expenses.each do |expense| %>
 <div class="custom mdl-card mdl-shadow--2dp mdl-grid">
-  <div class="mdl-cell mdl-cell--8-col">
+  <div class="mdl-cell mdl-cell--8-col mdl-cell--7-col-tablet mdl-cell--3-col-phone">
 
     <div class="mdl-card__supporting-text">
       <div class="expense-title">
@@ -10,7 +10,7 @@
       Pay By: <%= expense.date_due.strftime("%B %d, %Y") %><br><br>
     </div>
   </div>
-  <div class="mdl-cell mdl-cell--4-col">
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--1-col-tablet mdl-cell--1-col-phone">
     <div class="card">
       <div class="delete-button">
         <%= link_to('<i class="material-icons">close</i>'.html_safe, house_expense_path(current_user.house_id, expense), method: :delete, remote: true) if expense.owner_id == current_user.id %>
