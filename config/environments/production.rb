@@ -11,7 +11,7 @@ ActionMailer::Base.smtp_settings = {
   :enable_starttls_auto => true
 }
 
-
+PUBLIC_URL = "http://www.homys.space"
 
 config.action_mailer.default_url_options = { host: 'homys.herokuapp.com' }
 

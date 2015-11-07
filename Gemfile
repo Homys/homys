@@ -5,7 +5,6 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record
 
-gem "simple_calendar", "~> 2.0"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -57,7 +56,7 @@ gem 'sendgrid-ruby'
 
 gem 'whenever'
 
-gem 'pry-rails'
+gem 'icalendar', '~> 2.3'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -78,6 +77,7 @@ group :development, :test do
   gem 'byebug'
   gem 'sqlite3'
   gem "faker"
+  gem 'pry-rails'
 end
 
 group :development do

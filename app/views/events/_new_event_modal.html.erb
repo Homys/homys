@@ -1,44 +1,61 @@
 <div class="modal calendar">
   <label for="modal-1">
     <div class="modal-trigger">
-       <span class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">New Event</span>
-    </div>
-  </label>
-  <input class="modal-state" id="modal-1" type="checkbox" />
-  <div class="modal-fade-screen">
-    <div class="modal-inner">
-      <div class="modal-close" for="modal-1"></div>
-        <%= render 'layouts/progress' %>
-        <h4>Create a New Event</h4>
-      <p class="modal-content">
-        <div id="new-event", class="progress_bar">
-          <%= form_for([current_user.house, @event], remote: true) do |f| %>
+     <span class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">New Event</span>
+   </div>
+ </label>
+ <input class="modal-state" id="modal-1" type="checkbox" />
+ <div class="modal-fade-screen">
+  <div class="modal-inner">
+    <div class="modal-close" for="modal-1"></div>
+    <%= render 'layouts/progress' %>
+    <h4>Create a New Event</h4>
+    <p class="modal-content">
+      <div id="new-event", class="progress_bar">
+        <%= form_for([current_user.house, @event], remote: true) do |f| %>
 
-            <div id="event-form-errors">
-              <%= render "events/event_errors" %>
-            </div>
-
-            <div class="field">
-              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <%= f.label :name, :class => "mdl-textfield__label" %>
-                <%= f.text_field :name, :class => "mdl-textfield__input" %>
-              </div>
-            </div>
-
-            <div class="field">
-                <%= f.label :date %>
-                <%= f.datetime_select :date, :minute_step => 30 %> <br><br>
-            </div>
-
-
-
-            <div class="actions">
-              <%= f.submit "Make it!", :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
-            </div>
-
-          <% end %>
+        <div id="event-form-errors">
+          <%= render "events/event_errors" %>
         </div>
+
+        <div class="field">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <%= f.label :title, :class => "mdl-textfield__label" %>
+            <%= f.text_field :title, :class => "mdl-textfield__input" %>
+          </div>
+        </div>
+
+        <div class="field">
+          <%= f.label :date %>
+          <%= f.datetime_select :date, :minute_step => 30 %> <br><br>
+        </div>
+
+        <div class="field">
+          <%= f.label :end_date %>
+          <%= f.datetime_select :end_date, :minute_step => 30 %> <br><br>
+        </div>
+
+         <div class="field">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <%= f.label :summary, :class => "mdl-textfield__label" %>
+            <%= f.text_field :summary, :class => "mdl-textfield__input" %>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <%= f.label :content, :class => "mdl-textfield__label" %>
+            <%= f.text_field :content, :class => "mdl-textfield__input" %>
+          </div>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Make it!", :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
+        </div>
+
+        <% end %>
+      </div>
     </p>
-    </div>
   </div>
+</div>
 </div>

@@ -20,6 +20,20 @@ class EventsController < ApplicationController
 
 	end
 
+def show
+  @event = Event.find(params[:id]})
+
+  respond_to do |wants|
+    wants.html
+    wants.ics do
+      calendar = Icalendar::Calendar.new
+      calendar.add_event(@event.to_ics)
+      calendar.publish
+      render :text => calendar.to_ical
+    end
+  end
+end
+
 	def destroy
     @event = Event.find(params[:id])
     @event.destroy
@@ -34,7 +48,7 @@ class EventsController < ApplicationController
 	private
 
 	def event_params
-		params.require(:event).permit(:name, :date, :importance, :owner_id)
+		params.require(:event).permit(:title, :date, :end_date, :summary, :content, :owner_id)
 	end
 
 end

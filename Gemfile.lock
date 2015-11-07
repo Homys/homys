@@ -179,6 +179,7 @@ GEM
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
+    icalendar (2.3.0)
     inflecto (0.0.2)
     ipaddress (0.8.0)
     jbuilder (2.3.2)
@@ -276,8 +277,6 @@ GEM
       faraday (~> 0.9)
       mimemagic
       smtpapi (~> 0.1)
-    simple_calendar (2.0.3)
-      rails (>= 3.0)
     slop (3.6.0)
     smtpapi (0.1.0)
     spring (1.4.0)
@@ -325,6 +324,7 @@ DEPENDENCIES
   faker
   figaro
   fog
+  icalendar (~> 2.3)
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
@@ -339,7 +339,6 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   select2-rails
   sendgrid-ruby
-  simple_calendar (~> 2.0)
   spring
   sqlite3
   therubyracer

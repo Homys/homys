@@ -23,7 +23,8 @@ Rails.application.routes.draw do
     end
     resources :commandments, only: [:create, :index, :destroy]
     resources :announcements, only: [:create, :index, :destroy]
-    resources :events, only: [:create, :destroy]
+    resources :events
+    
     resources :settings, only: [:index, :show]
 
 
