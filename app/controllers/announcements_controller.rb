@@ -5,11 +5,6 @@ class AnnouncementsController < ApplicationController
 	def index
 		@announcements = @house.announcements.order('importance DESC', 'created_at DESC').page(params[:page])
 		@announcement = Announcement.new
-
-    respond_to do |format|
-      format.html
-      format.js
-    end
 	end
 
 
@@ -42,7 +37,7 @@ class AnnouncementsController < ApplicationController
 		respond_to do |format|
 			format.html {redirect_to house_announcements_path(current_user.house)}
 			format.js
-		end 
+		end
 
 	end
 

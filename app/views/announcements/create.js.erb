@@ -6,4 +6,5 @@
   $("#announcement-form-errors").html("");
   $("#announcement-list").html(("<%= j(render "announcement_list") %>"));
   $("#new_announcement")[0].reset();
+  $('.pagination').replaceWith('<%= j paginate(@announcements) %>');
 <% end %>
