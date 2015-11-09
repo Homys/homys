@@ -1,4 +1,4 @@
-<% @expenses = @house.expenses.all %>
+<% @expenses = @house.expenses.all.page(params[:page]) %>
 
 <% if @expense.errors.present? %>
   $("#expense-errors").html("<%= j(render "expense_errors") %>");
@@ -6,4 +6,5 @@
   $("#expense-errors").html("");
   $("#expense-list").html(("<%= j(render "expense_list") %>"));
   $("#new_expense")[0].reset();
+  $('.pagination').replaceWith('<%= j paginate(@expenses) %>');
 <% end %>

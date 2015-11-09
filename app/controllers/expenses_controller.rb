@@ -6,11 +6,6 @@ class ExpensesController < ApplicationController
     @expenses = @house.expenses.all.page(params[:page])
     @expense = Expense.new
     @housemates = @house.users
-
-    respond_to do |format|
-      format.html
-      format.js
-    end
   end
 
   def create
@@ -44,8 +39,8 @@ class ExpensesController < ApplicationController
     respond_to do |format|
       format.html {redirect_to house_expenses_path(current_user.house)}
       format.js
-    end 
-    
+    end
+
   end
 
   def update
