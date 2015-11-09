@@ -1,4 +1,4 @@
-<% @chore_items = @house.chore_items.all %>
+<% @chore_items = @house.chore_items.all.page(params[:page]) %>
 <% @new_chore_items = @house.chore_items.where("user_id is null") %>
 
 <% if @chore_item.errors.present? %>
@@ -7,4 +7,5 @@
   $("#chore-form-errors").html("");
   $("#chore-list").html(("<%= j(render "chore_item_list") %>"));
   $("#new_chore_item")[0].reset();
+  $('.pagination').replaceWith('<%= j paginate(@chore_items) %>');
 <% end %>

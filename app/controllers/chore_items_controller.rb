@@ -24,15 +24,6 @@ class ChoreItemsController < ApplicationController
 		@chore_items = @house.chore_items.all.page(params[:page])
 		@new_chore_items = @house.chore_items.where("user_id is null")
 		@chore_item = ChoreItem.new
-
-		if @chore_items.count == nil
-  	     flash[:alert] = "You have no chore items. Create one now."
-		end
-
-		respond_to do |format|
-      format.html
-      format.js
-    end
 	end
 
 	def chore_assigner
@@ -44,11 +35,11 @@ class ChoreItemsController < ApplicationController
 	def destroy
 		@chore_item = ChoreItem.find(params[:id])
 		@chore_item.destroy
-	
+
 		respond_to do |format|
 			format.html {redirect_to house_chore_items_path(current_user.house)}
 			format.js
-		end 
+		end
 
 	end
 

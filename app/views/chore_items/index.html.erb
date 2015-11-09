@@ -13,7 +13,7 @@
   			<div><%= image_tag('chores.png') %></div>
   		</div>
   </div>
- 
+
 </div>
 
 <div id="chore-list">
@@ -21,5 +21,7 @@
 </div>
 
 <div class="center-horizontal">
-  <%= paginate @chore_items %>
+  <div class="pagination" >
+    <%= paginate @chore_items %>
+  </div>
 </div>
