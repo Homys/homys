@@ -1,4 +1,4 @@
-<% @shopping_items = @house.shopping_items.order('importance DESC', 'created_at DESC') %>
+<% @shopping_items = @house.shopping_items.order('importance DESC', 'created_at DESC').page(params[:page]) %>
 
 <% if @shopping_item.errors.present? %>
   $("#shopping-item-errors").html("<%= j(render "shopping_item_errors") %>");
@@ -6,4 +6,8 @@
   $("#shopping-item-errors").html("");
   $("#shopping-list").html(("<%= j(render "shopping_item_list") %>"));
   $("#new_shopping_item")[0].reset();
+  $('.pagination').replaceWith('<%= j paginate(@shopping_items) %>');
 <% end %>
+
+
+

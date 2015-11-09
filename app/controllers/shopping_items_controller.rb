@@ -19,22 +19,18 @@ class ShoppingItemsController < ApplicationController
 		end
 	end
 
-	def update 
+	def update
 		@shopping_item = ShoppingItem.find(params[:id])
 		@shopping_item.user = current_user
 		@shopping_item.save
 
 		redirect_to house_shopping_items_path(current_user.house)
-	end 
+	end
 
 	def index
 		@shopping_items = @house.shopping_items.order('importance DESC', 'created_at DESC').page(params[:page])
 		@shopping_item = ShoppingItem.new
 
-		respond_to do |format|
-      format.html
-      format.js
-    end
 	end
 
 	def destroy
@@ -44,8 +40,8 @@ class ShoppingItemsController < ApplicationController
 		respond_to do |format|
       		format.html {redirect_to house_shopping_items_path(current_user.house)}
       		format.js
-    	end 
-		
+    	end
+
 	end
 
 	def bought_item
@@ -54,7 +50,7 @@ class ShoppingItemsController < ApplicationController
 		current_user.save
 		@shopping_item.destroy
 		redirect_to house_shopping_items_path(current_user.house), notice: "+#{@shopping_item.points_rewarded} points!"
-	end 
+	end
 
 private
 
