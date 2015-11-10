@@ -4,6 +4,7 @@ class Expense < ActiveRecord::Base
   belongs_to :owner, class_name: "User"
   belongs_to :house
   validates_length_of :title, :maximum => 60, :allow_blank => false
+  validates :amount, :date_due, presence: true
 
   def split_amount
     num_users = users.size
