@@ -1,6 +1,13 @@
 
-<% if @housemates.size > 1 %>
-  <h2>Homys Contact Information</h2>
+
+<h2>Homys Contact Information</h2>
+<% if @housemates.size == 1 %>
+    <div class="custom mdl-card mdl-shadow--2dp description">
+      <div class="mdl-card__supporting-text">
+        <span class="descrition-text"> <strong>Add your Homys to the house on the main page in order to view their contact information.<strong> </span>
+      </div>
+    </div>
+<% else %>
   <% @housemates.each do |housemate| %>
     <% if current_user != housemate %>
       <div class="custom mdl-card mdl-shadow--2dp mdl-grid">
@@ -16,7 +23,7 @@
     <% end %>
   <% end %>
 <% end %>
-
+<br>
 
 <h2>Other Options</h2>
 <div class="custom mdl-card mdl-shadow--2dp">

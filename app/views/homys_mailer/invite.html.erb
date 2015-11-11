@@ -3,7 +3,9 @@
 
 <body>
 
-	<h1> Your friend <%= @current_user.full_name %> has invited you to join <%= @current_user.house.name %> on Homys ! </h1>
+	<h1> Your friend <%= @current_user.full_name %> wants you to join <%= @current_user.house.name %> on Homys. ! </h1>
+
+  <p> Create an account and let <%= @current_user.full_name %> know so <%= @current_user.full_name %> can add you to <%= @current_user.house.name %>.  </p>
 
 	<p> Click the link below to sign up for a Homys account: </p>
 

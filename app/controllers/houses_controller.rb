@@ -25,13 +25,13 @@ class HousesController < ApplicationController
       	redirect_to house_path(current_user.house), notice: "User cannot be assigned to this house"
       end
     else
-      redirect_to house_path(current_user.house), alert: "User does not exist, invite homy below"
+      redirect_to house_path(current_user.house), alert: "User does not exist, invite homy to sign up for site below"
     end
   end
 
   def invite_housemate
      HomysMailer.invite(params[:email], current_user).deliver_now
-     redirect_to house_path(current_user.house), notice: "Sent invite email to your homy"
+     redirect_to house_path(current_user.house), notice: "Sign up email sent, don't forget to add your housemate below once he/she has created an account"
   end
 
 
@@ -45,12 +45,14 @@ class HousesController < ApplicationController
   def destroy
     if params[:id] == "user"
       current_user.house_id = nil
+      current_user.total_points = 0
       current_user.save
       redirect_to houses_path
     else
       @house = House.find(params[:id])
       @house.users.each do |user|
         user.house_id = nil
+        user.total_points = 0
         user.save
       end
       @house.destroy
