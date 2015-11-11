@@ -1,78 +1,76 @@
 
-<div class="custom mdl-card mdl-shadow--2dp description">
-  <div class="mdl-card__supporting-text">
-   <span class="descrition-text"> <strong>Hey, <%= current_user.first_name %>! Here's what's on tap for this month. </strong> </span>
-   <%= image_tag('events.png') %>
-  </div>
-</div>
-
-      <div id="new-event">
-  <%= render "events/new_event_modal" %>
-</div>
-
-<div id="event-list">
-  <%= render "events/event_list" %>
-</div>
-
-<br>
-
-<h2>Leaderboard</h2>
-<p id="points"> Points reset at the beginning of each month. </p>
-
-<% @users.each do |user| %>
-  <div class="custom mdl-card mdl-shadow--2dp mdl-grid">
-    <div class="mdl-card__supporting-text mdl-cell mdl-cell--8-col mdl-cell--4-col-phone">
-
-      <div class="name-title">
-        <% if user == @users.first %>
-          <%= user.full_name %> <i class="material-icons">stars</i>
-        <% else %>
-          <%= user.full_name %>
-        <% end %>
-        <br><br>
-      </div>
-       Points: <%= user.total_points %> <br><br>
-    </div>
-  </div>
-<% end %>
-
-
-
-
-<h2>Add Homy</h2>
-<div class="custom mdl-card mdl-shadow--2dp">
-  <div class="mdl-card__supporting-text">
-    <% if flash[:alert] %>
+<% if flash[:alert] %>
+  <h2>Invite User to Join Homys by Email</h2>
+  <div class="custom mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__supporting-text">
       <%= form_tag house_invite_housemate_path(current_user.house_id), method: :patch do %>
-
-
-      <div class="field">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <%= label_tag :email, "Email", :class => "mdl-textfield__label" %>
-          <%= email_field_tag :email, params[:email], :class => "mdl-textfield__input" %>
+        <div class="field">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <%= label_tag :email, "Email", :class => "mdl-textfield__label" %>
+            <%= email_field_tag :email, params[:email], :class => "mdl-textfield__input" %>
+          </div>
         </div>
-      </div>
 
         <div class="actions">
           <%= submit_tag "Invite Homy", :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
         </div>
       <%end%>
+      <br>
+      <%= link_to "Back", house_path(@house) %>
+<% else %>
+    <div class="custom mdl-card mdl-shadow--2dp description">
+      <div class="mdl-card__supporting-text">
+       <span class="descrition-text"> <strong>Hey, <%= current_user.first_name %>! Here's what's on tap for this month. </strong> </span>
+       <%= image_tag('events.png') %>
+     </div>
+   </div>
 
-    <% else %>
+   <div id="new-event">
+    <%= render "events/new_event_modal" %>
+  </div>
+
+  <div id="event-list">
+    <%= render "events/event_list" %>
+  </div>
+
+  <br>
+
+  <h2>Leaderboard</h2>
+  <p id="points"> Points reset at the beginning of each month. </p>
+
+  <% @users.each do |user| %>
+    <div class="custom mdl-card mdl-shadow--2dp mdl-grid">
+      <div class="mdl-card__supporting-text mdl-cell mdl-cell--8-col mdl-cell--4-col-phone">
+        <div class="name-title">
+          <% if user == @users.first %>
+           <%= user.full_name %> <i class="material-icons">stars</i>
+          <% else %>
+           <%= user.full_name %>
+          <% end %>
+          <br><br>
+        </div>
+        Points: <%= user.total_points %> <br><br>
+      </div>
+    </div>
+  <% end %>
+
+
+  <h2>Add Homy</h2>
+  <div class="custom mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__supporting-text">
       <%= form_tag house_add_housemate_path(current_user.house_id), method: :patch do %>
 
         <div class="field">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <%= label_tag :email, "Email", :class => "mdl-textfield__label" %>
-              <%= email_field_tag :email, params[:email], :class => "mdl-textfield__input" %>
-            </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <%= label_tag :email, "Email", :class => "mdl-textfield__label" %>
+            <%= email_field_tag :email, params[:email], :class => "mdl-textfield__input" %>
+          </div>
         </div>
 
-      <div class="actions">
-        <%= submit_tag "Add Homy", :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"%>
-      </div>
-    <% end %>
-  <% end %>
-
+        <div class="actions">
+          <%= submit_tag "Add Homy", :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"%>
+        </div>
+      <% end %>
+    </div>
   </div>
-</div>
+<%end%>
