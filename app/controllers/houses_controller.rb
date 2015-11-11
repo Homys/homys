@@ -48,6 +48,9 @@ class HousesController < ApplicationController
       redirect_to houses_path
     else
       @house = House.find(params[:id])
+      @house.users.each do |user|
+        user.house_id = nil
+      end
       @house.destroy
       redirect_to houses_path
     end
