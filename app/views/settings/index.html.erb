@@ -1,5 +1,5 @@
 
-<% unless @housemates.empty? %>
+<% if @housemates.size > 1 %>
   <h2>Homys Contact Information</h2>
   <% @housemates.each do |housemate| %>
     <% if current_user != housemate %>

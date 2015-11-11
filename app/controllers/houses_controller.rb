@@ -45,11 +45,13 @@ class HousesController < ApplicationController
   def destroy
     if params[:id] == "user"
       current_user.house_id = nil
+      current_user.save
       redirect_to houses_path
     else
       @house = House.find(params[:id])
       @house.users.each do |user|
         user.house_id = nil
+        user.save
       end
       @house.destroy
       redirect_to houses_path
