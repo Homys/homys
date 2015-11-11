@@ -230,15 +230,15 @@ you can use the generic selector below, but it's slower:
 .icon_pause:before {
 	content: "\60";
 }
-.icon_menu:before {
-	content: "\61";
-}
-.icon_menu-square_alt2:before {
-	content: "\62";
-}
-.icon_menu-circle_alt2:before {
-	content: "\63";
-}
+// .icon_menu:before {
+// 	content: "\61";
+// }
+// .icon_menu-square_alt2:before {
+// 	content: "\62";
+// }
+// .icon_menu-circle_alt2:before {
+// 	content: "\63";
+// }
 .icon_ul:before {
 	content: "\64";
 }
