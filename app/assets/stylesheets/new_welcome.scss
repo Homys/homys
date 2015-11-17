@@ -17,7 +17,8 @@
 }
 
 .sign_log_buttons {
-	padding: 50px;
+	padding-left: 480px;
+	padding-top: 70px;
 }
 
 #header {
@@ -30,12 +31,22 @@
 
 .homys_image {
 	position: absolute;
-	top: 130px;
-	left: 640px;
+	top: 580px;
+	left: 1200px;
+	zoom: 60%;
 }
 
 .beta {
   font-size: 10px;
   text-transform: uppercase;
   line-height: 3;
+}
+
+
+h4#homys-title {
+    text-align: center;
+}
+
+#slogan {
+	text-align: center;
 }
