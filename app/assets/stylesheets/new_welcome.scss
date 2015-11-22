@@ -32,11 +32,17 @@
 	@include clearfix;
 }
 
+#homys-home{
+	width: 100%;
+}
+
 .homys_image {
-	position: absolute;
+/*	position: absolute;
 	top: 800px;
-	left: 20px;
+	left: 20px;*/
 	zoom: 60%;
+	display: block;
+  margin: auto;
 }
 
 .beta {
