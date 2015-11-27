@@ -3,11 +3,11 @@
 
 <body>
 
-  <h1> Your friend <%= @current_user.full_name %> wants to add you to  <%= @current_user.house.name %> on Homys! </h1>
+  <p> Your friend <%= @current_user.full_name %> wants to add you to  <%= @current_user.house.name %> on Homys! </p>
 
   <p> Click the link below to move in to your home:  </p>
 
-  <a href="http://homys.space/houses/<%= @house %>/join_house/<%= @user.id %>/<%= @current_user.id %>"></a>
+  <a href="http://homys.space/houses/<%= @house %>/join_house/<%= @user.id %>/<%= @current_user.id %>">Move In</a>
 
 </body>
 </html>
