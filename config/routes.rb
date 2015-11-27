@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     patch 'text_sender' => 'announcements#text_sender'
     patch 'add_housemate' => 'houses#add_housemate'
     patch 'invite_housemate' => 'houses#invite_housemate'
+    get 'join_house/:user_id/:house_member' => 'houses#confirm_house'
 
 
   end

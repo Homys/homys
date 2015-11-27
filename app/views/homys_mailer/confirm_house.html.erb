@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <h1> Your friend <%= @current_user.full_name %> wants to add you to  <%= @current_user.house.name %> on Homys! </h1>
+
+  <p> Click the link below to move in to your home:  </p>
+
+  <a href="http://homys.space/houses/<%= @house %>/join_house/<%= @user.id %>/<%= @current_user.id %>"></a>
+
+</body>
+</html>

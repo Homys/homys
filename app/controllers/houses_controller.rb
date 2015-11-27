@@ -18,9 +18,10 @@ class HousesController < ApplicationController
   	@user = User.find_by(email: params[:email])
   	if @user
       if @user.house_id == nil
-        @user.house_id = current_user.house_id
-      	@user.save
-      	redirect_to house_path(current_user.house)
+       #  @user.house_id = current_user.house_id
+      	# @user.save
+        HomysMailer.confirm_house(@user.email, @user, current_user.house, current_user).deliver_now
+      	redirect_to house_path(current_user.house), notice: "Request email sent to Homy"
       else
       	redirect_to house_path(current_user.house), notice: "User cannot be assigned to this house"
       end
@@ -71,6 +72,16 @@ class HousesController < ApplicationController
       end
     else
       redirect_to welcome_index_path
+    end
+  end
+
+  def confirm_house
+    if current_user && current_user == User.find(params[:user_id]) && User.find(params[:house_member]).house_id == params[:house_id].to_i
+      current_user.house_id = params[:house_id]
+      current_user.save
+      redirect_to house_path(current_user.house), notice: "Welcome to #{current_user.house.name}"
+    else
+      redirect_to houses_path, notice: "Please make sure you are logged in as the correct user."
     end
   end
 
