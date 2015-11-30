@@ -1,7 +1,7 @@
 class HousesController < ApplicationController
-  before_action :verified_phone, :if => :wants_sms?, :except => [:index, :show]
+  before_action :verified_phone, :except => [:index, :show]
   before_action :authenticate_user!, :except => [:index]
-
+  before_action :verified_phone, :if => :wants_sms?, :only => [:create]
   def create
   	@house = House.new(house_params)
     @house.users << current_user

@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
 
-	before_action :authenticate_user!, :ensure_house_exists, :get_house, :verified_phone
+	before_action :authenticate_user!, :ensure_house_exists, :get_house
+	before_action :verified_phone, :if => :wants_sms?
 
 	def create
 		@event = Event.new(event_params)
@@ -27,7 +28,7 @@ class EventsController < ApplicationController
     respond_to do |format|
 			format.html {redirect_to house_path(@house)}
 			format.js
-		end 
+		end
   end
 
 
