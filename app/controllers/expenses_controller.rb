@@ -1,6 +1,7 @@
 class ExpensesController < ApplicationController
 
-  before_action :authenticate_user!, :ensure_house_exists, :get_house, :verified_phone
+  before_action :authenticate_user!, :ensure_house_exists, :get_house
+  before_action :verified_phone, :if => :wants_sms?
 
   def index
     @expenses = @house.expenses.all.page(params[:page])

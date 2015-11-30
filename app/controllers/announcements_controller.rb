@@ -1,6 +1,7 @@
 class AnnouncementsController < ApplicationController
 
-	before_action :authenticate_user!, :ensure_house_exists, :get_house, :verified_phone
+	before_action :authenticate_user!, :ensure_house_exists, :get_house
+	before_action :verified_phone, :if => :wants_sms?
 
 	def index
 		@announcements = @house.announcements.order('importance DESC', 'created_at DESC').page(params[:page])

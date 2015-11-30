@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
 
+  validates_inclusion_of :send_sms, in: [true, false]
+
 
   def full_name
     "#{first_name.capitalize} #{last_name.capitalize}"

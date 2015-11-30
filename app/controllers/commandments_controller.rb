@@ -1,6 +1,7 @@
 class CommandmentsController < ApplicationController
 
-	before_action :authenticate_user!, :ensure_house_exists, :get_house, :verified_phone
+	before_action :authenticate_user!, :ensure_house_exists, :get_house
+	before_action :verified_phone, :if => :wants_sms?
 
 	def create
 		@commandment = Commandment.new(commandment_params)
@@ -31,11 +32,11 @@ class CommandmentsController < ApplicationController
 	def destroy
 		@commandment = Commandment.find(params[:id])
 		@commandment.destroy
-		
+
 		respond_to do |format|
 			format.html {redirect_to house_commandments_path(current_user.house)}
 			format.js
-		end 
+		end
 
 	end
 

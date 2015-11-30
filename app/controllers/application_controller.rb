@@ -14,8 +14,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << [:first_name, :last_name, :phone_num, :avatar]
-    devise_parameter_sanitizer.for(:account_update) << [:first_name, :last_name, :phone_num, :avatar]
+    devise_parameter_sanitizer.for(:sign_up) << [:first_name, :last_name, :phone_num, :avatar, :send_sms]
+    devise_parameter_sanitizer.for(:account_update) << [:first_name, :last_name, :phone_num, :avatar, :send_sms]
   end
 
   private
@@ -29,7 +29,11 @@ class ApplicationController < ActionController::Base
   def verified_phone
     unless current_user.has_verified_phone?
       redirect_to new_phone_number_path
-    end  
-  end 
+    end
+  end
+
+  def wants_sms?
+    current_user.send_sms == true
+  end
 
 end

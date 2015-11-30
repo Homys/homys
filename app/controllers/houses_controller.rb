@@ -1,5 +1,5 @@
 class HousesController < ApplicationController
-  before_action :verified_phone, :except => [:index, :show]
+  before_action :verified_phone, :if => :wants_sms?, :except => [:index, :show]
   before_action :authenticate_user!, :except => [:index]
 
   def create
@@ -38,9 +38,14 @@ class HousesController < ApplicationController
 
   def show
   	@house = House.find(params[:id])
-    @users = @house.users.order('total_points DESC')
-    @events = @house.events.all
-    @event = Event.new
+    if @house
+      @users = @house.users.order('total_points DESC')
+      @events = @house.events.all
+      @event = Event.new
+    else
+      redirect_to houses_path
+    end
+
   end
 
   def destroy
@@ -63,10 +68,10 @@ class HousesController < ApplicationController
 
   def index
     if current_user
-      if current_user.house_id != nil && current_user.has_verified_phone?
+      if current_user.send_sms == true && current_user.has_verified_phone? == nil
+        redirect_to new_phone_number_path
+      elsif current_user.house_id != nil
         redirect_to house_path(current_user.house)
-      elsif  current_user.has_verified_phone? == nil
-          redirect_to new_phone_number_path
       else
         @house = House.new
       end

@@ -1,6 +1,7 @@
 class PaymentsController < ApplicationController
- 
-  before_action :authenticate_user!, :ensure_house_exists, :verified_phone
+
+  before_action :authenticate_user!, :ensure_house_exists
+  before_action :verified_phone, :if => :wants_sms?
 
   def paid
   	payment = Payment.find(params[:payment_id])
