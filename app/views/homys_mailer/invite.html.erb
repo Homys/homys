@@ -3,11 +3,11 @@
 
 <body>
 
-	<p> Your friend <%= @current_user.full_name %> wants you to join <%= @current_user.house.name %> on Homys. ! </p>
+	<h5> Your friend <%= @current_user.full_name %> wants you to join <%= @current_user.house.name %> on Homys. ! </h5>
 
-  <p> Create an account and let <%= @current_user.full_name %> know so <%= @current_user.full_name %> can add you to <%= @current_user.house.name %>.  </p>
+  <h5> Create an account and let <%= @current_user.full_name %> know so <%= @current_user.full_name %> can add you to <%= @current_user.house.name %>.  </h5>
 
-	<p> Click the link below to sign up for a Homys account: </p>
+	<h5> Click the link below to sign up for a Homys account: </h5>
 
 	<%= link_to "SIGN UP", new_user_registration_url %>
 

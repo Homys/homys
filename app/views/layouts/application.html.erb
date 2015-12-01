@@ -31,6 +31,7 @@ content="<%= image_path('thumbnail.png') %>" />
 
  <% if current_user && current_user.house_id != nil && current_user.send_sms == false %>
 
+
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
 
 
@@ -54,6 +55,9 @@ content="<%= image_path('thumbnail.png') %>" />
         <div class="mdl-cell mdl-cell--3-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
       </main>
     </div>
+
+  <% elsif current_user && current_user.send_sms == true && !current_user.has_verified_phone? %>
+    <%= yield %>
   <% else %>
     <%= yield %>
   <% end %>
