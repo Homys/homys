@@ -34,7 +34,8 @@
     <%= f.label :avatar %>
     <%= f.file_field :avatar %>
   </div>
-<br>
+
+  <br>
   <div class="field">
     Contact method for important house related info: <br>
     <%= f.radio_button(:send_sms, "0", :checked => true) %>
@@ -42,6 +43,7 @@
     <%= f.radio_button(:send_sms, "1") %>
     <%= f.label(:send_sms, "SMS") %>
   </div>
+  <br>
 
 <!--
 1. have a simple form that asks for name, email, password

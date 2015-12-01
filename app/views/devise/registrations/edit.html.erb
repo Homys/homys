@@ -23,6 +23,16 @@
     <%= f.file_field :avatar  %> <br> <br>
   </div>
 
+  <br>
+  <div class="field">
+    Contact method for important house related info: <br>
+    <%= f.radio_button(:send_sms, "0", :checked => true) %>
+    <%= f.label(:send_sms, "Email") %>
+    <%= f.radio_button(:send_sms, "1") %>
+    <%= f.label(:send_sms, "SMS") %>
+  </div>
+  <br>
+
   <div class="field">
    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <%= f.label :email,  :class => "mdl-textfield__label"  %><br />
@@ -56,7 +66,7 @@
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <%= f.label :current_password, :class => "mdl-textfield__label"%> <br />
     <%= f.password_field :current_password, autocomplete: "off", :class => "mdl-textfield__input" %>
-  
+
   </div>
   </div>
 
