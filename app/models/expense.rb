@@ -17,8 +17,11 @@ class Expense < ActiveRecord::Base
   end
 
   def text_sender
-    users.each do |user|
-      user.send_text_message(expense_text)
+    sms_users = users.select { |user| user.send_sms == true}
+    if !sms_users.nil?
+      sms_users.each do |user|
+        user.send_text_message(expense_text)
+      end
     end
   end
 

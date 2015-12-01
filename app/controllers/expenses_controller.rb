@@ -21,6 +21,7 @@ class ExpensesController < ApplicationController
     respond_to do |format|
       if @expense.save
         @expense.text_sender
+        @house.email_about_expenses(@expense)
         format.html { redirect_to house_expenses_path(current_user.house), notice: 'expense added.' }
         format.js {}
 

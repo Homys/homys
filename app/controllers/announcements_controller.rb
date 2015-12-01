@@ -18,6 +18,7 @@ class AnnouncementsController < ApplicationController
 			if @announcement.save
 				if @announcement.importance == "1"
 					text_sender(@announcement.description)
+					@house.email_about_announcements(@announcement.description)
 				end
 
 				format.html { redirect_to house_announcements_path(current_user.house), notice: 'Announcement added.' }

@@ -15,4 +15,16 @@ class HomysMailer < ApplicationMailer
     @house = house.id
     mail(to: email, subject: "Your Homy wants you to join the house")
   end
+
+  def email_announcements(user, body)
+    @user = user
+    @body = body
+    mail(to: @user.email, subject: "Your Homy has made an important announcement")
+  end
+
+  def email_expenses(user, body)
+    @user = user
+    @body = body
+    mail(to: @user.email, subject: "A friendly reminder from your homy")
+  end
 end

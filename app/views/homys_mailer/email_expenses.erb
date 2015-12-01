@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <h3>Just reminding you that you owe <%= @body.owner.full_name %> $<%= @body.split_amount %> for <%= @body.title %>.</h3>
+
+  <h3>The expense is due by <%= @body.date_due.strftime("%B %d, %Y") %></h3>
+
+
+</body>
+</html>

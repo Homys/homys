@@ -47,10 +47,33 @@ end
   end
 
   def send_to_all_users(body)
-    users.each do |user|
-      user.send_text_message(body)
+    sms_users = users.select { |user| user.send_sms == true}
+    if !sms_users.nil?
+      sms_users.each do |user|
+        user.send_text_message(body)
+      end
     end
   end
+
+  def email_about_announcements(body)
+    email_users = users.select { |user| user.send_sms == false}
+    if !email_users.nil?
+      email_users.each do |user|
+        HomysMailer.email_announcements(user, body).deliver_now
+      end
+    end
+  end
+
+  def email_about_expenses(body)
+    email_users = users.select { |user| user.send_sms == false}
+    if !email_users.nil?
+      email_users.each do |user|
+        HomysMailer.email_expenses(user, body).deliver_now
+      end
+    end
+  end
+
+
 
 
   def self.reduce_all_points
