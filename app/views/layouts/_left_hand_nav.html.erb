@@ -15,8 +15,7 @@
 			<button id="optns" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
   			<i class="material-icons">arrow_drop_down</i>
 			</button>
-			<ul class="mdl-me
-      nu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="optns">
+			<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="optns">
               <li><%= link_to "Edit Profile", edit_user_registration_path, :class => "mdl-menu__item"%></li>
               <li><%= link_to "Logout", destroy_user_session_path, :class => "mdl-menu__item", method: :delete %></li>
               <li><%= link_to "Settings", house_settings_path(current_user.house), :class => "mdl-menu__item" %></li>
