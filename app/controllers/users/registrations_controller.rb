@@ -5,9 +5,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   def new
     super
-    def after_sign_up_path_for(resource)
-      new_phone_number_path
-    end
   end
 
   # POST /resource

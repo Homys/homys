@@ -68,7 +68,7 @@ class HousesController < ApplicationController
 
   def index
     if current_user
-      if current_user.send_sms == true && current_user.has_verified_phone? == nil
+      if current_user.send_sms == true && current_user.has_verified_phone? == false
         redirect_to new_phone_number_path
       elsif current_user.house_id != nil
         redirect_to house_path(current_user.house)
